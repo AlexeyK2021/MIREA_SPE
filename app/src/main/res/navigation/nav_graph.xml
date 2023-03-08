@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainPage"
-        android:name="ru.eco.automan.MainPage"
+        android:name="ru.eco.automan.Fragments.MainPage"
         android:label="fragment_main_page"
         tools:layout="@layout/fragment_main_page">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/pdd_rules_book"
-        android:name="ru.eco.automan.Pdd_rules_book"
+        android:name="ru.eco.automan.Fragments.Pdd_rules_book"
         android:label="fragment_pdd_rules_book"
         tools:layout="@layout/fragment_pdd_rules_book">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/car_info"
-        android:name="ru.eco.automan.CarInfo"
+        android:name="ru.eco.automan.Fragments.CarInfo"
         android:label="fragment_car_info"
         tools:layout="@layout/fragment_car_info" >
         <action

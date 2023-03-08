@@ -1,28 +1,28 @@
-package ru.eco.automan
+package ru.eco.automan.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import ru.eco.automan.databinding.FragmentPddRulesBookBinding
+import ru.eco.automan.databinding.FragmentMainPageBinding
 
 
-class Pdd_rules_book : Fragment() {
-    private var _binding: FragmentPddRulesBookBinding? = null
+class MainPage : Fragment() {
+    private var _binding: FragmentMainPageBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentPddRulesBookBinding.inflate(inflater, container, false)
+        _binding = FragmentMainPageBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.Hello.text = "Hello from Rules Fragment 😊"
+        binding.Hello.text = "Hello from Main Fragment 😊"
     }
 
     override fun onDestroyView() {
