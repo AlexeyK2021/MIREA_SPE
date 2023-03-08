@@ -1,4 +1,4 @@
-package ru.eco.automan.Dao
+package ru.eco.automan.dao
 
 import androidx.room.Dao
 

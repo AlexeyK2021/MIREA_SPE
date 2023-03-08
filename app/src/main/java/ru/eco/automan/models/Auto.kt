@@ -1,4 +1,4 @@
-package ru.eco.automan.Models
+package ru.eco.automan.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

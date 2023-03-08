@@ -1,10 +1,10 @@
-package ru.eco.automan.Models
+package ru.eco.automan.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Expense(
+data class Category(
     @PrimaryKey val id: Int,
     @PrimaryKey val name: String
 )

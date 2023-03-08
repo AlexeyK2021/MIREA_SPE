@@ -1,4 +1,4 @@
-package ru.eco.automan.Fragments
+package ru.eco.automan.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

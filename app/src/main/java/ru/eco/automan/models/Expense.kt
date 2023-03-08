@@ -1,10 +1,10 @@
-package ru.eco.automan.Models
+package ru.eco.automan.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class EngineType(
+data class Expense(
     @PrimaryKey val id: Int,
     @PrimaryKey val name: String
 )

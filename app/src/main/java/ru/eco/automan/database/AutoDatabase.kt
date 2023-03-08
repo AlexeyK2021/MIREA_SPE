@@ -1,12 +1,12 @@
-package ru.eco.automan.Database
+package ru.eco.automan.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import ru.eco.automan.Dao.AutoDao
-import ru.eco.automan.Dao.CategoryDao
-import ru.eco.automan.Dao.ExpenseDao
-import ru.eco.automan.Models.Category
-import ru.eco.automan.Models.Expense
+import ru.eco.automan.dao.AutoDao
+import ru.eco.automan.dao.CategoryDao
+import ru.eco.automan.dao.ExpenseDao
+import ru.eco.automan.models.Category
+import ru.eco.automan.models.Expense
 
 @Database(
     entities = [
