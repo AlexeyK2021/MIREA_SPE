@@ -1,19 +1,16 @@
 package ru.eco.automan.models
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.ForeignKey
-import androidx.room.PrimaryKey
+import androidx.room.*
 
 
 @Entity(
-    foreignKeys = arrayOf(
-        ForeignKey(
-            EngineType::class,
-            ["id"],
-            ["engineTypeId"]
-        )
-    )
+//    foreignKeys = arrayOf(
+//        ForeignKey(
+//            EngineType::class,
+//            ["id"],
+//            ["engineTypeId"]
+//        )
+//    )
 )
 data class Auto(
     @PrimaryKey val id: Int,
@@ -21,5 +18,6 @@ data class Auto(
     @ColumnInfo val brand: String,
     @ColumnInfo val model: String,
     @ColumnInfo val registrationNumber: String,
-    val engineTypeId: Int
+    @Embedded val engineTypeId: EngineType
+
 )
