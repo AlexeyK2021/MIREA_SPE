@@ -3,6 +3,7 @@ package ru.eco.automan.repositories
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.room.Dao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.eco.automan.AutoApplication

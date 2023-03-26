@@ -1,7 +1,6 @@
 package ru.eco.automan
 
 import android.app.Application
-import androidx.room.Room
 import ru.eco.automan.database.AutoDatabase
 
 class AutoApplication : Application() {
