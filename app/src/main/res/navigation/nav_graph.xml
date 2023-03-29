@@ -3,36 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainPage">
-
+    app:startDestination="@id/mainFragment">
     <fragment
-        android:id="@+id/mainPage"
-        android:name="ru.eco.automan.fragments.MainPage"
-        android:label="fragment_main_page"
-        tools:layout="@layout/fragment_main_page">
-        <action
-            android:id="@+id/action_mainPage_to_pdd_rules_book"
-            app:destination="@id/pdd_rules_book" />
-        <action
-            android:id="@+id/action_mainPage_to_expansesHistory2"
-            app:destination="@id/car_info" />
-    </fragment>
-    <fragment
-        android:id="@+id/pdd_rules_book"
-        android:name="ru.eco.automan.fragments.Pdd_rules_book"
-        android:label="fragment_pdd_rules_book"
-        tools:layout="@layout/fragment_pdd_rules_book">
-        <action
-            android:id="@+id/action_pdd_rules_book_to_mainPage"
-            app:destination="@id/mainPage" />
-    </fragment>
-    <fragment
-        android:id="@+id/car_info"
-        android:name="ru.eco.automan.fragments.CarInfo"
-        android:label="fragment_car_info"
-        tools:layout="@layout/fragment_car_info" >
-        <action
-            android:id="@+id/action_expansesHistory2_to_mainPage"
-            app:destination="@id/mainPage" />
-    </fragment>
+        android:id="@+id/mainFragment"
+        android:name="ru.eco.automan.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>

@@ -3,7 +3,6 @@ package ru.eco.automan.repositories
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.Dao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.eco.automan.AutoApplication
@@ -24,8 +23,8 @@ class ExpenseRepository : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) { expenseDao?.addExpense(expense) }
 
     fun updateExpense(expense: Expense) =
-        viewModelScope.launch(Dispatchers.IO) { expenseDao?.updateAuto(expense)!! }
+        viewModelScope.launch(Dispatchers.IO) { expenseDao?.updateExpense(expense)!! }
 
     fun deleteExpense(expense: Expense) =
-        viewModelScope.launch(Dispatchers.IO) { expenseDao?.deleteAuto(expense)!! }
+        viewModelScope.launch(Dispatchers.IO) { expenseDao?.deleteExpense(expense)!! }
 }

@@ -8,7 +8,7 @@ import ru.eco.automan.models.Category
 @Dao
 interface CategoryDao {
     @Insert
-    fun addCategory(category: Category): Boolean
+    fun addCategory(category: Category)
 
     @Query("SELECT * FROM Category")
     fun getAllCategories(): List<Category>
@@ -17,9 +17,9 @@ interface CategoryDao {
     fun getAllCategoriesLiveData(): LiveData<List<Category>>
 
     @Update
-    fun updateCategory(category: Category): Boolean
+    fun updateCategory(category: Category)
 
     @Delete
-    fun deleteCategory(category: Category): Boolean
+    fun deleteCategory(category: Category)
 
 }

@@ -7,7 +7,7 @@ import ru.eco.automan.models.Auto
 @Dao
 interface AutoDao {
     @Insert
-    fun addAuto(auto: Auto): Boolean
+    fun addAuto(auto: Auto)
 
     @Query("SELECT * FROM Auto")
     fun getAllAutos(): List<Auto>
@@ -16,9 +16,9 @@ interface AutoDao {
     fun getAllAutosLiveData(): LiveData<List<Auto>>
 
     @Update
-    fun updateAuto(auto: Auto): Boolean
+    fun updateAuto(auto: Auto)
 
     @Delete
-    fun deleteAuto(auto: Auto): Boolean
+    fun deleteAuto(auto: Auto)
 
 }

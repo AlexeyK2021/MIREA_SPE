@@ -1,6 +1,7 @@
 package ru.eco.automan
 
 import android.app.Application
+import androidx.room.Room
 import ru.eco.automan.database.AutoDatabase
 
 class AutoApplication : Application() {
@@ -12,7 +13,10 @@ class AutoApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-//        database_ = Room.databaseBuilder(this, AutoDatabase::class.java, "auto_database").build()
+        database_ = Room.databaseBuilder(this, AutoDatabase::class.java, "auto_database.db")
+            .createFromAsset("database/auto_DbBrowser.db")
+            .build()
+
     }
 
 }
