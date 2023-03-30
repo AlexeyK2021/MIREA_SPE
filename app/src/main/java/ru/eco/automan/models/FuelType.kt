@@ -4,8 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "chapter")
-data class Chapter(
+@Entity(
+    tableName = "fuel_type"
+)
+data class FuelType(
     @PrimaryKey val id: Int,
     @ColumnInfo val name: String
 )

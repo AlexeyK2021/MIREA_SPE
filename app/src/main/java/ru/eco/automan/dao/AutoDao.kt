@@ -9,10 +9,10 @@ interface AutoDao {
     @Insert
     fun addAuto(auto: Auto)
 
-    @Query("SELECT * FROM Auto")
+    @Query("SELECT * FROM auto")
     fun getAllAutos(): List<Auto>
 
-    @Query("SELECT * FROM Auto")
+    @Query("SELECT * FROM auto")
     fun getAllAutosLiveData(): LiveData<List<Auto>>
 
     @Update

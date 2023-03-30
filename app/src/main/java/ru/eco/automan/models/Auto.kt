@@ -1,7 +1,6 @@
 package ru.eco.automan.models
 
 import androidx.room.*
-import androidx.room.ForeignKey.Companion.CASCADE
 import java.sql.Date
 
 
@@ -9,9 +8,9 @@ import java.sql.Date
     tableName = "auto",
     foreignKeys = [
         ForeignKey(
-            entity = EngineType::class,
+            entity = FuelType::class,
             parentColumns = ["id"],
-            childColumns = ["engine_type_id"]
+            childColumns = ["fuel_type_id"]
         ),
         ForeignKey(
             entity = Brand::class,
@@ -27,11 +26,11 @@ import java.sql.Date
 )
 data class Auto(
     @PrimaryKey val id: Int,
-    @ColumnInfo val name: String,
-    @ColumnInfo(name = "brand_id") val brandId: String,
-    @ColumnInfo(name = "model_id") val modelId: String,
-    @ColumnInfo(name = "registration_number") val registrationNumber: String,
-    @ColumnInfo(name = "engine_type_id") val engineTypeId: Int,
-    @ColumnInfo(name = "last_maintenance_date") val lastMaintenanceDate: Date,
-    @ColumnInfo(name = "insurance_expiration_date") val insuranceExpirationDate: Date
+    @ColumnInfo val name: String?,
+    @ColumnInfo(name = "brand_id") val brandId: Int,
+    @ColumnInfo(name = "model_id") val modelId: Int,
+    @ColumnInfo(name = "registration_number") val registrationNumber: String?,
+    @ColumnInfo(name = "fuel_type_id") val fuelTypeId: Int,
+    @ColumnInfo(name = "last_maintenance_date",) val lastMaintenanceDate: Date?,
+    @ColumnInfo(name = "insurance_expiration_date") val insuranceExpirationDate: Date?
 )
