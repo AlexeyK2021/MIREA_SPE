@@ -15,10 +15,14 @@ interface AutoDao {
     @Query("SELECT * FROM auto")
     fun getAllAutosLiveData(): LiveData<List<Auto>>
 
+    @Query("SELECT * FROM auto WHERE id=:autoId")
+    fun findById(autoId: Int):Auto
+
     @Update
     fun updateAuto(auto: Auto)
 
     @Delete
     fun deleteAuto(auto: Auto)
+
 
 }

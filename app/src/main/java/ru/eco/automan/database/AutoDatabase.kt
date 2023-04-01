@@ -27,5 +27,6 @@ abstract class AutoDatabase : RoomDatabase() {
     abstract fun categoryDao(): CategoryDao
     abstract fun expenseDao(): ExpenseDao
     abstract fun fuelTypeDao(): FuelTypeDao
-    abstract fun brandDao():BrandDao
+    abstract fun brandDao(): BrandDao
+    abstract fun modelDao(): ModelDao
 }
