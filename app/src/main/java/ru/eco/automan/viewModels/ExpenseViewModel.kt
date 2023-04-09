@@ -10,23 +10,18 @@ import ru.eco.automan.dao.ExpenseDao
 import ru.eco.automan.models.Expense
 import ru.eco.automan.models.Model
 
+/**
+ * Класс
+ */
 class ExpenseViewModel : ViewModel() {
-    private var _expenses: LiveData<List<Expense>>
-    val expenses get() = _expenses.value
-    private var expenseDao: ExpenseDao? = null
-
-    init {
-        expenseDao = AutoApplication.database.expenseDao()
-        _expenses = expenseDao?.getAllExpensesLiveData()!!
-    }
+    private var _expenses: LiveData<List<Expense>> = AutoApplication.expenseRepository.expenses
 
     fun addExpense(expense: Expense) =
-        viewModelScope.launch(Dispatchers.IO) { expenseDao?.addExpense(expense) }
+        viewModelScope.launch(Dispatchers.IO) { }
 
     fun updateExpense(expense: Expense) =
-        viewModelScope.launch(Dispatchers.IO) { expenseDao?.updateExpense(expense)!! }
+        viewModelScope.launch(Dispatchers.IO) { }
 
     fun deleteExpense(expense: Expense) =
-        viewModelScope.launch(Dispatchers.IO) { expenseDao?.deleteExpense(expense)!! }
-
+        viewModelScope.launch(Dispatchers.IO) {  }
 }

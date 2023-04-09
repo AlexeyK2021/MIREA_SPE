@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.eco.automan.models.Expense
 
-class ExpenseViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+class ExpenseViewHolder(view: View) : RecyclerView.ViewHolder(view) {//ViewHolder для каждой категории трат
 
 }
 

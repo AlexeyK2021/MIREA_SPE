@@ -7,6 +7,17 @@ import ru.eco.automan.Converters
 import ru.eco.automan.dao.*
 import ru.eco.automan.models.*
 
+/**
+ * Класс базы данных, в котором описаны классы для автоматического создания таблиц.
+ * @see Auto
+ * @see Brand
+ * @see Model
+ * @see Category
+ * @see Expense
+ * @see FuelType
+ * @see Chapter
+ * @see Paragraph
+ */
 @Database(
     entities = [
         Auto::class,
@@ -29,4 +40,6 @@ abstract class AutoDatabase : RoomDatabase() {
     abstract fun fuelTypeDao(): FuelTypeDao
     abstract fun brandDao(): BrandDao
     abstract fun modelDao(): ModelDao
+    abstract fun chapterDao(): ChapterDao
+    abstract fun paragraphDao(): ParagraphDao
 }

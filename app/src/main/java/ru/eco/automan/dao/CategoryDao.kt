@@ -2,9 +2,11 @@ package ru.eco.automan.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import ru.eco.automan.models.Auto
 import ru.eco.automan.models.Category
-
+/**
+ * Интерфейс, позволяющий получить доступ к списку категорий трат пользователя, хранящихся в базе данных
+ * @see Category
+ */
 @Dao
 interface CategoryDao {
     @Insert

@@ -17,7 +17,7 @@ import androidx.room.PrimaryKey
 )
 data class Paragraph(
     @PrimaryKey val id: Int,
-    @ColumnInfo(name = "chapter_id") val idChapter: Int,
+    @ColumnInfo(name = "chapter_id") val chapterId: Int,
     @ColumnInfo val text: String?,
     @ColumnInfo val name: String?
 )

@@ -2,8 +2,12 @@ package ru.eco.automan.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import ru.eco.automan.models.Brand
 import ru.eco.automan.models.Expense
-
+/**
+ * Интерфейс, позволяющий получить доступ к тратам пользователя, хранящихся в базе данных
+ * @see Expense
+ */
 @Dao
 interface ExpenseDao {
     @Insert

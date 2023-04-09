@@ -4,6 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import ru.eco.automan.models.Auto
 
+/**
+ * Интерфейс, позволяющий получить доступ к данным об автомобилях пользователя, хранящихся в базе данных
+ * @see Auto
+ */
 @Dao
 interface AutoDao {
     @Insert

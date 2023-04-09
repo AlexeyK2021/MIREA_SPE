@@ -2,8 +2,12 @@ package ru.eco.automan.dao
 
 import androidx.room.Dao
 import androidx.room.Query
+import ru.eco.automan.models.Brand
 import ru.eco.automan.models.Model
-
+/**
+ * Интерфейс, позволяющий получить доступ к списку моделей автомобилей, хранящихся в базе данных
+ * @see Model
+ */
 @Dao
 interface ModelDao {
 

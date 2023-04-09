@@ -5,7 +5,10 @@ import androidx.room.Dao
 import androidx.room.Query
 import ru.eco.automan.models.Auto
 import ru.eco.automan.models.Brand
-
+/**
+ * Интерфейс, позволяющий получить доступ к списку брендов автомобилей, хранящихся в базе данных
+ * @see Brand
+ */
 @Dao
 interface BrandDao {
 
