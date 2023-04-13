@@ -47,7 +47,6 @@ class AutoApplication : Application() {
             chapterDao = _database.chapterDao(),
             paragraphDao = _database.paragraphDao()
         )
-
     }
 
 }
