@@ -25,6 +25,8 @@ class AutoApplication : Application() {
         private var rulesRepo: RulesRepository? = null
         val rulesRepository get() = rulesRepo!!
 
+        private var _notificationController: NotificationController? = null
+        val notificationManager get() = _notificationController!!
     }
 
     override fun onCreate() {
@@ -47,6 +49,8 @@ class AutoApplication : Application() {
             chapterDao = _database.chapterDao(),
             paragraphDao = _database.paragraphDao()
         )
+
+        _notificationController = NotificationController()
     }
 
 }
