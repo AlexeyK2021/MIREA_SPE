@@ -4,6 +4,11 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/**
+ *  Класс данных типа топлива автомобиля
+ * @param id ID-номер типа топлива
+ * @param name Имя типа топлива (бензин, дизель, электричество)
+ */
 @Entity(
     tableName = "fuel_type"
 )

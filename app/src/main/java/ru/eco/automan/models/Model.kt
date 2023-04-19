@@ -5,6 +5,12 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
+/**
+ *  Класс данных модели автомобиля
+ * @param id ID-номер модели автомобиля
+ * @param name Имя модели автомобиля
+ * @param brandId ID-бренда, которому принадлежит эта модель
+ */
 @Entity(
     tableName = "model",
     foreignKeys = [

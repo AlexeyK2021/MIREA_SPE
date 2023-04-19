@@ -3,7 +3,17 @@ package ru.eco.automan.models
 import androidx.room.*
 import java.sql.Date
 
-
+/**
+ * Класс данных автомобиля
+ * @param id ID-номер автомобиля
+ * @param name Имя (псевдоним) автомобиля, которое задаёт пользователь
+ * @param brandId ID-номер бренда автомобиля
+ * @param modelId ID-номер модели автомобиля
+ * @param registrationNumber Регистрационный номер автомобиля
+ * @param fuelTypeId ID-номер типа топлива автомобиля
+ * @param lastMaintenanceDate Дата последнего технического обслуживания
+ * @param insuranceExpirationDate Дата окнончания действия страхования автомобиля
+ */
 @Entity(
     tableName = "auto",
     foreignKeys = [

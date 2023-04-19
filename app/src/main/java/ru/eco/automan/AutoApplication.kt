@@ -9,7 +9,7 @@ import ru.eco.automan.repositories.RulesRepository
 
 /**
  * Класс приложения
- * Используется как класс со всеми зависимостями в приложении
+ * Используется как хранилище со всеми зависимостями в приложении
  */
 class AutoApplication : Application() {
     companion object {

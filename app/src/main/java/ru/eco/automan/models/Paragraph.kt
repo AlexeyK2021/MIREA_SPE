@@ -5,6 +5,13 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
+/**
+ * Класс данных пункта Правил Дорожного Движения
+ * @param id ID-номер пункта правил
+ * @param chapterId ID-номер главы, к которой принадлежит пункт
+ * @param text Текстовое содержимое пункта
+ * @param name Имя пункта
+ */
 @Entity(
     tableName = "paragraph",
     foreignKeys = [

@@ -6,6 +6,15 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import java.sql.Date
 
+/**
+ * Класс данных траты на конкретный автомобиль
+ * @param id ID-номер траты на автомобиль
+ * @param name Имя траты
+ * @param amount Количество затраченных средств
+ * @param date Дата траты
+ * @param categoryId ID-номер категории траты
+ * @param autoId ID-номер автомобиля, для которого совершена трата
+ */
 @Entity(
     tableName = "expense",
     foreignKeys = [

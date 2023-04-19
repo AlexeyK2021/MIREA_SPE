@@ -11,11 +11,10 @@ import ru.eco.automan.models.Brand
  */
 @Dao
 interface BrandDao {
-
+    /**
+     * Метод для получения списка всех брендов автомобилей
+     * @return Список брендов
+     */
     @Query("SELECT * FROM brand")
     fun getAllBrands(): List<Brand>
-
-    @Query("SELECT * FROM brand")
-    fun getAllBrandsLiveData(): LiveData<List<Brand>>
-
 }

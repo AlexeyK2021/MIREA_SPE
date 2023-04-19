@@ -7,6 +7,9 @@ import android.content.Intent
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
+/**
+ * Контроллер уведомлений
+ */
 class NotificationController() {
     companion object {
         var NOTIFICATION_ID = 101

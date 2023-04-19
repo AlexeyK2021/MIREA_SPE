@@ -10,10 +10,18 @@ import ru.eco.automan.models.Paragraph
  */
 @Dao
 interface ParagraphDao {
-
+    /**
+     * Метод для получения списка всех пунктов Правил Дорожного Движения
+     * @return Список всех пунктов
+     */
     @Query("SELECT * FROM paragraph")
     fun getAllParagraphs(): List<Paragraph>
 
+    /**
+     * Метод для получения пунктов ПДД по ID-номеру главы
+     * @param chapterId ID-номер главы
+     * @return Список пунктов входящих в эту главу
+     */
     @Query("SELECT * FROM paragraph WHERE chapter_id=:chapterId")
     fun getParagraphsByChapterId(chapterId: Int): List<Paragraph>
 }

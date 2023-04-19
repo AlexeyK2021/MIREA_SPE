@@ -10,6 +10,10 @@ import ru.eco.automan.models.Chapter
  */
 @Dao
 interface ChapterDao {
+    /**
+     * Метод получения всех глав ПДД в виде списка
+     * @return Список глав ПДД
+     */
     @Query("SELECT * FROM chapter")
     fun getAllChapters(): List<Chapter>
 }
