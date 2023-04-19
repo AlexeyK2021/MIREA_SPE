@@ -10,7 +10,6 @@ import ru.eco.automan.models.Chapter
  */
 @Dao
 interface ChapterDao {
-
     @Query("SELECT * FROM chapter")
     fun getAllChapters(): List<Chapter>
 }
