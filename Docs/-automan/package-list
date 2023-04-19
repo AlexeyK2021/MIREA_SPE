@@ -25,7 +25,6 @@ $dokka.location:ru.eco.automan.dao/AutoDao/getAllAutosLiveData/#/PointingToDecla
 $dokka.location:ru.eco.automan.dao/AutoDao/updateAuto/#ru.eco.automan.models.Auto/PointingToDeclaration/-automan/ru.eco.automan.dao/-auto-dao/update-auto.html
 $dokka.location:ru.eco.automan.dao/BrandDao///PointingToDeclaration/-automan/ru.eco.automan.dao/-brand-dao/index.html
 $dokka.location:ru.eco.automan.dao/BrandDao/getAllBrands/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-brand-dao/get-all-brands.html
-$dokka.location:ru.eco.automan.dao/BrandDao/getAllBrandsLiveData/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-brand-dao/get-all-brands-live-data.html
 $dokka.location:ru.eco.automan.dao/CategoryDao///PointingToDeclaration/-automan/ru.eco.automan.dao/-category-dao/index.html
 $dokka.location:ru.eco.automan.dao/CategoryDao/addCategory/#ru.eco.automan.models.Category/PointingToDeclaration/-automan/ru.eco.automan.dao/-category-dao/add-category.html
 $dokka.location:ru.eco.automan.dao/CategoryDao/deleteCategory/#ru.eco.automan.models.Category/PointingToDeclaration/-automan/ru.eco.automan.dao/-category-dao/delete-category.html

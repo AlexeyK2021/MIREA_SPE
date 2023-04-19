@@ -58,7 +58,7 @@
   <div class="breadcrumbs"><a href="../../../index.html">Automan</a><span class="delimiter">/</span><a href="../index.html">ru.eco.automan</a><span class="delimiter">/</span><span class="current">Converters</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Converters</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="root/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">Converters</a></div><p class="paragraph">Класс конверторов даты из Date в Int и наоборот для дальнейшего сохранения в БД</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="root/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">Converters</a></div><p class="paragraph">Класс конверторов даты из Date в Long и наоборот для дальнейшего сохранения в БД</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button></div>
@@ -94,7 +94,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="root/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="date-to-timestamp.html"><span class="token function">dateToTimestamp</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">date<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html">Date</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="root/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="date-to-timestamp.html"><span class="token function">dateToTimestamp</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">date<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html">Date</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Превращение даты из типа Date в тип снимка для хранения в БД</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -109,7 +109,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="root/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="from-timestamp.html"><span class="token function">fromTimestamp</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html">Date</a><span class="token operator">?</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="root/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="from-timestamp.html"><span class="token function">fromTimestamp</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html">Date</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Превращение даты из типа снимка (хранится в БД) в тим Date для работы с ним в программе</p></div></div></div>
                 </div>
               </div>
             </div>
