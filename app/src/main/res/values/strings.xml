@@ -16,7 +16,7 @@
     <string name="fuel">Вид топлива</string>
     <string name="insurance">Тип страхования</string>
     <string name="description">Чтобы контролировать\nфинансовые расходы</string>
-    <string name="ooooooaaaaaa">Добавьте свой\nавтомобиль</string>
+    <string name="AddYourAuto">Добавьте свой\nавтомобиль</string>
 
     <!-- SettingsAutoFragment -->
     <string name="common">Общие</string>

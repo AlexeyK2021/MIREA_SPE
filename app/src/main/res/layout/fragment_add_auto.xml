@@ -1,199 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontalBeginGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontalEndGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_end="50dp"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontalBeginGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/verticalBeginGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="30dp"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontalEndGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="50dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/verticalEndGuideLine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="30dp"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalBeginGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="30dp" />
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/radio_button_unchecked"
-        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
-        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalEndGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="30dp" />
 
-    <TextView
-        android:id="@+id/oooooaaaaaTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ooooooaaaaaa"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintVertical_bias="0.95"
-        app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"
-        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
-        app:layout_constraintBottom_toTopOf="@id/descriptionTextView"/>
+        <ImageView
+            android:id="@+id/auto_photo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/radio_button_unchecked"
+            app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+            app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+            app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"
+            tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/descriptionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/description"
-        android:gravity="center"
-        android:textSize="14sp"
-        android:textColor="@color/white"
-        app:layout_constraintVertical_bias="0.85"
-        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
-        app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"
-        app:layout_constraintBottom_toBottomOf="@id/brandTextView"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/AddYourAuto"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintVertical_bias="0.95"
+            app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"
+            app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+            app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+            app:layout_constraintBottom_toTopOf="@id/descriptionTextView" />
 
-    <TextView
-        android:id="@+id/brandTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:text="@string/brand"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintStart_toStartOf="@id/brandEditView"
-        app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline"
-        app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"/>
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            app:layout_constraintVertical_bias="0.85"
+            app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+            app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+            app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"
+            app:layout_constraintBottom_toBottomOf="@id/brandTextView" />
 
-    <EditText
-        android:id="@+id/brandEditView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_218"
-        android:layout_marginTop="10dp"
-        android:paddingHorizontal="10dp"
-        style="@style/TextSmall"
-        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintTop_toBottomOf="@id/brandTextView"/>
+        <TextView
+            android:id="@+id/brandTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="@string/brand"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintStart_toStartOf="@id/brandEditView"
+            app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline"
+            app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline" />
 
-    <TextView
-        android:id="@+id/modelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:text="@string/model"
-        app:layout_constraintStart_toStartOf="@id/modelEditView"
-        app:layout_constraintBottom_toTopOf="@id/modelEditView"
-        app:layout_constraintTop_toTopOf="@id/brandTextView"/>
+        <EditText
+            android:id="@+id/brandEditView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_218"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="10dp"
+            style="@style/TextSmall"
+            app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+            app:layout_constraintTop_toBottomOf="@id/brandTextView"
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/modelEditView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_218"
-        android:layout_marginTop="10dp"
-        android:paddingHorizontal="10dp"
-        style="@style/TextSmall"
-        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
-        app:layout_constraintTop_toBottomOf="@id/modelTextView"/>
+        <TextView
+            android:id="@+id/modelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="@string/model"
+            app:layout_constraintStart_toStartOf="@id/modelEditView"
+            app:layout_constraintBottom_toTopOf="@id/modelEditView"
+            app:layout_constraintTop_toTopOf="@id/brandTextView" />
 
-    <TextView
-        android:id="@+id/yearsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:text="@string/years"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="@id/brandEditView"
-        app:layout_constraintTop_toBottomOf="@id/brandEditView"/>
+        <EditText
+            android:id="@+id/modelEditView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_218"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="10dp"
+            style="@style/TextSmall"
+            app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/modelTextView"
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/yearsEditView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_218"
-        android:layout_marginTop="10dp"
-        android:paddingHorizontal="10dp"
-        style="@style/TextSmall"
-        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintTop_toBottomOf="@id/yearsTextView"/>
+        <TextView
+            android:id="@+id/yearsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="@string/years"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@id/brandEditView"
+            app:layout_constraintTop_toBottomOf="@id/brandEditView" />
 
-    <TextView
-        android:id="@+id/fuelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:text="@string/fuel"
-        app:layout_constraintStart_toStartOf="@id/fuelEditView"
-        app:layout_constraintBottom_toTopOf="@id/fuelEditView"
-        app:layout_constraintTop_toTopOf="@id/yearsTextView"/>
+        <EditText
+            android:id="@+id/yearsEditView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_218"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="10dp"
+            style="@style/TextSmall"
+            app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+            app:layout_constraintTop_toBottomOf="@id/yearsTextView"
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/fuelEditView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_218"
-        android:layout_marginTop="10dp"
-        android:paddingHorizontal="10dp"
-        style="@style/TextSmall"
-        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
-        app:layout_constraintTop_toBottomOf="@id/fuelTextView"/>
+        <TextView
+            android:id="@+id/fuelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="@string/fuel"
+            app:layout_constraintStart_toStartOf="@id/fuelEditView"
+            app:layout_constraintBottom_toTopOf="@id/fuelEditView"
+            app:layout_constraintTop_toTopOf="@id/yearsTextView" />
 
-    <TextView
-        android:id="@+id/insuranceTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:text="@string/insurance"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="@id/yearsEditView"
-        app:layout_constraintTop_toBottomOf="@id/yearsEditView"/>
+        <EditText
+            android:id="@+id/fuelEditView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_218"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="10dp"
+            style="@style/TextSmall"
+            app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/fuelTextView"
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/insuranceEditView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_218"
-        android:layout_marginTop="10dp"
-        android:paddingHorizontal="10dp"
-        style="@style/TextSmall"
-        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintTop_toBottomOf="@id/insuranceTextView"/>
+        <TextView
+            android:id="@+id/insuranceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="@string/insurance"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@id/yearsEditView"
+            app:layout_constraintTop_toBottomOf="@id/yearsEditView" />
+
+        <EditText
+            android:id="@+id/insuranceEditView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_218"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="10dp"
+            style="@style/TextSmall"
+            app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+            app:layout_constraintTop_toBottomOf="@id/insuranceTextView"
+            android:inputType="text" />
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/continueButton"
-        style="@style/Button.White"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/continue_text"
-        android:paddingVertical="15dp"
-        app:layout_constraintWidth_percent="0.65"
-        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
-        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline"
-        />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/continueButton"
+            style="@style/Button.White"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/continue_text"
+            android:paddingVertical="15dp"
+            app:layout_constraintWidth_percent="0.65"
+            app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+            app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+            app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

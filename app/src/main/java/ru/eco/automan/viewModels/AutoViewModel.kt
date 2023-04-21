@@ -6,6 +6,7 @@ import kotlinx.coroutines.launch
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.models.Auto
 import ru.eco.automan.models.Brand
+import ru.eco.automan.models.FuelType
 import ru.eco.automan.models.Model
 import ru.eco.automan.repositories.AutoRepository
 
@@ -14,11 +15,18 @@ import ru.eco.automan.repositories.AutoRepository
  */
 
 class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
-
     val userAutos get() = AutoApplication.autoRepository.autos
     val brands get() = AutoApplication.autoRepository.brands
-    fun addAuto(auto: Auto) = viewModelScope.launch(Dispatchers.IO) {
 
+    private var currAuto: LiveData<Auto>? = null
+    val currentAuto get() = currAuto!!
+
+    val currentAutoBrandName get() = getBrandNameById(currentAuto.value!!.brandId)
+    val currentAutoModelName get() = getModelNameById(currentAuto.value!!.modelId)
+    val currentAutoFuelTypeName get() = getFuelTypeNameById(currentAuto.value!!.fuelTypeId)
+
+    fun addAuto(auto: Auto) = viewModelScope.launch(Dispatchers.IO) {
+        autoRepository.addAuto(auto = auto)
     }
 
     fun updateAuto(auto: Auto) =
@@ -34,5 +42,14 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
         }
         return brands
     }
+
+    private fun getBrandNameById(brandId: Int): String =
+        autoRepository.brands.find { it.id == brandId }!!.name
+
+    private fun getModelNameById(modelId: Int): String =
+        autoRepository.models.find { it.id == modelId }!!.name
+
+    private fun getFuelTypeNameById(fuelTypeId: Int): String =
+        autoRepository.fuelTypes.find { it.id == fuelTypeId }!!.name
 
 }

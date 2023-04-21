@@ -29,9 +29,13 @@ class AutoRepository(
 ) {
     private var _autos: LiveData<List<Auto>> = autoDao.getAllAutosLiveData()
     private var _brands: List<Brand> = brandDao.getAllBrands()
+    private var _models: List<Model> = modelDao.getAllModels()
+    private var _fuels: List<FuelType> = fuelTypeDao.getAllFuelTypes()
 
     val autos get() = _autos
     val brands get() = _brands
+    val models get() = _models
+    val fuelTypes get() = _fuels
 
     /**
      * Метод добавления нового автомобиля пользователя в БД
@@ -57,4 +61,6 @@ class AutoRepository(
      * @return список моделей по переданному экземпляру бренда
      */
     fun getModelsByBrand(brand: Brand) = modelDao.getModelsByBrandId(brandId = brand.id)
+
+
 }

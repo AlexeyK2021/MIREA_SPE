@@ -35,7 +35,7 @@ import java.sql.Date
     ]
 )
 data class Auto(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo val name: String?,
     @ColumnInfo(name = "brand_id") val brandId: Int,
     @ColumnInfo(name = "model_id") val modelId: Int,

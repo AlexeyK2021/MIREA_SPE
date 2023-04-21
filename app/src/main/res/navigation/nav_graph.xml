@@ -9,4 +9,8 @@
         android:name="ru.eco.automan.fragments.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/addAutoFragment"
+        android:name="ru.eco.automan.fragments.AddAutoFragment"
+        android:label="AddAutoFragment" />
 </navigation>
