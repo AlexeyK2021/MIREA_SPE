@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalBeginGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalBeginGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="30dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalEndGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="30dp"/>
+
+    <ImageView
+        android:id="@+id/commonImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rectangle_219"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"/>
+    
+    <TextView
+        android:id="@+id/commonTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/common"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="@id/commonImage"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"/>
+
+    <TextView
+        android:id="@+id/themeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/theme"
+        style="@style/TextSmall"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/commonTextView"
+        app:layout_constraintTop_toBottomOf="@id/commonTextView"/>
+
+    <Spinner
+        android:id="@+id/themeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintTop_toTopOf="@id/themeTextView"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"/>
+
+    <TextView
+        android:id="@+id/languageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/language"
+        style="@style/TextSmall"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/themeTextView"
+        app:layout_constraintTop_toBottomOf="@id/themeTextView"/>
+
+    <Spinner
+        android:id="@+id/languageSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/languageTextView"
+        app:layout_constraintEnd_toEndOf="@id/themeSpinner"/>
+
+    <TextView
+        android:id="@+id/notificationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notifications"
+        style="@style/TextSmall"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/languageTextView"
+        app:layout_constraintTop_toBottomOf="@id/languageTextView"/>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/languageSpinner"
+        app:layout_constraintTop_toTopOf="@id/notificationTextView"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <ImageView
+        android:id="@+id/controlImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rectangle_219"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintTop_toBottomOf="@id/commonImage"/>
+
+    <TextView
+        android:id="@+id/controlTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/manage"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="@id/controlImage"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"/>
+
+    <TextView
+        android:id="@+id/eventTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event"
+        style="@style/TextSmall"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/controlTextView"
+        app:layout_constraintTop_toBottomOf="@id/controlTextView"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextSmall"
+        android:text="3"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintTop_toTopOf="@id/eventTextView"/>
+
+    <TextView
+        android:id="@+id/ClearTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear"
+        style="@style/TextSmall"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/eventTextView"
+        app:layout_constraintTop_toBottomOf="@id/eventTextView"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

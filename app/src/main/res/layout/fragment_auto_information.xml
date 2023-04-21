@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalBeginGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="50dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalBeginGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalEndGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp"/>
+
+    <ImageView
+        android:id="@+id/settingImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_settings"
+        app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"/>
+
+    <ImageView
+        android:id="@+id/carImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/radio_button_unchecked"
+        app:layout_constraintTop_toBottomOf="@id/settingImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/brandTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        style="@style/TextSmall"
+        android:text="@string/brand_inf"
+        app:layout_constraintStart_toStartOf="@id/brandEditView"
+        app:layout_constraintTop_toBottomOf="@id/carImageView"/>
+
+
+    <EditText
+        android:id="@+id/brandEditView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_226"
+        android:layout_marginTop="5dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintTop_toBottomOf="@id/brandTextView"/>
+
+    <TextView
+        android:id="@+id/modelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        style="@style/TextSmall"
+        android:text="@string/model_inf"
+        app:layout_constraintStart_toStartOf="@id/brandEditView"
+        app:layout_constraintTop_toBottomOf="@id/brandEditView"/>
+
+
+    <EditText
+        android:id="@+id/modelEditView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_226"
+        android:layout_marginTop="5dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintTop_toBottomOf="@id/modelTextView"/>
+
+    <TextView
+        android:id="@+id/fuelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        style="@style/TextSmall"
+        android:text="@string/fuel"
+        app:layout_constraintStart_toStartOf="@id/brandEditView"
+        app:layout_constraintTop_toBottomOf="@id/modelEditView"/>
+
+
+    <EditText
+        android:id="@+id/fuelEditView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_226"
+        android:layout_marginTop="5dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintTop_toBottomOf="@id/fuelTextView"/>
+
+    <TextView
+        android:id="@+id/registrationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        style="@style/TextSmall"
+        android:text="@string/registration_inf"
+        app:layout_constraintStart_toStartOf="@id/brandEditView"
+        app:layout_constraintTop_toBottomOf="@id/fuelEditView"/>
+
+
+    <EditText
+        android:id="@+id/registrationEditView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_226"
+        android:layout_marginTop="5dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintTop_toBottomOf="@id/registrationTextView"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

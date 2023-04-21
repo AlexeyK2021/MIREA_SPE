@@ -1,6 +1,53 @@
 <resources>
-    <string name="app_name">Automan</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">AutoCost</string>
+
+    <!-- ControlAutoFragment -->
+    <string name="choose_your_auto">Выберите свой\n автомобиль</string>
+    <string name="add_auto_text">Добавить автомобиль</string>
+    <string name="actual_text">Просматривайте всю актуальную\nинформацию.</string>
+    <string name="expenses_text">Следите за расходами</string>
+    <string name="add_text">Добавляйте автомобиль</string>
+
+    <!-- AddAutoFragment -->
+    <string name="continue_text">Продолжить</string>
+    <string name="brand">Марка</string>
+    <string name="model">Модель</string>
+    <string name="years">Год выпуска</string>
+    <string name="fuel">Вид топлива</string>
+    <string name="insurance">Тип страхования</string>
+    <string name="description">Чтобы контролировать\nфинансовые расходы</string>
+    <string name="ooooooaaaaaa">Добавьте свой\nавтомобиль</string>
+
+    <!-- SettingsAutoFragment -->
+    <string name="common">Общие</string>
+    <string name="theme">Тема</string>
+    <string name="language">Язык</string>
+    <string name="notifications">Уведомления</string>
+    <string name="manage">Управление автомобилем</string>
+    <string name="event">Предстоящие события</string>
+    <string name="clear">Очистить историю трат</string>
+
+    <!-- AutoInformationFragment -->
+    <string name="brand_inf">Марка машины</string>
+    <string name="model_inf">Модель машины</string>
+    <string name="registration_inf">Свидетельство о регистрации</string>
+    
+    <!-- EventAutoFragment -->
+    <string name="future_event">Предстоящие события</string>
+    
+    <!-- WastesAutoFragment -->
+    <string name="period">Период</string>
+    <plurals name="periods">
+        <item quantity="zero">День</item>
+        <item quantity="one">Неделя</item>
+        <item quantity="two">Месяц</item>
+        <item quantity="few">План.\nрасходы</item>
+        <item quantity="other">Все время</item>
+    </plurals>
+
+    <!-- RulesSectionsFragment -->
+
+    <!-- RulesFragment -->
+    <string name="pdd">Правила дорожного\nдвижения</string>
+
 </resources>
