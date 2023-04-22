@@ -1,11 +1,14 @@
 package ru.eco.automan.fragments
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
 import ru.eco.automan.databinding.FragmentAddAutoBinding
@@ -24,6 +27,7 @@ class AddAutoFragment : Fragment(R.layout.fragment_add_auto) {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentAddAutoBinding.inflate(inflater, container, false)
+//        Log.d("AddAutoFragment", "onCreateView")
         return binding.root
     }
 
@@ -38,8 +42,8 @@ class AddAutoFragment : Fragment(R.layout.fragment_add_auto) {
                     fuelType = fuelEditView.text.toString(),
                     registrationCertificateNumber = insuranceEditView.text.toString()
                 )
+                findNavController().navigate(R.id.action_addAutoFragment2_to_infoAutoFragment)
             }
-
         }
     }
 

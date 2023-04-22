@@ -3,14 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/addAutoFragment2">
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="ru.eco.automan.fragments.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
-    <fragment
-        android:id="@+id/addAutoFragment"
+        android:id="@+id/addAutoFragment2"
         android:name="ru.eco.automan.fragments.AddAutoFragment"
-        android:label="AddAutoFragment" />
+        android:label="fragment_add_auto"
+        tools:layout="@layout/fragment_add_auto" >
+        <action
+            android:id="@+id/action_addAutoFragment2_to_infoAutoFragment"
+            app:destination="@id/infoAutoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoAutoFragment"
+        android:name="ru.eco.automan.fragments.InfoAutoFragment"
+        android:label="fragment_auto_information"
+        tools:layout="@layout/fragment_auto_information" />
 </navigation>

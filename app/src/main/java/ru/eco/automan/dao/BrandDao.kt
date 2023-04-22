@@ -13,6 +13,9 @@ import ru.eco.automan.models.Brand
  */
 @Dao
 interface BrandDao {
+    @Insert
+    fun addBrand(brand: Brand)
+
     /**
      * Метод для получения списка всех брендов автомобилей
      * @return Список брендов
@@ -27,6 +30,9 @@ interface BrandDao {
     @Query("SELECT * FROM brand")
     fun getAllBrandsLiveData(): LiveData<List<Brand>>
 
-    @Insert()
-    fun addBrand(brand: Brand)
+    @Query("SELECT id FROM brand WHERE name=:brand")
+    fun getBrandIdByName(brand: String): Int?
+
+    @Query("SELECT name FROM brand WHERE id=:brandId")
+    fun getBrandNameById(brandId: Int): String?
 }

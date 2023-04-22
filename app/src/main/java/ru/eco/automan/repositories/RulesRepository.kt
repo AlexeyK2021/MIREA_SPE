@@ -1,5 +1,7 @@
 package ru.eco.automan.repositories
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 import ru.eco.automan.dao.ChapterDao
 import ru.eco.automan.dao.ParagraphDao
 import ru.eco.automan.models.*
@@ -15,8 +17,12 @@ class RulesRepository(
     private val chapterDao: ChapterDao,
     private val paragraphDao: ParagraphDao
 ) {
-    private var allChapters: List<Chapter> = chapterDao.getAllChapters()
+    private var allChapters: List<Chapter>? = null
     val chapters get() = allChapters
+
+    init {
+        runBlocking(Dispatchers.IO) { allChapters = chapterDao.getAllChapters() }
+    }
 
     /**
      * Метод получения пунктов Правил Дорожного Движения по экземпляру главы

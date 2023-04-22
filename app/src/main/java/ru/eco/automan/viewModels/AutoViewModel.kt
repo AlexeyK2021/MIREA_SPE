@@ -18,12 +18,11 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
     val userAutos get() = AutoApplication.autoRepository.autos
     val brands get() = AutoApplication.autoRepository.brands
 
-    private var currAuto: LiveData<Auto>? = null
-    val currentAuto get() = currAuto!!
+    var currAuto: MutableLiveData<Auto> = MutableLiveData()
 
-    val currentAutoBrandName get() = getBrandNameById(currentAuto.value!!.brandId)
-    val currentAutoModelName get() = getModelNameById(currentAuto.value!!.modelId)
-    val currentAutoFuelTypeName get() = getFuelTypeNameById(currentAuto.value!!.fuelTypeId)
+    val currentAutoBrandName get() = getBrandNameById(currAuto.value!!.brandId)
+    val currentAutoModelName get() = getModelNameById(currAuto.value!!.modelId)
+    val currentAutoFuelTypeName get() = getFuelTypeNameById(currAuto.value!!.fuelTypeId)
 
 //    fun addAuto(auto: Auto) = viewModelScope.launch(Dispatchers.IO) {
 //        autoRepository.addAuto(auto = auto)
@@ -50,27 +49,78 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
         fuelType: String,
         registrationCertificateNumber: String
     ) {
-        autoRepository.brands
+        viewModelScope.launch(Dispatchers.IO) {
+            var brandId = getBrandIdByName(brand)
+            if (brandId == null) {
+                autoRepository.addBrand(Brand(id = 0, name = brand))
+                brandId = getBrandIdByName(brand)
+            }
+
+            var modelId = getModelIdByName(model)
+            if (modelId == null) {
+                autoRepository.addModel(Model(id = 0, name = model, brandId = brandId!!))
+                modelId = getModelIdByName(model)
+            }
+
+            var fuelTypeId = getFuelTypeIdByName(fuelType)
+            if (fuelTypeId == null) {
+                autoRepository.addFuelType(FuelType(id = 0, name = fuelType))
+                fuelTypeId = getFuelTypeIdByName(fuelType)
+            }
+
+            val newAuto = Auto(
+                id = 0,
+                brandId = brandId!!,
+                modelId = modelId!!,
+                manufactureYear = manufactureYear,
+                fuelTypeId = fuelTypeId!!,
+                registrationCertificateNumber = registrationCertificateNumber
+            )
+            autoRepository.addAuto(newAuto)
+            currAuto.postValue(autoRepository.autos.value!!.find { it.modelId == modelId })
+        }
     }
 
     fun setNewName(newName: String) {
-        currentAuto.value!!.name = newName
+        currAuto.value!!.name = newName
     }
 
     fun setNewBrand(newBrandName: String) {
-        currentAuto.value!!.brandId = getBrandIdByName(newBrandName)
+        var newBrand = getBrandIdByName(newBrandName)
+        if (newBrand == null) {
+            autoRepository.addBrand(Brand(id = 0, name = newBrandName))
+            newBrand = getBrandIdByName(newBrandName)
+        }
+        currAuto.value!!.brandId = newBrand!!
     }
 
     fun setNewModel(newModelName: String) {
-        currentAuto.value!!.modelId = getModelIdByName(newModelName)
+        var modelId = getModelIdByName(newModelName)
+        if (modelId == null) {
+            autoRepository.addModel(
+                Model(
+                    id = 0,
+                    name = newModelName,
+                    brandId = currAuto.value!!.brandId
+                )
+            )
+            modelId = getModelIdByName(newModelName)
+        }
+        currAuto.value!!.modelId = modelId!!
     }
 
     fun setNewFuelType(newFuelTypeName: String) {
-        currentAuto.value!!.fuelTypeId = getFuelTypeIdByName(newFuelTypeName)
+//        currentAuto.value!!.fuelTypeId = getFuelTypeIdByName(newFuelTypeName)
+        var fuelTypeId = getFuelTypeIdByName(newFuelTypeName)
+        if (fuelTypeId == null) {
+            autoRepository.addFuelType(FuelType(id = 0, name = newFuelTypeName))
+            fuelTypeId = getFuelTypeIdByName(newFuelTypeName)
+        }
+        currAuto.value!!.fuelTypeId = fuelTypeId!!
     }
 
     fun setNewRegistrationCertificate(newNumber: String) {
-        currentAuto.value!!.registrationCertificateNumber = newNumber
+        currAuto.value!!.registrationCertificateNumber = newNumber
     }
 
 //    private fun copyAutoObj(): Auto {
@@ -90,24 +140,21 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
 //    }
 
 
-    private fun getBrandNameById(brandId: Int): String =
-        autoRepository.brands.find { it.id == brandId }!!.name
+    private fun getBrandNameById(brandId: Int): String? =
+        autoRepository.brands.find { it.id == brandId }?.name
 
-    private fun getModelNameById(modelId: Int): String =
-        autoRepository.models.find { it.id == modelId }!!.name
+    private fun getModelNameById(modelId: Int): String? =
+        autoRepository.models.find { it.id == modelId }?.name
 
-    private fun getFuelTypeNameById(fuelTypeId: Int): String =
-        autoRepository.fuelTypes.find { it.id == fuelTypeId }!!.name
+    private fun getFuelTypeNameById(fuelTypeId: Int): String? =
+        autoRepository.fuelTypes.find { it.id == fuelTypeId }?.name
 
+    private fun getBrandIdByName(brand: String): Int? =
+        autoRepository.brands.find { it.name == brand }?.id
 
-    private fun getBrandIdByName(brand: String): Int =
-        autoRepository.brands.find { it.name == brand }!!.id
+    private fun getModelIdByName(model: String): Int? =
+        autoRepository.models.find { it.name == model }?.id
 
-    private fun getModelIdByName(model: String): Int =
-        autoRepository.models.find { it.name == model }!!.id
-
-    private fun getFuelTypeIdByName(fuelType: String): Int =
-        autoRepository.fuelTypes.find { it.name == fuelType }!!.id
-
-
+    private fun getFuelTypeIdByName(fuelType: String): Int? =
+        autoRepository.fuelTypes.find { it.name == fuelType }?.id
 }

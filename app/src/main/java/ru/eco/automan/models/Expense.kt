@@ -31,7 +31,7 @@ import java.sql.Date
     ]
 )
 data class Expense(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo val name: String,
     @ColumnInfo val amount: Float,
     @ColumnInfo val date: Date,

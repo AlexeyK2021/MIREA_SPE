@@ -1,9 +1,11 @@
 package ru.eco.automan.dao
 
 import androidx.room.Dao
+import androidx.room.Insert
 import androidx.room.Query
 import ru.eco.automan.models.Brand
 import ru.eco.automan.models.Model
+
 /**
  * Интерфейс, позволяющий получить доступ к списку моделей автомобилей, хранящихся в базе данных
  * @see Model
@@ -24,4 +26,12 @@ interface ModelDao {
      */
     @Query("SELECT * FROM model WHERE brand_id=:brandId")
     fun getModelsByBrandId(brandId: Int): List<Model>
+
+    @Query("SELECT id FROM model WHERE name=:model")
+    fun getModelIdByName(model: String): Int?
+
+    @Query("SELECT name FROM model WHERE id=:modelId")
+    fun getModelNameById(modelId: Int): String?
+    @Insert
+    fun addModel(model: Model)
 }

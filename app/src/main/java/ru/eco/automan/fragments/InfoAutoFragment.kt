@@ -2,11 +2,13 @@ package ru.eco.automan.fragments
 
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
 import ru.eco.automan.databinding.FragmentAddAutoBinding
@@ -37,10 +39,16 @@ class InfoAutoFragment : Fragment(R.layout.fragment_auto_information) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.apply {
-            brandEditView.text = autoViewModel.currentAutoBrandName.getEditable()
-            modelEditView.text = autoViewModel.currentAutoModelName.getEditable()
-            fuelEditView.text = autoViewModel.currentAutoFuelTypeName.getEditable()
+        autoViewModel.currAuto.observe(viewLifecycleOwner){
+            binding.apply {
+                Log.d("InfoAutoFragment", "Created")
+                brandEditView.text = autoViewModel.currentAutoBrandName?.getEditable()
+                modelEditView.text = autoViewModel.currentAutoModelName?.getEditable()
+                fuelEditView.text = autoViewModel.currentAutoFuelTypeName?.getEditable()
+            }
+        }
+
+
 
 //            brandEditView.setOnFocusChangeListener { v, hasFocus ->
 //                if (!hasFocus) autoViewModel.setNewBrand(brandEditView.text.toString())
@@ -51,7 +59,7 @@ class InfoAutoFragment : Fragment(R.layout.fragment_auto_information) {
 //            fuelEditView.setOnFocusChangeListener { v, hasFocus ->
 //                if (!hasFocus) autoViewModel.setNewFuelType(fuelEditView.text.toString())
 //            }
-        }
+//    }
     }
 
 //    private fun getEditableFromText(text: String): Editable =

@@ -13,6 +13,6 @@ import androidx.room.PrimaryKey
     tableName = "fuel_type"
 )
 data class FuelType(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo val name: String
 )

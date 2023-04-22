@@ -1,6 +1,9 @@
 package ru.eco.automan.repositories
 
 import androidx.lifecycle.LiveData
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import ru.eco.automan.dao.AutoDao
 import ru.eco.automan.dao.BrandDao
 import ru.eco.automan.dao.FuelTypeDao
@@ -27,16 +30,24 @@ class AutoRepository(
     private val modelDao: ModelDao,
     private val fuelTypeDao: FuelTypeDao
 ) {
-    private var _autos: LiveData<List<Auto>> = autoDao.getAllAutosLiveData()
-    private var _brands: List<Brand> = brandDao.getAllBrands()
-    private var _models: List<Model> = modelDao.getAllModels()
-    private var _fuels: List<FuelType> = fuelTypeDao.getAllFuelTypes()
+    private var _autos: LiveData<List<Auto>>? = null
+    private var _brands: List<Brand>? = null
+    private var _models: List<Model>? = null
+    private var _fuels: List<FuelType>? = null
 
-    val autos get() = _autos
-    val brands get() = _brands
-    val models get() = _models
-    val fuelTypes get() = _fuels
+    val autos get() = _autos!!
+    val brands get() = _brands!!
+    val models get() = _models!!
+    val fuelTypes get() = _fuels!!
 
+    init {
+        runBlocking(Dispatchers.IO){
+            _autos = autoDao.getAllAutosLiveData()
+            _brands = brandDao.getAllBrands()
+            _models = modelDao.getAllModels()
+            _fuels = fuelTypeDao.getAllFuelTypes()
+        }
+    }
     /**
      * Метод добавления нового автомобиля пользователя в БД
      * @param auto Экземпляр автомобиля с заполненными полями данных для внесения в БД
@@ -58,10 +69,23 @@ class AutoRepository(
     /**
      * Метод получения списка моделей по определенному бренду
      * @param brand Экземпляр бренда, для которого необходимо получить список моделей
-     * @return список моделей по переданному экземпляру бренда
+     * @return Список моделей по переданному экземпляру бренда
      */
     fun getModelsByBrand(brand: Brand) = modelDao.getModelsByBrandId(brandId = brand.id)
 
-    fun addBrand(brand: Brand) = brandDao.
+    fun addBrand(brand: Brand) {
+        brandDao.addBrand(brand)
+        _brands = brandDao.getAllBrands()
+    }
+
+    fun addModel(model: Model) {
+        modelDao.addModel(model)
+        _models = modelDao.getAllModels()
+    }
+
+    fun addFuelType(fuelType: FuelType) {
+        fuelTypeDao.addFuelType(fuelType)
+        _fuels = fuelTypeDao.getAllFuelTypes()
+    }
 
 }
