@@ -36,11 +36,12 @@ import java.sql.Date
 )
 data class Auto(
     @PrimaryKey(autoGenerate = true) val id: Int,
-    @ColumnInfo val name: String?,
-    @ColumnInfo(name = "brand_id") val brandId: Int,
-    @ColumnInfo(name = "model_id") val modelId: Int,
-    @ColumnInfo(name = "registration_number") val registrationNumber: String?,
-    @ColumnInfo(name = "fuel_type_id") val fuelTypeId: Int,
-    @ColumnInfo(name = "last_maintenance_date",) val lastMaintenanceDate: Date?,
-    @ColumnInfo(name = "insurance_expiration_date") val insuranceExpirationDate: Date?
+    @ColumnInfo var name: String?,
+    @ColumnInfo(name = "brand_id") var brandId: Int,
+    @ColumnInfo(name = "model_id") var modelId: Int,
+    @ColumnInfo(name = "registration_number") var registrationNumber: String?,
+    @ColumnInfo(name = "fuel_type_id") var fuelTypeId: Int,
+    @ColumnInfo(name = "last_maintenance_date",) var lastMaintenanceDate: Date?,
+    @ColumnInfo(name = "insurance_expiration_date") var insuranceExpirationDate: Date?,
+    @ColumnInfo(name = "registration_certificate_number") var registrationCertificateNumber: String?
 )

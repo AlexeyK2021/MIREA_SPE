@@ -43,6 +43,43 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
         return brands
     }
 
+    fun setNewName(newName: String) {
+        currentAuto.value!!.name = newName
+    }
+
+    fun setNewBrand(newBrandName: String) {
+        currentAuto.value!!.brandId = getBrandIdByName(newBrandName)
+    }
+
+    fun setNewModel(newModelName: String) {
+        currentAuto.value!!.modelId = getModelIdByName(newModelName)
+    }
+
+    fun setNewFuelType(newFuelTypeName: String) {
+        currentAuto.value!!.fuelTypeId = getFuelTypeIdByName(newFuelTypeName)
+    }
+
+    fun setNewRegistrationCertificate(newNumber: String) {
+        currentAuto.value!!.registrationCertificateNumber = newNumber
+    }
+
+//    private fun copyAutoObj(): Auto {
+//        currentAuto.value!!.apply {
+//            return Auto(
+//                id,
+//                name,
+//                brandId,
+//                modelId,
+//                registrationNumber,
+//                fuelTypeId,
+//                lastMaintenanceDate,
+//                insuranceExpirationDate,
+//                registrationCertificateNumber
+//            )
+//        }
+//    }
+
+
     private fun getBrandNameById(brandId: Int): String =
         autoRepository.brands.find { it.id == brandId }!!.name
 
@@ -51,5 +88,16 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
 
     private fun getFuelTypeNameById(fuelTypeId: Int): String =
         autoRepository.fuelTypes.find { it.id == fuelTypeId }!!.name
+
+
+    private fun getBrandIdByName(brand: String): Int =
+        autoRepository.brands.find { it.name == brand }!!.id
+
+    private fun getModelIdByName(model: String): Int =
+        autoRepository.models.find { it.name == model }!!.id
+
+    private fun getFuelTypeIdByName(fuelType: String): Int =
+        autoRepository.fuelTypes.find { it.name == fuelType }!!.id
+
 
 }

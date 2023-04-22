@@ -15,6 +15,12 @@ import ru.eco.automan.models.Auto
 import ru.eco.automan.viewModelFactories.AutoViewModelFactory
 import ru.eco.automan.viewModels.AutoViewModel
 
+/**
+ * Метод-расширение переводит текст из класса String в класс Editable для EditText
+ */
+fun String.getEditable(): Editable =
+    Editable.Factory.getInstance().newEditable(this)
+
 class InfoAutoFragment : Fragment(R.layout.fragment_auto_information) {
     private val autoViewModel: AutoViewModel by viewModels { AutoViewModelFactory(AutoApplication.autoRepository) }
     private var _binding: FragmentAutoInformationBinding? = null
@@ -32,15 +38,24 @@ class InfoAutoFragment : Fragment(R.layout.fragment_auto_information) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            brandEditView.text = getEditableFromText(autoViewModel.currentAutoBrandName)
-            modelEditView.text = getEditableFromText(autoViewModel.currentAutoModelName)
-            fuelEditView.text = getEditableFromText(autoViewModel.currentAutoFuelTypeName)
+            brandEditView.text = autoViewModel.currentAutoBrandName.getEditable()
+            modelEditView.text = autoViewModel.currentAutoModelName.getEditable()
+            fuelEditView.text = autoViewModel.currentAutoFuelTypeName.getEditable()
 
+//            brandEditView.setOnFocusChangeListener { v, hasFocus ->
+//                if (!hasFocus) autoViewModel.setNewBrand(brandEditView.text.toString())
+//            }
+//            modelEditView.setOnFocusChangeListener { v, hasFocus ->
+//                if (!hasFocus) autoViewModel.setNewModel(modelEditView.text.toString())
+//            }
+//            fuelEditView.setOnFocusChangeListener { v, hasFocus ->
+//                if (!hasFocus) autoViewModel.setNewFuelType(fuelEditView.text.toString())
+//            }
         }
     }
 
-    private fun getEditableFromText(text: String): Editable =
-        Editable.Factory.getInstance().newEditable(text)
+//    private fun getEditableFromText(text: String): Editable =
+//        Editable.Factory.getInstance().newEditable(text)
 
     override fun onDestroyView() {
         super.onDestroyView()
