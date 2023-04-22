@@ -13,6 +13,8 @@ import java.sql.Date
  * @param fuelTypeId ID-номер типа топлива автомобиля
  * @param lastMaintenanceDate Дата последнего технического обслуживания
  * @param insuranceExpirationDate Дата окнончания действия страхования автомобиля
+ * @param registrationCertificateNumber Номер свидетельства о регистрации транспортного средства
+ * @param manufactureYear Год выпуска автомобиля
  */
 @Entity(
     tableName = "auto",
@@ -41,7 +43,8 @@ data class Auto(
     @ColumnInfo(name = "model_id") var modelId: Int,
     @ColumnInfo(name = "registration_number") var registrationNumber: String?,
     @ColumnInfo(name = "fuel_type_id") var fuelTypeId: Int,
-    @ColumnInfo(name = "last_maintenance_date",) var lastMaintenanceDate: Date?,
+    @ColumnInfo(name = "last_maintenance_date") var lastMaintenanceDate: Date?,
     @ColumnInfo(name = "insurance_expiration_date") var insuranceExpirationDate: Date?,
-    @ColumnInfo(name = "registration_certificate_number") var registrationCertificateNumber: String?
+    @ColumnInfo(name = "registration_certificate_number") var registrationCertificateNumber: String?,
+    @ColumnInfo(name = "manufacture_year") var manufactureYear: Int
 )

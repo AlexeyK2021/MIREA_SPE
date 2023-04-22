@@ -12,7 +12,7 @@
         android:icon="@drawable/baseline_directions_car_24"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Automan"
+        android:theme="@style/Theme.AutoCost"
         android:name=".AutoApplication"
         tools:targetApi="31">
         <activity

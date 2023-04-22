@@ -11,6 +11,6 @@ import androidx.room.PrimaryKey
  */
 @Entity(tableName = "brand")
 data class Brand(
-    @PrimaryKey val id: Int,
-    @ColumnInfo val name: String
+    @PrimaryKey(autoGenerate = true) val id: Int,
+    @ColumnInfo var name: String
 )

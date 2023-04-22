@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">AutoCost</string>
-
     <!-- ControlAutoFragment -->
     <string name="choose_your_auto">Выберите свой\n автомобиль</string>
     <string name="add_auto_text">Добавить автомобиль</string>
@@ -16,7 +15,7 @@
     <string name="fuel">Вид топлива</string>
     <string name="insurance">Тип страхования</string>
     <string name="description">Чтобы контролировать\nфинансовые расходы</string>
-    <string name="AddYourAuto">Добавьте свой\nавтомобиль</string>
+    <string name="add_your_auto">Добавьте свой\nавтомобиль</string>
 
     <!-- SettingsAutoFragment -->
     <string name="common">Общие</string>
@@ -31,10 +30,10 @@
     <string name="brand_inf">Марка машины</string>
     <string name="model_inf">Модель машины</string>
     <string name="registration_inf">Свидетельство о регистрации</string>
-    
+
     <!-- EventAutoFragment -->
     <string name="future_event">Предстоящие события</string>
-    
+
     <!-- WastesAutoFragment -->
     <string name="period">Период</string>
     <plurals name="periods">
@@ -49,5 +48,4 @@
 
     <!-- RulesFragment -->
     <string name="pdd">Правила дорожного\nдвижения</string>
-
 </resources>

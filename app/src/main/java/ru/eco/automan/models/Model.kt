@@ -22,7 +22,7 @@ import androidx.room.PrimaryKey
     ]
 )
 data class Model(
-    @PrimaryKey val id: Int,
-    @ColumnInfo val name: String,
+    @PrimaryKey(autoGenerate = true) val id: Int,
+    @ColumnInfo var name: String,
     @ColumnInfo(name = "brand_id") val brandId: Int
 )

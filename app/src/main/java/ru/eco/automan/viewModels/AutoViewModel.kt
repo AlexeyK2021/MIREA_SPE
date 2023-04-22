@@ -25,9 +25,9 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
     val currentAutoModelName get() = getModelNameById(currentAuto.value!!.modelId)
     val currentAutoFuelTypeName get() = getFuelTypeNameById(currentAuto.value!!.fuelTypeId)
 
-    fun addAuto(auto: Auto) = viewModelScope.launch(Dispatchers.IO) {
-        autoRepository.addAuto(auto = auto)
-    }
+//    fun addAuto(auto: Auto) = viewModelScope.launch(Dispatchers.IO) {
+//        autoRepository.addAuto(auto = auto)
+//    }
 
     fun updateAuto(auto: Auto) =
         viewModelScope.launch(Dispatchers.IO) { autoRepository.updateAuto(auto = auto) }
@@ -41,6 +41,16 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
             brands.value = autoRepository.getModelsByBrand(brand = brand)
         }
         return brands
+    }
+
+    fun addNewAuto(
+        brand: String,
+        model: String,
+        manufactureYear: Int,
+        fuelType: String,
+        registrationCertificateNumber: String
+    ) {
+        autoRepository.brands
     }
 
     fun setNewName(newName: String) {

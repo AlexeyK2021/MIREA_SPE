@@ -62,5 +62,6 @@ class AutoRepository(
      */
     fun getModelsByBrand(brand: Brand) = modelDao.getModelsByBrandId(brandId = brand.id)
 
+    fun addBrand(brand: Brand) = brandDao.
 
 }

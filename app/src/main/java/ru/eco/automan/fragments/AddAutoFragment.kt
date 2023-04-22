@@ -31,15 +31,23 @@ class AddAutoFragment : Fragment(R.layout.fragment_add_auto) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             continueButton.setOnClickListener {
-
+                autoViewModel.addNewAuto(
+                    brand = brandEditView.text.toString(),
+                    model = modelEditView.text.toString(),
+                    manufactureYear = yearsEditView.text.toString().toInt(),
+                    fuelType = fuelEditView.text.toString(),
+                    registrationCertificateNumber = insuranceEditView.text.toString()
+                )
             }
 
         }
     }
 
-    private fun saveDataToDb(newAuto: Auto) {
-        autoViewModel.addAuto(newAuto)
-    }
+//    private fun saveDataToDb(newAuto: Auto) {
+//
+//        autoViewModel.addAuto(newAuto)
+//
+//    }
 
 
     override fun onDestroyView() {
