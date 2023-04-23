@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:context=".fragments.ChooseAutoFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontalBeginGuideline"
@@ -60,6 +61,7 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_autos_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="30dp"

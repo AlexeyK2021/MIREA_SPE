@@ -1,16 +1,16 @@
 package ru.eco.automan.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ru.eco.automan.R
+import ru.eco.automan.listeners.OnChapterClickListener
 import ru.eco.automan.models.Chapter
 
 class RulesViewHolder(itemView: View) :
-    RecyclerView.ViewHolder(itemView)/*, View.OnClickListener */{
+    RecyclerView.ViewHolder(itemView) {
     val chapterName: TextView = itemView.findViewById(R.id.chapter_name)
 }
 

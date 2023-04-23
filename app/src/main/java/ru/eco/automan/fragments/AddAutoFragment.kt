@@ -43,7 +43,7 @@ class AddAutoFragment : Fragment(R.layout.fragment_add_auto) {
                     fuelType = fuelEditView.text.toString(),
                     registrationCertificateNumber = insuranceEditView.text.toString()
                 )
-                findNavController().navigate(R.id.action_addAutoFragment2_to_infoAutoFragment)
+                findNavController().navigate(R.id.action_addAutoFragment2_to_chooseAutoFragment2)
             }
         }
     }

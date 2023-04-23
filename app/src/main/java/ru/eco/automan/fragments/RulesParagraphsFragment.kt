@@ -51,10 +51,10 @@ class RulesParagraphsFragment : Fragment(R.layout.fragment_rules_sections) {
                 ParagraphsAdapter(rulesViewModel.getParagraphsForCurrentChapter())
             binding.paragraphsRecycler.layoutManager = LinearLayoutManager(view.context)
 
-            Log.d(
-                "RulesParagraphsFragment",
-                "Data collected. First par ${rulesViewModel.getParagraphsForCurrentChapter()[0]}"
-            )
+//            Log.d(
+//                "RulesParagraphsFragment",
+//                "Data collected. First par ${rulesViewModel.getParagraphsForCurrentChapter()[0]}"
+//            )
         }
     }
 }

@@ -37,7 +37,7 @@ class RulesRepository(
      */
     fun getParagraphsByChapterId(chapterId: Int): List<Paragraph> {
         val paragraphsList = mutableListOf<Paragraph>()
-        paragraphs!!.forEach {
+        allParagraphs!!.forEach {
             if (it.chapterId == chapterId) paragraphsList.add(it)
         }
         return paragraphsList

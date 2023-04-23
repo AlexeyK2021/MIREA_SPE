@@ -5,6 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.models.Auto
+import ru.eco.automan.models.AutoWithModelAndBrand
 import ru.eco.automan.models.Brand
 import ru.eco.automan.models.FuelType
 import ru.eco.automan.models.Model
@@ -31,8 +32,16 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
     fun updateAuto(auto: Auto) =
         viewModelScope.launch(Dispatchers.IO) { autoRepository.updateAuto(auto = auto) }
 
-    fun deleteAuto(auto: Auto) =
-        viewModelScope.launch(Dispatchers.IO) { autoRepository.deleteAuto(auto = auto) }
+    fun deleteAuto(autoId: Int) {
+        val autoToDelete = userAutos.value!!.find { it.id == autoId }!!
+        viewModelScope.launch(Dispatchers.IO) {
+            autoRepository.deleteAuto(auto = autoToDelete)
+        }
+    }
+
+    fun setCurrentAutoById(autoId: Int) {
+        currAuto.postValue(userAutos.value!!.find { it.id == autoId })
+    }
 
     fun getModelsByBrand(brand: Brand): LiveData<List<Model>> {
         val brands = MutableLiveData<List<Model>>()
@@ -77,7 +86,7 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
                 registrationCertificateNumber = registrationCertificateNumber
             )
             autoRepository.addAuto(newAuto)
-            currAuto.postValue(autoRepository.autos.value!!.find { it.modelId == modelId })
+//            currAuto.postValue(autoRepository.autos.value!!.find { it.modelId == modelId })
         }
     }
 
@@ -157,4 +166,21 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
 
     private fun getFuelTypeIdByName(fuelType: String): Int? =
         autoRepository.fuelTypes.find { it.name == fuelType }?.id
+
+    fun getAutosWithBrandAndModel(): List<AutoWithModelAndBrand> {
+        val autos = mutableListOf<AutoWithModelAndBrand>()
+        userAutos.value?.forEach { auto ->
+            autos.add(
+                AutoWithModelAndBrand(
+                    auto.id,
+                    auto.name,
+                    getBrandNameById(auto.brandId)!!,
+                    getModelNameById(auto.modelId)!!
+                )
+            )
+        }
+        return autos
+    }
+
+    fun didUserAddAuto(): Boolean = userAutos.value != null
 }

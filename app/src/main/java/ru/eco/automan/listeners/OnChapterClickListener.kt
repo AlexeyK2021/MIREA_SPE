@@ -1,4 +1,4 @@
-package ru.eco.automan.adapters
+package ru.eco.automan.listeners
 
 import android.view.MotionEvent
 import android.view.View

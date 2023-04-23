@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/rulesChapterFragment">
+    app:startDestination="@id/chooseAutoFragment2">
     <fragment
         android:id="@+id/addAutoFragment2"
         android:name="ru.eco.automan.fragments.AddAutoFragment"
         android:label="fragment_add_auto"
         tools:layout="@layout/fragment_add_auto" >
         <action
-            android:id="@+id/action_addAutoFragment2_to_infoAutoFragment"
-            app:destination="@id/infoAutoFragment" />
+            android:id="@+id/action_addAutoFragment2_to_chooseAutoFragment2"
+            app:destination="@id/chooseAutoFragment2" />
     </fragment>
     <fragment
         android:id="@+id/infoAutoFragment"
@@ -32,4 +32,16 @@
         android:name="ru.eco.automan.fragments.RulesParagraphsFragment"
         android:label="fragment_rules_sections"
         tools:layout="@layout/fragment_rules_sections" />
+    <fragment
+        android:id="@+id/chooseAutoFragment2"
+        android:name="ru.eco.automan.fragments.ChooseAutoFragment"
+        android:label="fragment_control_auto"
+        tools:layout="@layout/fragment_control_auto" >
+        <action
+            android:id="@+id/action_chooseAutoFragment2_to_addAutoFragment2"
+            app:destination="@id/addAutoFragment2" />
+        <action
+            android:id="@+id/action_chooseAutoFragment2_to_infoAutoFragment"
+            app:destination="@id/infoAutoFragment" />
+    </fragment>
 </navigation>

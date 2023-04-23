@@ -4,12 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/black">
 
 
     <ImageView
-        android:id="@+id/rectangle"
+        android:id="@+id/user_auto"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:src="@drawable/rectangle_210"
@@ -17,17 +17,17 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/deleteCircle"/>
+        app:layout_constraintEnd_toStartOf="@id/delete_auto"/>
 
     <TextView
-        android:id="@+id/AutoName"
+        android:id="@+id/auto_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/rectangle"
-        app:layout_constraintBottom_toBottomOf="@id/rectangle"
-        app:layout_constraintTop_toTopOf="@id/rectangle"
+        app:layout_constraintStart_toStartOf="@id/user_auto"
+        app:layout_constraintBottom_toBottomOf="@id/user_auto"
+        app:layout_constraintTop_toTopOf="@id/user_auto"
         app:layout_constraintEnd_toStartOf="@id/AutoImage"
         tools:text="Mercedes-benz C300"/>
 
@@ -36,17 +36,17 @@
         android:layout_width="67dp"
         android:layout_height="38dp"
         android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintBottom_toBottomOf="@id/rectangle"
-        app:layout_constraintTop_toTopOf="@id/rectangle"
-        app:layout_constraintEnd_toEndOf="@id/rectangle"
-        app:layout_constraintStart_toEndOf="@id/AutoName"/>
+        app:layout_constraintBottom_toBottomOf="@id/user_auto"
+        app:layout_constraintTop_toTopOf="@id/user_auto"
+        app:layout_constraintEnd_toEndOf="@id/user_auto"
+        app:layout_constraintStart_toEndOf="@id/auto_name"/>
 
     <ImageView
-        android:id="@+id/deleteCircle"
+        android:id="@+id/delete_auto"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/radio_button_unchecked"
-        app:layout_constraintStart_toEndOf="@id/rectangle"
+        app:layout_constraintStart_toEndOf="@id/user_auto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -54,16 +54,16 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:src="@drawable/close"
-        app:layout_constraintEnd_toEndOf="@id/deleteCircle"
-        app:layout_constraintTop_toTopOf="@id/deleteCircle"
-        app:layout_constraintStart_toStartOf="@id/deleteCircle"
-        app:layout_constraintBottom_toBottomOf="@id/deleteCircle"/>
+        app:layout_constraintEnd_toEndOf="@id/delete_auto"
+        app:layout_constraintTop_toTopOf="@id/delete_auto"
+        app:layout_constraintStart_toStartOf="@id/delete_auto"
+        app:layout_constraintBottom_toBottomOf="@id/delete_auto"/>
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="rectangle, deleteCircle"
+        app:constraint_referenced_ids="user_auto, delete_auto"
         app:barrierDirection="bottom"/>
 
     <Space
