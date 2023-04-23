@@ -20,8 +20,14 @@ class RulesRepository(
     private var allChapters: List<Chapter>? = null
     val chapters get() = allChapters
 
+    private var allParagraphs: List<Paragraph>? = null
+    val paragraphs get() = allParagraphs
+
     init {
-        runBlocking(Dispatchers.IO) { allChapters = chapterDao.getAllChapters() }
+        runBlocking(Dispatchers.IO) {
+            allChapters = chapterDao.getAllChapters()
+            allParagraphs = paragraphDao.getAllParagraphs()
+        }
     }
 
     /**
@@ -29,6 +35,12 @@ class RulesRepository(
      * @param chapter Экземпляр главы, для которой необходимо получить список пунктов
      * @return Список пунктов правил по определенной главе
      */
-    fun getParagraphsByChapter(chapter: Chapter): List<Paragraph> =
-        paragraphDao.getParagraphsByChapterId(chapterId = chapter.id)
+    fun getParagraphsByChapterId(chapterId: Int): List<Paragraph> {
+        val paragraphsList = mutableListOf<Paragraph>()
+        paragraphs!!.forEach {
+            if (it.chapterId == chapterId) paragraphsList.add(it)
+        }
+        return paragraphsList
+    }
+
 }

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import ru.eco.automan.AutoApplication
@@ -17,7 +18,7 @@ import ru.eco.automan.viewModelFactories.AutoViewModelFactory
 import ru.eco.automan.viewModels.AutoViewModel
 
 class AddAutoFragment : Fragment(R.layout.fragment_add_auto) {
-    private val autoViewModel: AutoViewModel by viewModels { AutoViewModelFactory(AutoApplication.autoRepository) }
+    private val autoViewModel: AutoViewModel by activityViewModels { AutoViewModelFactory(AutoApplication.autoRepository) }
     private var _binding: FragmentAddAutoBinding? = null
     private val binding get() = _binding!!
 

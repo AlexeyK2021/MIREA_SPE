@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/addAutoFragment2">
+    app:startDestination="@id/rulesChapterFragment">
     <fragment
         android:id="@+id/addAutoFragment2"
         android:name="ru.eco.automan.fragments.AddAutoFragment"
@@ -18,4 +18,18 @@
         android:name="ru.eco.automan.fragments.InfoAutoFragment"
         android:label="fragment_auto_information"
         tools:layout="@layout/fragment_auto_information" />
+    <fragment
+        android:id="@+id/rulesChapterFragment"
+        android:name="ru.eco.automan.fragments.RulesChapterFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" >
+        <action
+            android:id="@+id/action_rulesChapterFragment_to_rulesParagraphsFragment2"
+            app:destination="@id/rulesParagraphsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/rulesParagraphsFragment2"
+        android:name="ru.eco.automan.fragments.RulesParagraphsFragment"
+        android:label="fragment_rules_sections"
+        tools:layout="@layout/fragment_rules_sections" />
 </navigation>

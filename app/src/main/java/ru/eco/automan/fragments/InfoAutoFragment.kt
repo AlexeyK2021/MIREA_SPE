@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import ru.eco.automan.AutoApplication
@@ -24,7 +25,7 @@ fun String.getEditable(): Editable =
     Editable.Factory.getInstance().newEditable(this)
 
 class InfoAutoFragment : Fragment(R.layout.fragment_auto_information) {
-    private val autoViewModel: AutoViewModel by viewModels { AutoViewModelFactory(AutoApplication.autoRepository) }
+    private val autoViewModel: AutoViewModel by activityViewModels { AutoViewModelFactory(AutoApplication.autoRepository) }
     private var _binding: FragmentAutoInformationBinding? = null
     private val binding get() = _binding!!
 

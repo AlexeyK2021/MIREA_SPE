@@ -8,7 +8,7 @@
     android:background="@color/black">
 
     <TextView
-        android:id="@+id/TextView"
+        android:id="@+id/chapter_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -24,7 +24,7 @@
         android:id="@+id/barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="TextView"
+        app:constraint_referenced_ids="chapter_name"
         app:barrierDirection="bottom"/>
 
     <Space

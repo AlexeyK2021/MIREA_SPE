@@ -15,8 +15,8 @@ import ru.eco.automan.repositories.AutoRepository
  */
 
 class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
-    val userAutos get() = AutoApplication.autoRepository.autos
-    val brands get() = AutoApplication.autoRepository.brands
+    val userAutos get() = autoRepository.autos
+    val brands get() = autoRepository.brands
 
     var currAuto: MutableLiveData<Auto> = MutableLiveData()
 
