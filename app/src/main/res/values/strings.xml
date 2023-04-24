@@ -48,4 +48,14 @@
 
     <!-- RulesFragment -->
     <string name="pdd">Правила дорожного\nдвижения</string>
+
+    <string-array name="themes">
+<!--        <item>Светлая</item>-->
+        <item>Тёмная</item>
+    </string-array>
+
+    <string-array name="languages">
+        <item>Русский</item>
+        <item>English</item>
+    </string-array>
 </resources>

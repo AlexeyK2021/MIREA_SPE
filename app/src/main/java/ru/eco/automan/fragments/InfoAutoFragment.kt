@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
 import ru.eco.automan.databinding.FragmentAddAutoBinding
@@ -25,7 +26,11 @@ fun String.getEditable(): Editable =
     Editable.Factory.getInstance().newEditable(this)
 
 class InfoAutoFragment : Fragment(R.layout.fragment_auto_information) {
-    private val autoViewModel: AutoViewModel by activityViewModels { AutoViewModelFactory(AutoApplication.autoRepository) }
+    private val autoViewModel: AutoViewModel by activityViewModels {
+        AutoViewModelFactory(
+            AutoApplication.autoRepository
+        )
+    }
     private var _binding: FragmentAutoInformationBinding? = null
     private val binding get() = _binding!!
 
@@ -40,15 +45,17 @@ class InfoAutoFragment : Fragment(R.layout.fragment_auto_information) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        autoViewModel.currAuto.observe(viewLifecycleOwner){
+        autoViewModel.currAuto.observe(viewLifecycleOwner) {
             binding.apply {
                 Log.d("InfoAutoFragment", "Created")
                 brandEditView.text = autoViewModel.currentAutoBrandName?.getEditable()
                 modelEditView.text = autoViewModel.currentAutoModelName?.getEditable()
                 fuelEditView.text = autoViewModel.currentAutoFuelTypeName?.getEditable()
+                settingImageView.setOnClickListener {
+                    findNavController().navigate(R.id.action_infoAutoFragment_to_settingsFragment)
+                }
             }
         }
-
 
 
 //            brandEditView.setOnFocusChangeListener { v, hasFocus ->

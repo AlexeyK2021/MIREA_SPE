@@ -17,7 +17,11 @@
         android:id="@+id/infoAutoFragment"
         android:name="ru.eco.automan.fragments.InfoAutoFragment"
         android:label="fragment_auto_information"
-        tools:layout="@layout/fragment_auto_information" />
+        tools:layout="@layout/fragment_auto_information" >
+        <action
+            android:id="@+id/action_infoAutoFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/rulesChapterFragment"
         android:name="ru.eco.automan.fragments.RulesChapterFragment"
@@ -44,4 +48,9 @@
             android:id="@+id/action_chooseAutoFragment2_to_infoAutoFragment"
             app:destination="@id/infoAutoFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ru.eco.automan.fragments.SettingsFragment"
+        android:label="fragment_settings_auto"
+        tools:layout="@layout/fragment_settings_auto" />
 </navigation>

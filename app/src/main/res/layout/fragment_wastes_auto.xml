@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"/>
 
     <Spinner
-        android:id="@+id/periodSpinner"
+        android:id="@+id/period_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"
