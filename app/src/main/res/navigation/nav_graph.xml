@@ -45,12 +45,34 @@
             android:id="@+id/action_chooseAutoFragment2_to_addAutoFragment2"
             app:destination="@id/addAutoFragment2" />
         <action
-            android:id="@+id/action_chooseAutoFragment2_to_infoAutoFragment"
-            app:destination="@id/infoAutoFragment" />
+            android:id="@+id/action_chooseAutoFragment2_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="ru.eco.automan.fragments.SettingsFragment"
         android:label="fragment_settings_auto"
         tools:layout="@layout/fragment_settings_auto" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="ru.eco.automan.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_infoAutoFragment"
+            app:destination="@id/infoAutoFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_wastesListFragment"
+            app:destination="@id/wastesListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_rulesChapterFragment"
+            app:destination="@id/rulesChapterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wastesListFragment"
+        android:name="ru.eco.automan.fragments.WastesListFragment"
+        android:label="WastesListFragment" />
 </navigation>

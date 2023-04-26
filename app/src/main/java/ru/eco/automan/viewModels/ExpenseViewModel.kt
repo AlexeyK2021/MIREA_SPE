@@ -17,7 +17,8 @@ import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.Calendar
-import java.util.Date
+import java.sql.Date
+import java.time.LocalDateTime.now
 
 /**
  * Класс
@@ -28,7 +29,7 @@ class ExpenseViewModel(private val expenseRepository: ExpenseRepository) : ViewM
 
     fun addNewExpense(name: String, amount: Float, categoryId: Int, autoId: Int) {
 //        val todayDate = Calendar.getInstance().time.date
-        val current = Date()
+        val current = Date(System.currentTimeMillis())
         val newExpense = Expense(
             id = 0,
             name = name,
