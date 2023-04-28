@@ -1,26 +1,17 @@
 package ru.eco.automan.viewModels
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import ru.eco.automan.AutoApplication
-import ru.eco.automan.dao.ExpenseDao
 import ru.eco.automan.models.Category
 import ru.eco.automan.models.Expense
-import ru.eco.automan.models.Model
 import ru.eco.automan.repositories.ExpenseRepository
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.ZoneId
-import java.time.format.DateTimeFormatter
+import java.sql.Date
 import java.util.Calendar
-import java.util.Date
 
 /**
- * Класс
+ * Преобразователь данных из базы данных для показа пользователю всего, что связано с тратами
  */
 class ExpenseViewModel(private val expenseRepository: ExpenseRepository) : ViewModel() {
     private val userExpenses get() = expenseRepository.expenses
@@ -28,7 +19,7 @@ class ExpenseViewModel(private val expenseRepository: ExpenseRepository) : ViewM
 
     fun addNewExpense(name: String, amount: Float, categoryId: Int, autoId: Int) {
 //        val todayDate = Calendar.getInstance().time.date
-        val current = Date()
+        val current = Date(Calendar.getInstance().timeInMillis)
         val newExpense = Expense(
             id = 0,
             name = name,
