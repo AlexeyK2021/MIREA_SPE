@@ -86,7 +86,7 @@
             app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline"
             app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline" />
 
-        <EditText
+        <Spinner
             android:id="@+id/brandEditView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -95,8 +95,7 @@
             android:paddingHorizontal="10dp"
             style="@style/TextSmall"
             app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-            app:layout_constraintTop_toBottomOf="@id/brandTextView"
-            android:inputType="text" />
+            app:layout_constraintTop_toBottomOf="@id/brandTextView" />
 
         <TextView
             android:id="@+id/modelTextView"
@@ -109,7 +108,7 @@
             app:layout_constraintBottom_toTopOf="@id/modelEditView"
             app:layout_constraintTop_toTopOf="@id/brandTextView" />
 
-        <EditText
+        <Spinner
             android:id="@+id/modelEditView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -118,8 +117,7 @@
             android:paddingHorizontal="10dp"
             style="@style/TextSmall"
             app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
-            app:layout_constraintTop_toBottomOf="@id/modelTextView"
-            android:inputType="text" />
+            app:layout_constraintTop_toBottomOf="@id/modelTextView" />
 
         <TextView
             android:id="@+id/yearsTextView"
@@ -155,7 +153,7 @@
             app:layout_constraintBottom_toTopOf="@id/fuelEditView"
             app:layout_constraintTop_toTopOf="@id/yearsTextView" />
 
-        <EditText
+        <Spinner
             android:id="@+id/fuelEditView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -164,8 +162,7 @@
             android:paddingHorizontal="10dp"
             style="@style/TextSmall"
             app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
-            app:layout_constraintTop_toBottomOf="@id/fuelTextView"
-            android:inputType="text" />
+            app:layout_constraintTop_toBottomOf="@id/fuelTextView" />
 
         <TextView
             android:id="@+id/insuranceTextView"
@@ -178,7 +175,7 @@
             app:layout_constraintStart_toStartOf="@id/yearsEditView"
             app:layout_constraintTop_toBottomOf="@id/yearsEditView" />
 
-        <EditText
+        <TextView
             android:id="@+id/insuranceEditView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -187,8 +184,7 @@
             android:paddingHorizontal="10dp"
             style="@style/TextSmall"
             app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-            app:layout_constraintTop_toBottomOf="@id/insuranceTextView"
-            android:inputType="text" />
+            app:layout_constraintTop_toBottomOf="@id/insuranceTextView" />
 
 
         <com.google.android.material.button.MaterialButton

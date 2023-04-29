@@ -1,19 +1,11 @@
 package ru.eco.automan.fragments
 
-import android.Manifest
-import android.app.Activity
-import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
-import android.provider.MediaStore
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
-import androidx.core.app.ActivityCompat.requestPermissions
-import androidx.core.content.ContextCompat
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -52,6 +44,10 @@ class AddAutoFragment : Fragment(R.layout.fragment_add_auto) {
 //
 //                }
 //            }
+        autoViewModel.createNewAuto()
+        val brands = autoViewModel.getBrandsNamesList()
+        var models = listOf<String>()
+        val fuelTypes = autoViewModel.fuelTypes
         binding.apply {
 //            autoPhoto.setOnClickListener {
 //                val i = Intent()
@@ -59,14 +55,73 @@ class AddAutoFragment : Fragment(R.layout.fragment_add_auto) {
 //                i.action = Intent.ACTION_GET_CONTENT
 //                resultLauncher.launch(i)
 //            }
+            brandEditView.adapter = ArrayAdapter(
+                view.context,
+                androidx.transition.R.layout.support_simple_spinner_dropdown_item,
+                brands
+            )
+            brandEditView.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parentView: AdapterView<*>?,
+                    selectedItemView: View,
+                    position: Int,
+                    id: Long
+                ) {
+                    autoViewModel.setNewAutoBrandName(brands[position])
+
+                    models = autoViewModel.getModelsNamesList()
+                    modelEditView.adapter = ArrayAdapter(
+                        view.context,
+                        androidx.transition.R.layout.support_simple_spinner_dropdown_item,
+                        models
+                    )
+                }
+
+                override fun onNothingSelected(p0: AdapterView<*>?) {}
+            }
+
+            modelEditView.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parentView: AdapterView<*>?,
+                    selectedItemView: View,
+                    position: Int,
+                    id: Long
+                ) {
+                    autoViewModel.setNewAutoModelName(models[position])
+                }
+
+                override fun onNothingSelected(p0: AdapterView<*>?) {}
+            }
+
+            fuelEditView.adapter = ArrayAdapter(
+                view.context,
+                androidx.transition.R.layout.support_simple_spinner_dropdown_item,
+                fuelTypes
+            )
+            fuelEditView.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parentView: AdapterView<*>?,
+                    selectedItemView: View,
+                    position: Int,
+                    id: Long
+                ) {
+                    autoViewModel.setNewAutoFuelTypeName(fuelTypes[position].name)
+                }
+
+                override fun onNothingSelected(p0: AdapterView<*>?) {}
+            }
+
             continueButton.setOnClickListener {
-                autoViewModel.addNewAuto(
-                    brand = brandEditView.text.toString(),
-                    model = modelEditView.text.toString(),
-                    manufactureYear = yearsEditView.text.toString().toInt(),
-                    fuelType = fuelEditView.text.toString(),
-                    registrationCertificateNumber = insuranceEditView.text.toString()
-                )
+//                autoViewModel.addNewAuto(
+//                    brand = brandEditView.text.toString(),
+//                    model = modelEditView.text.toString(),
+//                    manufactureYear = yearsEditView.text.toString().toInt(),
+//                    fuelType = fuelEditView.text.toString(),
+//                    registrationCertificateNumber = insuranceEditView.text.toString()
+//                )
+                autoViewModel.setNewAutoManufactureYear(yearsEditView.text.toString().toInt())
+                autoViewModel.setNewAutoRegNumber(insuranceEditView.text.toString())
+                autoViewModel.buildAuto()
                 findNavController().navigate(R.id.action_addAutoFragment2_to_chooseAutoFragment2)
             }
         }

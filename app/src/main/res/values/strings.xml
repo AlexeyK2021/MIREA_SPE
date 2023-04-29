@@ -50,7 +50,7 @@
     <string name="pdd">Правила дорожного\nдвижения</string>
 
     <string-array name="themes">
-<!--        <item>Светлая</item>-->
+        <!--        <item>Светлая</item>-->
         <item>Тёмная</item>
     </string-array>
 
@@ -58,4 +58,5 @@
         <item>Русский</item>
         <item>English</item>
     </string-array>
+    <string name="title_activity_splash">SplashActivity</string>
 </resources>

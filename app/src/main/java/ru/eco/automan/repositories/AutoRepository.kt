@@ -71,7 +71,7 @@ class AutoRepository(
      * @param brand Экземпляр бренда, для которого необходимо получить список моделей
      * @return Список моделей по переданному экземпляру бренда
      */
-    fun getModelsByBrand(brand: Brand) = modelDao.getModelsByBrandId(brandId = brand.id)
+    fun getModelsByBrandId(brandId: Int) = modelDao.getModelsByBrandId(brandId = brandId)
 
     fun addBrand(brand: Brand) {
         brandDao.addBrand(brand)

@@ -3,7 +3,6 @@ package ru.eco.automan.viewModels
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import ru.eco.automan.AutoApplication
 import ru.eco.automan.models.Auto
 import ru.eco.automan.models.AutoWithModelAndBrand
 import ru.eco.automan.models.Brand
@@ -16,8 +15,17 @@ import ru.eco.automan.repositories.AutoRepository
  */
 
 class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
+    class NewAutoData {
+        var brandId: Int = 0
+        var modelId: Int = 0
+        var manufactureYear: Int = 0
+        var fuelTypeId: Int = 0
+        var registrationCertificateNumber: String = ""
+    }
+
     val userAutos get() = autoRepository.autos
     val brands get() = autoRepository.brands
+    val fuelTypes get() = autoRepository.fuelTypes
 
     var currAuto: MutableLiveData<Auto> = MutableLiveData()
 
@@ -25,9 +33,8 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
     val currentAutoModelName get() = getModelNameById(currAuto.value!!.modelId)
     val currentAutoFuelTypeName get() = getFuelTypeNameById(currAuto.value!!.fuelTypeId)
 
-//    fun addAuto(auto: Auto) = viewModelScope.launch(Dispatchers.IO) {
-//        autoRepository.addAuto(auto = auto)
-//    }
+    private lateinit var newAuto: NewAutoData
+
 
     fun updateAuto(auto: Auto) =
         viewModelScope.launch(Dispatchers.IO) { autoRepository.updateAuto(auto = auto) }
@@ -43,10 +50,10 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
         currAuto.postValue(userAutos.value!!.find { it.id == autoId })
     }
 
-    fun getModelsByBrand(brand: Brand): LiveData<List<Model>> {
+    private fun getModelsByBrandId(brandId: Int): LiveData<List<Model>> {
         val brands = MutableLiveData<List<Model>>()
         viewModelScope.launch(Dispatchers.IO) {
-            brands.value = autoRepository.getModelsByBrand(brand = brand)
+            brands.postValue(autoRepository.getModelsByBrandId(brandId = brandId))
         }
         return brands
     }
@@ -87,6 +94,20 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
             )
             autoRepository.addAuto(newAuto)
 //            currAuto.postValue(autoRepository.autos.value!!.find { it.modelId == modelId })
+        }
+    }
+
+    fun addNewAuto(newAutoData: NewAutoData) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val newAuto = Auto(
+                id = 0,
+                brandId = newAutoData.brandId,
+                modelId = newAutoData.modelId,
+                manufactureYear = newAutoData.manufactureYear,
+                fuelTypeId = newAutoData.fuelTypeId,
+                registrationCertificateNumber = newAutoData.registrationCertificateNumber
+            )
+            autoRepository.addAuto(newAuto)
         }
     }
 
@@ -183,4 +204,48 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
     }
 
     fun didUserAddAuto(): Boolean = userAutos.value != null
+
+    fun getBrandsNamesList(): List<String> {
+        val list = mutableListOf<String>()
+        brands.forEach {
+            list.add(it.name)
+        }
+        return list
+    }
+
+    fun getModelsNamesList(): List<String> {
+        val list = mutableListOf<String>()
+        getModelsByBrandId(newAuto.brandId).value?.forEach {
+            list.add(it.name)
+        }
+        return list
+    }
+
+    fun setNewAutoBrandName(brandName: String) {
+        newAuto.brandId = getBrandIdByName(brandName)!!
+    }
+
+    fun setNewAutoModelName(modelName: String) {
+        newAuto.modelId = getModelIdByName(modelName)!!
+    }
+
+    fun setNewAutoFuelTypeName(fuelTypeName: String) {
+        newAuto.fuelTypeId = getFuelTypeIdByName(fuelTypeName)!!
+    }
+
+    fun setNewAutoRegNumber(registrationCertificateNumber: String) {
+        newAuto.registrationCertificateNumber = registrationCertificateNumber
+    }
+
+    fun setNewAutoManufactureYear(manufactureYear: Int) {
+        newAuto.manufactureYear = manufactureYear
+    }
+
+    fun buildAuto() {
+        addNewAuto(newAuto)
+    }
+
+    fun createNewAuto() {
+        newAuto = NewAutoData()
+    }
 }
