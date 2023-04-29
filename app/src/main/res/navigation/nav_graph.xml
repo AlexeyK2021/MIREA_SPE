@@ -70,9 +70,17 @@
         <action
             android:id="@+id/action_mainFragment_to_rulesChapterFragment"
             app:destination="@id/rulesChapterFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_finesFragment"
+            app:destination="@id/finesFragment" />
     </fragment>
     <fragment
         android:id="@+id/wastesListFragment"
         android:name="ru.eco.automan.fragments.WastesListFragment"
         android:label="WastesListFragment" />
+    <fragment
+        android:id="@+id/finesFragment"
+        android:name="ru.eco.automan.fragments.FinesFragment"
+        android:label="fragment_fines"
+        tools:layout="@layout/fragment_fines" />
 </navigation>

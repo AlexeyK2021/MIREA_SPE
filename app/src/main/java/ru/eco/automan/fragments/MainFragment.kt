@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import ru.eco.automan.R
 import ru.eco.automan.databinding.FragmentMainBinding
@@ -37,8 +36,7 @@ class MainFragment : Fragment() {
             }
 
             pddButton.setOnClickListener {
-                // Todo: Сделать фрагмент для экрана штрафов
-                Toast.makeText(view.context, "Нет фрагмента для экрана(", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_mainFragment_to_finesFragment)
             }
 
             fineButton.setOnClickListener {
