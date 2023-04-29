@@ -140,4 +140,16 @@
         app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
         app:layout_constraintTop_toBottomOf="@id/registrationTextView"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continueButton"
+        style="@style/Button.White"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/continue_wastes"
+        android:paddingVertical="15dp"
+        app:layout_constraintWidth_percent="0.65"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

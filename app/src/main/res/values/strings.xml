@@ -36,6 +36,7 @@
 
     <!-- WastesAutoFragment -->
     <string name="period">Период</string>
+    <string name="continue_wastes">Сохранить</string>
     <plurals name="periods">
         <item quantity="zero">День</item>
         <item quantity="one">Неделя</item>
