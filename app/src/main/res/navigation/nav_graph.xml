@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_infoAutoFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_infoAutoFragment_to_chooseAutoFragment2"
+            app:destination="@id/chooseAutoFragment2" />
     </fragment>
     <fragment
         android:id="@+id/rulesChapterFragment"
