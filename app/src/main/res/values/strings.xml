@@ -49,9 +49,11 @@
 
     <!-- RulesFragment -->
     <string name="pdd">Правила дорожного\nдвижения</string>
+    <string name="new_waste_name">New waste name</string>
+    <string name="new_waste_cost">New waste cost</string>
 
     <string-array name="themes">
-<!--        <item>Светлая</item>-->
+        <!--        <item>Светлая</item>-->
         <item>Тёмная</item>
     </string-array>
 
@@ -59,4 +61,13 @@
         <item>Русский</item>
         <item>English</item>
     </string-array>
+
+    <string-array name="wastes_periods">
+        <item>День</item>
+        <item>Неделя</item>
+        <item>Месяц</item>
+        <item>План.\nрасходы</item>
+        <item>Все время</item>
+    </string-array>
+
 </resources>

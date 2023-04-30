@@ -52,10 +52,18 @@
         <action
             android:id="@+id/action_chooseAutoFragment2_to_infoAutoFragment"
             app:destination="@id/infoAutoFragment" />
+        <action
+            android:id="@+id/action_chooseAutoFragment2_to_wastesListFragment2"
+            app:destination="@id/wastesListFragment2" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="ru.eco.automan.fragments.SettingsFragment"
         android:label="fragment_settings_auto"
         tools:layout="@layout/fragment_settings_auto" />
+    <fragment
+        android:id="@+id/wastesListFragment2"
+        android:name="ru.eco.automan.fragments.WastesListFragment"
+        android:label="fragment_wastes_auto"
+        tools:layout="@layout/fragment_wastes_auto" />
 </navigation>
