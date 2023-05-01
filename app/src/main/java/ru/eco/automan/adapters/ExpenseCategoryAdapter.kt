@@ -1,5 +1,6 @@
 package ru.eco.automan.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,10 +23,29 @@ class ExpenseCategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val newWasteName: TextView = view.findViewById(R.id.newWasteName)
     val newWasteAmount: TextView = view.findViewById(R.id.newWasteAmount)
     val addWaste: ImageView = view.findViewById(R.id.add_waste)
+
+    fun bind(result: CategoryWithExpenseAndIcon, onAddExpenseListener: OnAddExpenseListener) {
+        wasteImage.setImageDrawable(result.categoryImage)
+        wasteCategoryName.text = result.categoryName
+        wastesSum.text = result.wastesSum.currency()
+
+        wastesListRecycler.adapter = ExpenseAdapter(result.expensesList)
+        wastesListRecycler.layoutManager = LinearLayoutManager(itemView.context)
+
+        addWaste.setOnClickListener {
+            onAddExpenseListener.addExpense(
+                categoryName = result.categoryName,
+                expenseAmount = newWasteAmount.text.toString().toFloat(),
+                expenseName = newWasteName.text.toString()
+            )
+            newWasteName.text = ""
+            newWasteAmount.text = ""
+        }
+    }
 }
 
 class ExpenseCategoryAdapter(
-    private val data: List<CategoryWithExpenseAndIcon>,
+    private var data: List<CategoryWithExpenseAndIcon>,
     private var onAddExpenseListener: OnAddExpenseListener
 ) :
     RecyclerView.Adapter<ExpenseCategoryViewHolder>() {
@@ -37,30 +57,14 @@ class ExpenseCategoryAdapter(
     }
 
     override fun onBindViewHolder(holder: ExpenseCategoryViewHolder, position: Int) {
-        val expenses = data[position].expensesList
-        val image = data[position].categoryImage
-        val name = data[position].categoryName
-        val sum = data[position].wastesSum
-
-        holder.apply {
-            wasteImage.setImageDrawable(image)
-            wasteCategoryName.text = name
-            wastesSum.text = sum.currency()
-
-            wastesListRecycler.adapter = ExpenseAdapter(expenses)
-            wastesListRecycler.layoutManager = LinearLayoutManager(holder.itemView.context)
-
-            addWaste.setOnClickListener {
-                onAddExpenseListener.addExpense(
-                    categoryName = name,
-                    expenseAmount = newWasteAmount.text.toString().toFloat(),
-                    expenseName = newWasteName.text.toString()
-                )
-                newWasteName.text = ""
-                newWasteAmount.text = ""
-            }
-        }
+        holder.bind(result = data[position], onAddExpenseListener = onAddExpenseListener)
     }
 
     override fun getItemCount(): Int = data.size
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateData(newData: List<CategoryWithExpenseAndIcon>) {
+        data = newData
+        notifyDataSetChanged()
+    }
 }

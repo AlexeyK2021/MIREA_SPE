@@ -68,14 +68,13 @@ class ExpenseViewModel(
     fun getCategoryWithExpensesAndIcon(context: Context): List<CategoryWithExpenseAndIcon> {
         val ret = mutableListOf<CategoryWithExpenseAndIcon>()
 
-        Log.d("getCategoryWithExpensesAndIcon", expenseRepository.categories.value.toString())
-        expenseRepository.categories.value?.forEach { category ->
+        Log.d("getCategoryWithExpensesAndIcon", categories.value.toString())
+        categories.value?.forEach { category ->
             val expenses = mutableListOf<Expense>()
             userExpenses.value?.forEach { e ->
-                if (e.id == currAutoId && category.id == e.categoryId)
+                if (e.autoId == currAutoId && e.categoryId == category.id)
                     expenses.add(e)
             }
-
             ret.add(
                 CategoryWithExpenseAndIcon(
                     categoryName = category.name,

@@ -1,5 +1,6 @@
 package ru.eco.automan.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
+import ru.eco.automan.adapters.ExpenseAdapter
 import ru.eco.automan.adapters.ExpenseCategoryAdapter
 import ru.eco.automan.adapters.ExpenseCategoryViewHolder
 import ru.eco.automan.databinding.FragmentWastesAutoBinding
@@ -34,6 +36,7 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
             AutoApplication.autoRepository
         )
     }
+
     private var _binding: FragmentWastesAutoBinding? = null
     private val binding get() = _binding!!
 
@@ -46,29 +49,18 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
         return binding.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         expenseViewModel.setCurrentAuto(autoViewModel.currAuto.value!!.id)
 
-        expenseViewModel.userExpenses.observe(viewLifecycleOwner) {
-            binding.expensesRecycler.adapter =
-                ExpenseCategoryAdapter(
-                    expenseViewModel.getCategoryWithExpensesAndIcon(view.context),
-                    this
-                )
-        }
-
-        expenseViewModel.categories.observe(viewLifecycleOwner) {
-            binding.expensesRecycler.adapter =
-                ExpenseCategoryAdapter(
-                    expenseViewModel.getCategoryWithExpensesAndIcon(view.context),
-                    this
-                )
-        }
+        val data = expenseViewModel.getCategoryWithExpensesAndIcon(view.context)
+        val eca = ExpenseCategoryAdapter(data, this)
 
         binding.apply {
             expensesRecycler.layoutManager = LinearLayoutManager(view.context)
             periodSpinner.setSelection(requireContext().resources.getStringArray(R.array.wastes_periods).lastIndex)
+            expensesRecycler.adapter = eca
 //            periodSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 //                override fun onItemSelected(
 //                    parentView: AdapterView<*>?,
@@ -84,6 +76,27 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
 //            }
         }
 
+        expenseViewModel.userExpenses.observe(viewLifecycleOwner) {
+            Log.d("expenseViewModel.userExpenses", it.toString())
+            eca.updateData(expenseViewModel.getCategoryWithExpensesAndIcon(view.context))
+            eca.notifyDataSetChanged()
+        }
+        expenseViewModel.categories.observe(viewLifecycleOwner) {
+            Log.d("expenseViewModel.categories", it.toString())
+            eca.updateData(expenseViewModel.getCategoryWithExpensesAndIcon(view.context))
+            eca.notifyDataSetChanged()
+        }
+
+        expenseViewModel.userExpenses.observe(viewLifecycleOwner) {
+
+        }
+
+//        expenseViewModel.categories.observe(viewLifecycleOwner) {
+//            val data = expenseViewModel.getCategoryWithExpensesAndIcon(view.context)
+//            val eca = ExpenseCategoryAdapter(data, this)
+//            binding.expensesRecycler.adapter = eca
+//            eca.notifyDataSetChanged()
+//        }
 
     }
 

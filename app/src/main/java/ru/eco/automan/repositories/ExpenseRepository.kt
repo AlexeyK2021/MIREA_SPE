@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import ru.eco.automan.dao.CategoryDao
 import ru.eco.automan.dao.ExpenseDao
@@ -29,8 +30,8 @@ class ExpenseRepository(
 
     init {
         runBlocking(Dispatchers.IO) {
-            _expenses = expenseDao.getAllExpensesLiveData()
             _categories = categoryDao.getAllCategoriesLiveData()
+            _expenses = expenseDao.getAllExpensesLiveData()
         }
     }
 
