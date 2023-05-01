@@ -76,7 +76,7 @@ class ChooseAutoFragment : Fragment(R.layout.fragment_control_auto), OnAutoChoos
 
     override fun onChooseClick(autoId: Int) {
         autoViewModel.setCurrentAutoById(autoId)
-//        findNavController().navigate(R.id.action_chooseAutoFragment2_to_infoAutoFragment)
-        findNavController().navigate(R.id.action_chooseAutoFragment2_to_wastesListFragment2)
+
+        findNavController().navigate(R.id.action_chooseAutoFragment2_to_mainFragment)
     }
 }

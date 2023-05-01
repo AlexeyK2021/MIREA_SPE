@@ -51,6 +51,10 @@
     <string name="pdd">Правила дорожного\nдвижения</string>
     <string name="new_waste_name">New waste name</string>
     <string name="new_waste_cost">New waste cost</string>
+    
+    <!-- Fines -->
+    <string name="check_fines_button">Проверить</string>
+    <string name="last_check">Проверка не производилась</string>
 
     <string-array name="themes">
         <!--        <item>Светлая</item>-->
@@ -61,7 +65,8 @@
         <item>Русский</item>
         <item>English</item>
     </string-array>
-
+    
+    
     <string-array name="wastes_periods">
         <item>День</item>
         <item>Неделя</item>

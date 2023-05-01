@@ -14,6 +14,9 @@ import ru.eco.automan.models.Expense
 import ru.eco.automan.repositories.ExpenseRepository
 import java.sql.Date
 import java.util.Calendar
+import java.sql.Date
+import java.time.LocalDateTime.now
+
 
 /**
  * Преобразователь данных из базы данных для показа пользователю всего, что связано с тратами

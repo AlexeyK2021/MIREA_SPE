@@ -28,11 +28,11 @@
         app:layout_constraintStart_toStartOf="@id/user_auto"
         app:layout_constraintBottom_toBottomOf="@id/user_auto"
         app:layout_constraintTop_toTopOf="@id/user_auto"
-        app:layout_constraintEnd_toStartOf="@id/AutoImage"
+        app:layout_constraintEnd_toStartOf="@id/autoImage"
         tools:text="Mercedes-benz C300"/>
 
     <ImageView
-        android:id="@+id/AutoImage"
+        android:id="@+id/autoImage"
         android:layout_width="67dp"
         android:layout_height="38dp"
         android:src="@drawable/ic_launcher_foreground"
