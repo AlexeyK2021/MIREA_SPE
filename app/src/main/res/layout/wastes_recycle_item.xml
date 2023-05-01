@@ -1,17 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@color/black">
 
-    <ImageView
-        android:id="@+id/mainImageView"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardView"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/rectangle_212"
+        android:layout_marginVertical="5dp"
+        app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintWastes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#212121"
+            android:paddingHorizontal="5dp">
+
+            <ImageView
+                android:id="@+id/imageWastes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_name"
+                app:layout_constraintBottom_toBottomOf="@id/constraintWastes"
+                app:layout_constraintStart_toStartOf="@id/constraintWastes"
+                app:layout_constraintTop_toTopOf="@id/constraintWastes"
+                app:layout_constraintVertical_bias="0.05" />
+
+            <TextView
+                android:id="@+id/textWastes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/imageWastes"
+                app:layout_constraintEnd_toStartOf="@id/costWastes"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toEndOf="@id/imageWastes"
+                app:layout_constraintTop_toTopOf="@id/imageWastes"
+                tools:text="Ремонт" />
+
+            <TextView
+                android:id="@+id/costWastes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/constraintWastes"
+                app:layout_constraintTop_toTopOf="@id/textWastes"
+                tools:text="500 rub" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_wastes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingStart="50dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintEnd_toEndOf="@id/constraintWastes"
+                app:layout_constraintStart_toStartOf="@id/constraintWastes"
+                app:layout_constraintTop_toBottomOf="@id/imageWastes"
+                tools:listitem="@layout/wastes_card_recycler_item" />
+
+            <ImageView
+                android:id="@+id/add_waste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/vector_oke"
+                app:layout_constraintStart_toStartOf="@id/recycler_wastes"
+                app:layout_constraintTop_toBottomOf="@id/recycler_wastes" />
+
+            <EditText
+                android:id="@+id/newWasteName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/rectangle_214"
+                android:hint="@string/new_waste_name"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/add_waste"
+                app:layout_constraintStart_toEndOf="@id/add_waste"
+                app:layout_constraintTop_toTopOf="@id/add_waste"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/newWasteAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/rectangle_214"
+                android:hint="@string/new_waste_cost"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/newWasteName"
+                app:layout_constraintStart_toStartOf="@id/newWasteName"
+                app:layout_constraintTop_toBottomOf="@id/newWasteName"
+                android:inputType="numberDecimal"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="CardView" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="6dp"
+        app:layout_constraintTop_toBottomOf="@id/barrier" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

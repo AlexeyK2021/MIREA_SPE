@@ -11,7 +11,9 @@
         tools:layout="@layout/fragment_add_auto" >
         <action
             android:id="@+id/action_addAutoFragment2_to_chooseAutoFragment2"
-            app:destination="@id/chooseAutoFragment2" />
+            app:destination="@id/chooseAutoFragment2"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/chooseAutoFragment2"/>
     </fragment>
     <fragment
         android:id="@+id/infoAutoFragment"
@@ -21,6 +23,9 @@
         <action
             android:id="@+id/action_infoAutoFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_infoAutoFragment_to_chooseAutoFragment2"
+            app:destination="@id/chooseAutoFragment2" />
     </fragment>
     <fragment
         android:id="@+id/rulesChapterFragment"
@@ -43,7 +48,7 @@
         tools:layout="@layout/fragment_control_auto" >
         <action
             android:id="@+id/action_chooseAutoFragment2_to_addAutoFragment2"
-            app:destination="@id/addAutoFragment2" />
+            app:destination="@id/addAutoFragment2"/>
         <action
             android:id="@+id/action_chooseAutoFragment2_to_mainFragment"
             app:destination="@id/mainFragment" />

@@ -45,4 +45,7 @@ interface ExpenseDao {
      */
     @Delete
     fun deleteExpense(expense: Expense)
+
+    @Delete
+    fun deleteExpenses(expenses: List<Expense>)
 }

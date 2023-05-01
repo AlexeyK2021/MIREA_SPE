@@ -51,8 +51,16 @@ class InfoAutoFragment : Fragment(R.layout.fragment_auto_information) {
                 brandEditView.text = autoViewModel.currentAutoBrandName?.getEditable()
                 modelEditView.text = autoViewModel.currentAutoModelName?.getEditable()
                 fuelEditView.text = autoViewModel.currentAutoFuelTypeName?.getEditable()
+                registrationEditView.text = autoViewModel.currentAutoRegNumber?.getEditable()
                 settingImageView.setOnClickListener {
                     findNavController().navigate(R.id.action_infoAutoFragment_to_settingsFragment)
+                }
+                continueButton.setOnClickListener {
+                    autoViewModel.setNewModel(modelEditView.text.toString())
+                    autoViewModel.setNewBrand(brandEditView.text.toString())
+                    autoViewModel.setNewFuelType(fuelEditView.text.toString())
+                    autoViewModel.setNewRegistrationCertificate(registrationEditView.text.toString())
+                    findNavController().navigate(R.id.action_infoAutoFragment_to_chooseAutoFragment2)
                 }
             }
         }

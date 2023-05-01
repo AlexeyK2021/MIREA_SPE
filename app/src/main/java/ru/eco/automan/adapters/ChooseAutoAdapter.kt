@@ -27,7 +27,6 @@ class ChooseAutoAdapter(
     }
 
     override fun onBindViewHolder(holder: ChooseAutoViewHolder, position: Int) {
-        if (autosList == null) return
         val currAuto = autosList[position]
         holder.apply {
             var name = currAuto.name
@@ -37,9 +36,7 @@ class ChooseAutoAdapter(
             deleteAuto.setOnClickListener {
                 onAutoChooseClickListener.onDeleteClick(currAuto.id)
             }
-            autoName.setOnClickListener {
-                onAutoChooseClickListener.onChooseClick(currAuto.id)
-            }
+            holder.itemView.setOnClickListener { onAutoChooseClickListener.onChooseClick(currAuto.id) }
         }
     }
 

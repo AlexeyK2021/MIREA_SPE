@@ -25,6 +25,8 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
     val currentAutoModelName get() = getModelNameById(currAuto.value!!.modelId)
     val currentAutoFuelTypeName get() = getFuelTypeNameById(currAuto.value!!.fuelTypeId)
 
+    val currentAutoRegNumber get() = currAuto.value!!.registrationCertificateNumber
+
 //    fun addAuto(auto: Auto) = viewModelScope.launch(Dispatchers.IO) {
 //        autoRepository.addAuto(auto = auto)
 //    }
@@ -35,6 +37,7 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
     fun deleteAuto(autoId: Int) {
         val autoToDelete = userAutos.value!!.find { it.id == autoId }!!
         viewModelScope.launch(Dispatchers.IO) {
+
             autoRepository.deleteAuto(auto = autoToDelete)
         }
     }
@@ -91,45 +94,77 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
     }
 
     fun setNewName(newName: String) {
-        currAuto.value!!.name = newName
+//        currAuto.value!!.name = newName
+        viewModelScope.launch(Dispatchers.IO)
+        {
+            val newAuto = currAuto.value!!
+            newAuto.name = newName
+            autoRepository.updateAuto(newAuto)
+        }
     }
 
     fun setNewBrand(newBrandName: String) {
         var newBrand = getBrandIdByName(newBrandName)
         if (newBrand == null) {
-            autoRepository.addBrand(Brand(id = 0, name = newBrandName))
-            newBrand = getBrandIdByName(newBrandName)
+            viewModelScope.launch(Dispatchers.IO)
+            {
+                autoRepository.addBrand(Brand(id = 0, name = newBrandName))
+                newBrand = getBrandIdByName(newBrandName)
+
+//        currAuto.value!!.brandId = newBrand!!
+                val newAuto = currAuto.value!!
+                newAuto.brandId = newBrand!!
+                autoRepository.updateAuto(newAuto)
+            }
         }
-        currAuto.value!!.brandId = newBrand!!
     }
 
     fun setNewModel(newModelName: String) {
         var modelId = getModelIdByName(newModelName)
         if (modelId == null) {
-            autoRepository.addModel(
-                Model(
-                    id = 0,
-                    name = newModelName,
-                    brandId = currAuto.value!!.brandId
+            viewModelScope.launch(Dispatchers.IO)
+            {
+                autoRepository.addModel(
+                    Model(
+                        id = 0,
+                        name = newModelName,
+                        brandId = currAuto.value!!.brandId
+                    )
                 )
-            )
-            modelId = getModelIdByName(newModelName)
+                modelId = getModelIdByName(newModelName)
+                val newAuto = currAuto.value!!
+                newAuto.modelId = modelId!!
+                autoRepository.updateAuto(newAuto)
+            }
         }
-        currAuto.value!!.modelId = modelId!!
+//        currAuto.value!!.modelId = modelId!!
     }
 
     fun setNewFuelType(newFuelTypeName: String) {
 //        currentAuto.value!!.fuelTypeId = getFuelTypeIdByName(newFuelTypeName)
         var fuelTypeId = getFuelTypeIdByName(newFuelTypeName)
         if (fuelTypeId == null) {
-            autoRepository.addFuelType(FuelType(id = 0, name = newFuelTypeName))
-            fuelTypeId = getFuelTypeIdByName(newFuelTypeName)
+            viewModelScope.launch(Dispatchers.IO)
+            {
+                autoRepository.addFuelType(FuelType(id = 0, name = newFuelTypeName))
+                fuelTypeId = getFuelTypeIdByName(newFuelTypeName)
+
+//        currAuto.value!!.fuelTypeId = fuelTypeId!!
+                val newAuto = currAuto.value!!
+                newAuto.fuelTypeId = fuelTypeId!!
+                autoRepository.updateAuto(newAuto)
+            }
         }
-        currAuto.value!!.fuelTypeId = fuelTypeId!!
     }
 
     fun setNewRegistrationCertificate(newNumber: String) {
-        currAuto.value!!.registrationCertificateNumber = newNumber
+//        currAuto.value!!.registrationCertificateNumber = newNumber
+        viewModelScope.launch(Dispatchers.IO)
+        {
+            val newAuto = currAuto.value!!
+            newAuto.registrationCertificateNumber = newNumber
+            autoRepository.updateAuto(newAuto)
+        }
     }
 
 //    private fun copyAutoObj(): Auto {

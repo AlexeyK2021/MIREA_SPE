@@ -47,4 +47,5 @@ data class Auto(
     @ColumnInfo(name = "insurance_expiration_date") var insuranceExpirationDate: Date? = null,
     @ColumnInfo(name = "registration_certificate_number") var registrationCertificateNumber: String? = null,
     @ColumnInfo(name = "manufacture_year") var manufactureYear: Int
+//    @ColumnInfo(name = "image_name") var imageName: String? = null
 )

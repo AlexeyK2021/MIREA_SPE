@@ -36,6 +36,7 @@
 
     <!-- WastesAutoFragment -->
     <string name="period">Период</string>
+    <string name="continue_wastes">Сохранить</string>
     <plurals name="periods">
         <item quantity="zero">День</item>
         <item quantity="one">Неделя</item>
@@ -48,6 +49,12 @@
 
     <!-- RulesFragment -->
     <string name="pdd">Правила дорожного\nдвижения</string>
+    <string name="new_waste_name">New waste name</string>
+    <string name="new_waste_cost">New waste cost</string>
+    
+    <!-- Fines -->
+    <string name="check_fines_button">Проверить</string>
+    <string name="last_check">Проверка не производилась</string>
 
     <string-array name="themes">
         <!--        <item>Светлая</item>-->
@@ -58,7 +65,14 @@
         <item>Русский</item>
         <item>English</item>
     </string-array>
+    
+    
+    <string-array name="wastes_periods">
+        <item>День</item>
+        <item>Неделя</item>
+        <item>Месяц</item>
+        <item>План.\nрасходы</item>
+        <item>Все время</item>
+    </string-array>
 
-    <string name="check_fines_button">Проверить</string>
-    <string name="last_check">Проверка не производилась</string>
 </resources>

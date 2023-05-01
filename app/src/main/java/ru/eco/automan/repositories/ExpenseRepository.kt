@@ -1,6 +1,11 @@
 package ru.eco.automan.repositories
 
+import android.util.Log
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import ru.eco.automan.dao.CategoryDao
 import ru.eco.automan.dao.ExpenseDao
 import ru.eco.automan.models.Category
@@ -17,11 +22,18 @@ class ExpenseRepository(
     private val expenseDao: ExpenseDao,
     private val categoryDao: CategoryDao
 ) {
-    private var _expenses: LiveData<List<Expense>> = expenseDao.getAllExpensesLiveData()
-    val expenses get() = _expenses
+    private var _expenses: LiveData<List<Expense>>? = null
+    val expenses get() = _expenses!!
 
-    private var _categories: LiveData<List<Category>> = categoryDao.getAllCategoriesLiveData()
-    val categories get() = _categories
+    private var _categories: LiveData<List<Category>>? = null
+    val categories get() = _categories!!
+
+    init {
+        runBlocking(Dispatchers.IO) {
+            _categories = categoryDao.getAllCategoriesLiveData()
+            _expenses = expenseDao.getAllExpensesLiveData()
+        }
+    }
 
     /**
      * Метод добавления новой траты пользователя в БД
@@ -58,5 +70,6 @@ class ExpenseRepository(
      * @param category Экземпляр категории трат, подлежащей удалению
      */
     fun deleteCategory(category: Category) = categoryDao.deleteCategory(category)
-    
+
+    fun deleteExpenses(expenseList: List<Expense>) = expenseDao.deleteExpenses(expenseList)
 }
