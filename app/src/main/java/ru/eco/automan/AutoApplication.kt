@@ -3,6 +3,7 @@ package ru.eco.automan
 import android.app.Application
 import androidx.room.Room
 import ru.eco.automan.database.AutoDatabase
+import ru.eco.automan.models.Period
 import ru.eco.automan.repositories.AutoRepository
 import ru.eco.automan.repositories.ExpenseRepository
 import ru.eco.automan.repositories.RulesRepository
@@ -27,6 +28,9 @@ class AutoApplication : Application() {
 
         private var _notificationController: NotificationController? = null
         val notificationManager get() = _notificationController!!
+
+        private var _periods: List<Period>? = null
+        val periods get() = _periods!!
     }
 
     override fun onCreate() {
@@ -51,6 +55,13 @@ class AutoApplication : Application() {
         )
 
         _notificationController = NotificationController()
+
+        val periods = resources.getStringArray(R.array.wastes_periods)
+        _periods = mutableListOf(
+            Period(periods[0], 86_400_000),
+            Period(periods[1], 604_800_000),
+            Period(periods[2], 2_678_400_000)
+        )
     }
 
 }

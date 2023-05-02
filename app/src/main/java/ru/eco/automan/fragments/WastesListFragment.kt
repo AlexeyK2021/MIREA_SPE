@@ -7,19 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
-import ru.eco.automan.adapters.ExpenseAdapter
 import ru.eco.automan.adapters.ExpenseCategoryAdapter
-import ru.eco.automan.adapters.ExpenseCategoryViewHolder
 import ru.eco.automan.databinding.FragmentWastesAutoBinding
 import ru.eco.automan.listeners.OnAddExpenseListener
-import ru.eco.automan.models.CategoryWithExpenseAndIcon
 import ru.eco.automan.viewModelFactories.AutoViewModelFactory
 import ru.eco.automan.viewModelFactories.ExpenseViewModelFactory
 import ru.eco.automan.viewModels.AutoViewModel
@@ -57,23 +52,23 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
         val data = expenseViewModel.getCategoryWithExpensesAndIcon(view.context)
         val eca = ExpenseCategoryAdapter(data, this)
 
+        val lastPeriod = requireContext().resources.getStringArray(R.array.wastes_periods).lastIndex
         binding.apply {
             expensesRecycler.layoutManager = LinearLayoutManager(view.context)
-            periodSpinner.setSelection(requireContext().resources.getStringArray(R.array.wastes_periods).lastIndex)
+            periodSpinner.setSelection(lastPeriod)
             expensesRecycler.adapter = eca
-//            periodSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//                override fun onItemSelected(
-//                    parentView: AdapterView<*>?,
-//                    selectedItemView: View,
-//                    position: Int,
-//                    id: Long
-//                ) {
-//                    adapter = createAdapter(expenseViewModel.getExpensesByPeriod(position))
-//                    expensesRecycler.adapter = adapter
-//                }
-//
-//                override fun onNothingSelected(p0: AdapterView<*>?) {}
-//            }
+            periodSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parentView: AdapterView<*>?,
+                    selectedItemView: View,
+                    position: Int,
+                    id: Long
+                ) {
+                    onUpdatePeriodSpinner(position, eca, lastPeriod)
+                }
+
+                override fun onNothingSelected(p0: AdapterView<*>?) {}
+            }
         }
 
         expenseViewModel.userExpenses.observe(viewLifecycleOwner) {
@@ -87,10 +82,6 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
             eca.notifyDataSetChanged()
         }
 
-        expenseViewModel.userExpenses.observe(viewLifecycleOwner) {
-
-        }
-
 //        expenseViewModel.categories.observe(viewLifecycleOwner) {
 //            val data = expenseViewModel.getCategoryWithExpensesAndIcon(view.context)
 //            val eca = ExpenseCategoryAdapter(data, this)
@@ -98,6 +89,12 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
 //            eca.notifyDataSetChanged()
 //        }
 
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun onUpdatePeriodSpinner(position: Int, eca: ExpenseCategoryAdapter, lastPeriod: Int) {
+        eca.updateData(expenseViewModel.getExpensesByPeriod(position, lastPeriod, requireContext()))
+        eca.notifyDataSetChanged()
     }
 
     override fun addExpense(categoryName: String, expenseName: String, expenseAmount: Float) {

@@ -80,12 +80,13 @@
             app:destination="@id/finesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/wastesListFragment"
-        android:name="ru.eco.automan.fragments.WastesListFragment"
-        android:label="WastesListFragment" />
-    <fragment
         android:id="@+id/finesFragment"
         android:name="ru.eco.automan.fragments.FinesFragment"
         android:label="fragment_fines"
         tools:layout="@layout/fragment_fines" />
+    <fragment
+        android:id="@+id/wastesListFragment"
+        android:name="ru.eco.automan.fragments.WastesListFragment"
+        android:label="fragment_wastes_auto"
+        tools:layout="@layout/fragment_wastes_auto" />
 </navigation>

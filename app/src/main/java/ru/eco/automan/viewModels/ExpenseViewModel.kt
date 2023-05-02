@@ -2,19 +2,22 @@ package ru.eco.automan.viewModels
 
 import android.content.Context
 import android.util.Log
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
 import ru.eco.automan.models.Category
 import ru.eco.automan.models.CategoryWithExpenseAndIcon
 import ru.eco.automan.models.Expense
+import ru.eco.automan.models.Period
 import ru.eco.automan.repositories.ExpenseRepository
 import java.sql.Date
 import java.util.Calendar
-import java.sql.Date
 import java.time.LocalDateTime.now
 
 
@@ -28,6 +31,8 @@ class ExpenseViewModel(
     val categories get() = expenseRepository.categories
 
     private var currAutoId: Int? = null
+
+    private var currentPeriod: Period? = null
 
     fun addNewExpense(name: String, amount: Float, categoryName: String) {
 //        val todayDate = Calendar.getInstance().time.date
@@ -68,13 +73,16 @@ class ExpenseViewModel(
         return dataToReturn
     }
 
-    fun getCategoryWithExpensesAndIcon(context: Context): List<CategoryWithExpenseAndIcon> {
+    private fun getCategoryWithExpensesAndIcon(
+        context: Context,
+        userExpenses: List<Expense>?
+    ): List<CategoryWithExpenseAndIcon> {
         val ret = mutableListOf<CategoryWithExpenseAndIcon>()
 
         Log.d("getCategoryWithExpensesAndIcon", categories.value.toString())
         categories.value?.forEach { category ->
             val expenses = mutableListOf<Expense>()
-            userExpenses.value?.forEach { e ->
+            userExpenses?.forEach { e ->
                 if (e.autoId == currAutoId && e.categoryId == category.id)
                     expenses.add(e)
             }
@@ -90,15 +98,44 @@ class ExpenseViewModel(
         return ret
     }
 
+    fun getCategoryWithExpensesAndIcon(context: Context): List<CategoryWithExpenseAndIcon> =
+        getCategoryWithExpensesAndIcon(context, userExpenses.value)
+
+
     private fun sumOfExpenseList(expenses: List<Expense>): Float {
         var sum = 0f
         expenses.forEach { sum += it.amount }
         return sum
     }
 
-    fun getExpensesByPeriod(position: Int): List<CategoryWithExpenseAndIcon> {
-        return mutableListOf()
+    fun getExpensesByPeriod(
+        position: Int,
+        lastPeriod: Int,
+        context: Context
+    ): List<CategoryWithExpenseAndIcon> {
+        return when (position) {
+            lastPeriod, lastPeriod - 1 -> getCategoryWithExpensesAndIcon(context)
+            else -> getCategoryWithExpensesAndIcon(
+                context,
+                expensesByPeriod(AutoApplication.periods[position].secondsNum)
+            )
+        }
     }
+
+    fun expensesByPeriod(millis: Long): List<Expense> {
+        val ret = mutableListOf<Expense>()
+        userExpenses.value?.forEach {
+            Log.d(
+                "expensesByPeriod",
+                " ${it.name} - Delta Time: ${Calendar.getInstance().timeInMillis - it.date.time}"
+            )
+            if (Calendar.getInstance().timeInMillis - it.date.time < millis) {
+                ret.add(it)
+            }
+        }
+        return ret
+    }
+
 
     fun setCurrentAuto(autoId: Int) {
         currAutoId = autoId
