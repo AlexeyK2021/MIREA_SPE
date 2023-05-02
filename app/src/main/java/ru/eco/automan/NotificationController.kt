@@ -1,16 +1,23 @@
 package ru.eco.automan
 
 import android.annotation.SuppressLint
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.os.Build
+import android.provider.Settings.Global.getString
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat.getSystemService
 
 /**
  * Контроллер уведомлений
  */
-class NotificationController() {
+class NotificationController {
     companion object {
         var NOTIFICATION_ID = 101
         const val CHANNEL_ID = "channelID"
@@ -22,9 +29,8 @@ class NotificationController() {
         intent.apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
-        val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
+        val pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
 
-        // Создаём уведомление
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.baseline_directions_car_24)
             .setContentTitle("Напоминание")
@@ -37,4 +43,5 @@ class NotificationController() {
         notificationManager.notify(NOTIFICATION_ID++, builder.build())
 
     }
+
 }

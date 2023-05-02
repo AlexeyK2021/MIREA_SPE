@@ -13,9 +13,7 @@
         android:layout_width="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/baseline_settings"
-
-        />
+        android:src="@drawable/baseline_settings" />
 
     <ImageView
         android:id="@+id/editAutoButton"
@@ -23,9 +21,7 @@
         android:layout_width="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/baseline_settings"
-
-        />
+        android:src="@drawable/baseline_settings" />
 
     <ImageView
         android:id="@+id/autoImage"
@@ -34,9 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editAutoButton"
         app:layout_constraintStart_toEndOf="@+id/settingsButton"
         app:layout_constraintEnd_toStartOf="@id/editAutoButton"
-        android:src="@drawable/baseline_settings"
-
-        />
+        android:src="@drawable/baseline_settings" />
 
     <ImageView
         android:id="@+id/oilImage"
@@ -45,9 +39,7 @@
         app:layout_constraintTop_toBottomOf="@id/autoImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/checksImage"
-        android:src="@drawable/baseline_settings"
-
-        />
+        android:src="@drawable/baseline_settings" />
 
     <ImageView
         android:id="@+id/checksImage"
@@ -56,9 +48,7 @@
         app:layout_constraintTop_toBottomOf="@id/autoImage"
         app:layout_constraintStart_toEndOf="@id/oilImage"
         app:layout_constraintEnd_toStartOf="@id/repairImage"
-        android:src="@drawable/baseline_settings"
-
-        />
+        android:src="@drawable/baseline_settings" />
 
     <ImageView
         android:id="@+id/repairImage"
@@ -67,9 +57,7 @@
         app:layout_constraintTop_toBottomOf="@id/autoImage"
         app:layout_constraintStart_toEndOf="@id/checksImage"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/baseline_settings"
-
-        />
+        android:src="@drawable/baseline_settings" />
 
     <ImageView
         android:id="@+id/moreExpencesImage"
@@ -78,8 +66,7 @@
         app:layout_constraintTop_toBottomOf="@id/checksImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/baseline_keyboard_arrow_down_24"
-        />
+        android:src="@drawable/baseline_keyboard_arrow_down_24" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/fineButton"

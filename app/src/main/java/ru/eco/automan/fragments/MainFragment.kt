@@ -6,13 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
 import ru.eco.automan.databinding.FragmentMainBinding
 
 /**
  * Фрагмент, отвечающий за главную страницу приложения
  */
-class MainFragment : Fragment() {
+class MainFragment : Fragment(R.layout.fragment_main) {
     private lateinit var binding: FragmentMainBinding
 
     override fun onCreateView(
@@ -22,7 +23,7 @@ class MainFragment : Fragment() {
         binding = FragmentMainBinding.inflate(layoutInflater)
         val view = binding.root
 
-        with(binding) {
+        binding.apply{
             settingsButton.setOnClickListener {
                 findNavController().navigate(R.id.action_mainFragment_to_settingsFragment)
             }
@@ -41,6 +42,10 @@ class MainFragment : Fragment() {
 
             fineButton.setOnClickListener {
                 findNavController().navigate(R.id.action_mainFragment_to_rulesChapterFragment)
+            }
+
+            autoImage.setOnClickListener {
+                AutoApplication.notificationManager.createTestNotification(view.context)
             }
         }
 

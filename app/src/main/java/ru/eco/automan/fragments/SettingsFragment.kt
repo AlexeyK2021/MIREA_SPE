@@ -10,12 +10,15 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import ru.eco.automan.R
 import ru.eco.automan.databinding.FragmentSettingsAutoBinding
+import ru.eco.automan.viewModels.EventsViewModel
 import ru.eco.automan.viewModels.SettingsViewModel
 
 class SettingsFragment : Fragment(R.layout.fragment_settings_auto) {
     private val settingsViewModel: SettingsViewModel by activityViewModels()
+    private val eventsViewModel:EventsViewModel by activityViewModels()
 
     private var _binding: FragmentSettingsAutoBinding? = null
     private val binding get() = _binding!!
@@ -81,6 +84,14 @@ class SettingsFragment : Fragment(R.layout.fragment_settings_auto) {
             notificationSwitch.setOnCheckedChangeListener { compoundButton, b ->
                 settingsViewModel.setNotifications(b)
             }
+
+            eventTextView.setOnClickListener {
+                findNavController().navigate(R.id.action_settingsFragment_to_eventsFragment)
+            }
+
+            eventsNumber.text = eventsViewModel.getEventsNumber().toString()
+
+
         }
     }
 

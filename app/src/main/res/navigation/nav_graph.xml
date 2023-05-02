@@ -57,7 +57,11 @@
         android:id="@+id/settingsFragment"
         android:name="ru.eco.automan.fragments.SettingsFragment"
         android:label="fragment_settings_auto"
-        tools:layout="@layout/fragment_settings_auto" />
+        tools:layout="@layout/fragment_settings_auto" >
+        <action
+            android:id="@+id/action_settingsFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="ru.eco.automan.fragments.MainFragment"
@@ -89,4 +93,9 @@
         android:name="ru.eco.automan.fragments.WastesListFragment"
         android:label="fragment_wastes_auto"
         tools:layout="@layout/fragment_wastes_auto" />
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="ru.eco.automan.fragments.EventsFragment"
+        android:label="fragment_event_auto"
+        tools:layout="@layout/fragment_event_auto" />
 </navigation>
