@@ -1,6 +1,7 @@
 package ru.eco.automan.repositories
 
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import ru.eco.automan.dao.ChapterDao
 import ru.eco.automan.dao.ParagraphDao
@@ -25,8 +26,14 @@ class RulesRepository(
 
     init {
         runBlocking(Dispatchers.IO) {
-            allChapters = chapterDao.getAllChapters()
-            allParagraphs = paragraphDao.getAllParagraphs()
+            val chaptersJob = launch {
+                allChapters = chapterDao.getAllChapters()
+            }
+            val paragraphsJob = launch {
+                allParagraphs = paragraphDao.getAllParagraphs()
+            }
+            chaptersJob.join()
+            paragraphsJob.join()
         }
     }
 

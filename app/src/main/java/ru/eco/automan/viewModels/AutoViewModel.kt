@@ -35,10 +35,8 @@ class AutoViewModel(private val autoRepository: AutoRepository) : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) { autoRepository.updateAuto(auto = auto) }
 
     fun deleteAuto(autoId: Int) {
-        val autoToDelete = userAutos.value!!.find { it.id == autoId }!!
         viewModelScope.launch(Dispatchers.IO) {
-
-            autoRepository.deleteAuto(auto = autoToDelete)
+            autoRepository.deleteAuto(autoId = autoId)
         }
     }
 

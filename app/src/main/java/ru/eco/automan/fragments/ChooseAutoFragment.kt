@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
 import ru.eco.automan.adapters.ChooseAutoAdapter
@@ -62,17 +60,11 @@ class ChooseAutoFragment : Fragment(R.layout.fragment_control_auto), OnAutoChoos
     }
 
     override fun onDeleteClick(autoId: Int) {
-        runBlocking {
-            launch {
-                expenseViewModel.deleteAllExpenses(autoId)
-            }
-            launch {
-                autoViewModel.deleteAuto(autoId)
-            }
-        }
-
+        expenseViewModel.deleteAllExpensesByAutoId(autoId)
+        autoViewModel.deleteAuto(autoId)
 
     }
+
 
     override fun onChooseClick(autoId: Int) {
         autoViewModel.setCurrentAutoById(autoId)

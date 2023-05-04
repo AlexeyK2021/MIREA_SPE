@@ -2,7 +2,6 @@ package ru.eco.automan.viewModels
 
 import android.content.SharedPreferences
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 
 enum class SettingsTypes(name: String) {
     THEME("THEME"),
@@ -12,7 +11,6 @@ enum class SettingsTypes(name: String) {
 
 class SettingsViewModel(private val sharedPreferences: SharedPreferences) : ViewModel() {
     private val editPrefs = sharedPreferences.edit()
-    private val APP_PREFERENCES = "settings"
 //    private val settings
 //        get() =
 
@@ -31,11 +29,10 @@ class SettingsViewModel(private val sharedPreferences: SharedPreferences) : View
         editPrefs.commit()
     }
 
-    fun getNotificationPref(): Boolean =
+    fun getNotificationStatus(): Boolean =
         sharedPreferences.getBoolean(SettingsTypes.NOTIFICATIONS.name, true)
 
     fun getThemePref(): Int = sharedPreferences.getInt(SettingsTypes.THEME.name, 0)
     fun getLanguagePref(): Int = sharedPreferences.getInt(SettingsTypes.LANGUAGE.name, 0)
-
 
 }

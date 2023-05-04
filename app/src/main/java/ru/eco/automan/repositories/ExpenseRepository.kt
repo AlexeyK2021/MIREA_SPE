@@ -10,6 +10,7 @@ import ru.eco.automan.dao.CategoryDao
 import ru.eco.automan.dao.ExpenseDao
 import ru.eco.automan.models.Category
 import ru.eco.automan.models.Expense
+import kotlin.math.exp
 
 /**
  * Пограничный класс-репозиторий, работающий с данными в базе данных и тратами пользователя и категориями этих трат
@@ -30,8 +31,14 @@ class ExpenseRepository(
 
     init {
         runBlocking(Dispatchers.IO) {
-            _categories = categoryDao.getAllCategoriesLiveData()
-            _expenses = expenseDao.getAllExpensesLiveData()
+            val catJob = launch {
+                _categories = categoryDao.getAllCategoriesLiveData()
+            }
+            val expJob = launch {
+                _expenses = expenseDao.getAllExpensesLiveData()
+            }
+            catJob.join()
+            expJob.join()
         }
     }
 
@@ -72,4 +79,7 @@ class ExpenseRepository(
     fun deleteCategory(category: Category) = categoryDao.deleteCategory(category)
 
     fun deleteExpenses(expenseList: List<Expense>) = expenseDao.deleteExpenses(expenseList)
+
+    fun deleteExpensesByAutoId(autoId: Int) = expenseDao.deleteExpensesByAutoId(autoId)
+    fun deleteAllExpenses() = expenseDao.deleteAllExpenses()
 }

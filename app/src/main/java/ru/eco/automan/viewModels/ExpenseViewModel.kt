@@ -2,9 +2,7 @@ package ru.eco.automan.viewModels
 
 import android.content.Context
 import android.util.Log
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
@@ -18,7 +16,6 @@ import ru.eco.automan.models.Period
 import ru.eco.automan.repositories.ExpenseRepository
 import java.sql.Date
 import java.util.Calendar
-import java.time.LocalDateTime.now
 
 
 /**
@@ -147,13 +144,14 @@ class ExpenseViewModel(
     private fun getCategoryIdByName(category: String): Int? =
         expenseRepository.categories.value?.find { it.name == category }?.id
 
-    fun deleteAllExpenses(autoId: Int) {
-        val expensesToDelete = mutableListOf<Expense>()
+    fun deleteAllExpensesByAutoId(autoId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            userExpenses.value!!.forEach {
-                if (it.autoId == autoId) expensesToDelete.add(it)
-            }
-            expenseRepository.deleteExpenses(expensesToDelete)
+            expenseRepository.deleteExpensesByAutoId(autoId)
+        }
+    }
+    fun deleteAllExpenses(){
+        viewModelScope.launch(Dispatchers.IO) {
+            expenseRepository.deleteAllExpenses()
         }
     }
 }

@@ -6,19 +6,31 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
-import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
 import ru.eco.automan.databinding.FragmentSettingsAutoBinding
+import ru.eco.automan.viewModelFactories.EventsViewModelFactory
+import ru.eco.automan.viewModelFactories.ExpenseViewModelFactory
+import ru.eco.automan.viewModelFactories.SettingsViewModelFactory
 import ru.eco.automan.viewModels.EventsViewModel
+import ru.eco.automan.viewModels.ExpenseViewModel
 import ru.eco.automan.viewModels.SettingsViewModel
 
 class SettingsFragment : Fragment(R.layout.fragment_settings_auto) {
-    private val settingsViewModel: SettingsViewModel by activityViewModels()
-    private val eventsViewModel:EventsViewModel by activityViewModels()
+    private val settingsViewModel: SettingsViewModel by activityViewModels {
+        SettingsViewModelFactory(AutoApplication.sharedPreferences)
+    }
+    private val eventsViewModel: EventsViewModel by activityViewModels {
+        EventsViewModelFactory(AutoApplication.eventsRepository)
+    }
+    private val expenseViewModel: ExpenseViewModel by activityViewModels {
+        ExpenseViewModelFactory(
+            AutoApplication.expenseRepository
+        )
+    }
 
     private var _binding: FragmentSettingsAutoBinding? = null
     private val binding get() = _binding!!
@@ -81,17 +93,17 @@ class SettingsFragment : Fragment(R.layout.fragment_settings_auto) {
 
                 override fun onNothingSelected(p0: AdapterView<*>?) {}
             }
+            notificationSwitch.isChecked = settingsViewModel.getNotificationStatus()
             notificationSwitch.setOnCheckedChangeListener { compoundButton, b ->
                 settingsViewModel.setNotifications(b)
             }
-
             eventTextView.setOnClickListener {
                 findNavController().navigate(R.id.action_settingsFragment_to_eventsFragment)
             }
-
-            eventsNumber.text = eventsViewModel.getEventsNumber().toString()
-
-
+            clearExpenses.setOnClickListener {
+                expenseViewModel.deleteAllExpenses()
+            }
+            eventsNumber.text = eventsViewModel.getEventsNumberByAutoId().toString()
         }
     }
 

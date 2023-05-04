@@ -2,6 +2,7 @@ package ru.eco.automan.repositories
 
 import androidx.lifecycle.LiveData
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import ru.eco.automan.dao.AutoDao
@@ -41,13 +42,26 @@ class AutoRepository(
     val fuelTypes get() = _fuels!!
 
     init {
-        runBlocking(Dispatchers.IO){
-            _autos = autoDao.getAllAutosLiveData()
-            _brands = brandDao.getAllBrands()
-            _models = modelDao.getAllModels()
-            _fuels = fuelTypeDao.getAllFuelTypes()
+        runBlocking(Dispatchers.IO) {
+            val autoJob = launch {
+                _autos = autoDao.getAllAutosLiveData()
+            }
+            val brandsJob = launch {
+                _brands = brandDao.getAllBrands()
+            }
+            val modelsJob = launch {
+                _models = modelDao.getAllModels()
+            }
+            val fuelsJob = launch {
+                _fuels = fuelTypeDao.getAllFuelTypes()
+            }
+            autoJob.join()
+            brandsJob.join()
+            modelsJob.join()
+            fuelsJob.join()
         }
     }
+
     /**
      * Метод добавления нового автомобиля пользователя в БД
      * @param auto Экземпляр автомобиля с заполненными полями данных для внесения в БД
@@ -62,9 +76,9 @@ class AutoRepository(
 
     /**
      * Метод удаления существующего в БД автомобиля
-     * @param auto Экземпляр автомобиля, подлежащего удалению
+     * @param auto ID Экземпляра автомобиля, подлежащего удалению
      */
-    fun deleteAuto(auto: Auto) = autoDao.deleteAuto(auto)
+    fun deleteAuto(autoId: Int) = autoDao.deleteAuto(autoId)
 
     /**
      * Метод получения списка моделей по определенному бренду

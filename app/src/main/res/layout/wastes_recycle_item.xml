@@ -79,7 +79,7 @@
                 app:layout_constraintTop_toBottomOf="@id/recycler_wastes" />
 
             <EditText
-                android:id="@+id/newWasteName"
+                android:id="@+id/new_event"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -103,9 +103,9 @@
                 android:paddingHorizontal="10dp"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@id/newWasteName"
-                app:layout_constraintStart_toStartOf="@id/newWasteName"
-                app:layout_constraintTop_toBottomOf="@id/newWasteName"
+                app:layout_constraintEnd_toEndOf="@id/new_event"
+                app:layout_constraintStart_toStartOf="@id/new_event"
+                app:layout_constraintTop_toBottomOf="@id/new_event"
                 android:inputType="numberDecimal"/>
 
 

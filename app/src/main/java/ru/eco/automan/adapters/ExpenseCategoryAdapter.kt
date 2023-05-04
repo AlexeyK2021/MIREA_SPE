@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.eco.automan.R
 import ru.eco.automan.listeners.OnAddExpenseListener
 import ru.eco.automan.models.CategoryWithExpenseAndIcon
-import kotlin.math.exp
 
 /**
  * ViewHolder для списка категорий трат
@@ -21,7 +20,7 @@ class ExpenseCategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val wasteCategoryName: TextView = view.findViewById(R.id.textWastes)
     val wastesSum: TextView = view.findViewById(R.id.costWastes)
     val wastesListRecycler: RecyclerView = view.findViewById(R.id.recycler_wastes)
-    val newWasteName: TextView = view.findViewById(R.id.newWasteName)
+    val newWasteName: TextView = view.findViewById(R.id.new_event)
     val newWasteAmount: TextView = view.findViewById(R.id.newWasteAmount)
     val addWaste: ImageView = view.findViewById(R.id.add_waste)
 

@@ -147,7 +147,7 @@
         app:layout_constraintTop_toTopOf="@id/eventTextView" />
 
     <TextView
-        android:id="@+id/ClearTextView"
+        android:id="@+id/clear_expenses"
         style="@style/TextSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

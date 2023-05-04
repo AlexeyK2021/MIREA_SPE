@@ -48,4 +48,10 @@ interface ExpenseDao {
 
     @Delete
     fun deleteExpenses(expenses: List<Expense>)
+
+    @Query("DELETE FROM expense WHERE auto_id =:autoId")
+    fun deleteExpensesByAutoId(autoId: Int)
+
+    @Query("DELETE FROM expense ")
+    fun deleteAllExpenses()
 }

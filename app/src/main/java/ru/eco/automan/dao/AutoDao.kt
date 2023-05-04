@@ -50,7 +50,7 @@ interface AutoDao {
      * Метод для удаления информации об автомобиле из БД
      * @param auto Экзепляр автомобиля, подлежащего удалению
      */
-    @Delete
-    fun deleteAuto(auto: Auto)
+    @Query("DELETE FROM auto WHERE id =:autoId")
+    fun deleteAuto(autoId: Int)
 
 }

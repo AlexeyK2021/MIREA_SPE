@@ -49,8 +49,8 @@
 
     <!-- RulesFragment -->
     <string name="pdd">Правила дорожного\nдвижения</string>
-    <string name="new_waste_name">New waste name</string>
-    <string name="new_waste_cost">New waste cost</string>
+    <string name="new_waste_name">Имя новой траты</string>
+    <string name="new_waste_cost">Стоимость</string>
 
     <!-- Fines -->
     <string name="check_fines_button">Проверить</string>
@@ -59,6 +59,9 @@
     <!--    Notifications-->
     <string name="events">События</string>
     <string name="events_description">Получайте уведомления о предстоящих событиях</string>
+    <string name="fines">Штрафы</string>
+    <string name="event_date">Дата события</string>
+    <string name="new_event_name">Имя нового события</string>
 
     <string-array name="themes">
         <!--        <item>Светлая</item>-->

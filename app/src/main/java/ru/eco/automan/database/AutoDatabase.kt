@@ -17,6 +17,7 @@ import ru.eco.automan.models.*
  * @see FuelType
  * @see Chapter
  * @see Paragraph
+ * @see Event
  */
 @Database(
     entities = [
@@ -27,7 +28,8 @@ import ru.eco.automan.models.*
         Expense::class,
         FuelType::class,
         Chapter::class,
-        Paragraph::class
+        Paragraph::class,
+        Event::class
     ],
     version = 1,
     exportSchema = true
@@ -42,4 +44,5 @@ abstract class AutoDatabase : RoomDatabase() {
     abstract fun modelDao(): ModelDao
     abstract fun chapterDao(): ChapterDao
     abstract fun paragraphDao(): ParagraphDao
+    abstract fun eventDao(): EventDao
 }
