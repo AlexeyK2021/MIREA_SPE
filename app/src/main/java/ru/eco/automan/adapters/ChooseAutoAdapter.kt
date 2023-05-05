@@ -11,7 +11,7 @@ import ru.eco.automan.listeners.OnAutoChooseClickListener
 import ru.eco.automan.models.AutoWithModelAndBrand
 
 class ChooseAutoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val autoName: TextView = itemView.findViewById(R.id.auto_name)
+    val autoName: TextView = itemView.findViewById(R.id.event_name)
     val deleteAuto: ImageView = itemView.findViewById(R.id.delete_auto)
 }
 

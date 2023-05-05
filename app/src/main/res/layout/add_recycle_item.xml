@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/user_auto"
+        android:id="@+id/event"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:src="@drawable/rectangle_210"
@@ -20,33 +20,33 @@
         app:layout_constraintEnd_toStartOf="@id/delete_auto"/>
 
     <TextView
-        android:id="@+id/auto_name"
+        android:id="@+id/event_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/user_auto"
-        app:layout_constraintBottom_toBottomOf="@id/user_auto"
-        app:layout_constraintTop_toTopOf="@id/user_auto"
-        app:layout_constraintEnd_toStartOf="@id/autoImage"
+        app:layout_constraintStart_toStartOf="@id/event"
+        app:layout_constraintBottom_toBottomOf="@id/event"
+        app:layout_constraintTop_toTopOf="@id/event"
+        app:layout_constraintEnd_toStartOf="@id/days_before"
         tools:text="Mercedes-benz C300"/>
 
     <ImageView
-        android:id="@+id/autoImage"
+        android:id="@+id/days_before"
         android:layout_width="67dp"
         android:layout_height="38dp"
         android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintBottom_toBottomOf="@id/user_auto"
-        app:layout_constraintTop_toTopOf="@id/user_auto"
-        app:layout_constraintEnd_toEndOf="@id/user_auto"
-        app:layout_constraintStart_toEndOf="@id/auto_name"/>
+        app:layout_constraintBottom_toBottomOf="@id/event"
+        app:layout_constraintTop_toTopOf="@id/event"
+        app:layout_constraintEnd_toEndOf="@id/event"
+        app:layout_constraintStart_toEndOf="@id/event_name"/>
 
     <ImageView
         android:id="@+id/delete_auto"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/radio_button_unchecked"
-        app:layout_constraintStart_toEndOf="@id/user_auto"
+        app:layout_constraintStart_toEndOf="@id/event"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -63,7 +63,7 @@
         android:id="@+id/barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="user_auto, delete_auto"
+        app:constraint_referenced_ids="event, delete_auto"
         app:barrierDirection="bottom"/>
 
     <Space

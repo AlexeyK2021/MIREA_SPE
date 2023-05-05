@@ -22,7 +22,7 @@ class ExpenseCategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val wastesListRecycler: RecyclerView = view.findViewById(R.id.recycler_wastes)
     val newWasteName: TextView = view.findViewById(R.id.new_event)
     val newWasteAmount: TextView = view.findViewById(R.id.newWasteAmount)
-    val addWaste: ImageView = view.findViewById(R.id.add_waste)
+    val addWaste: ImageView = view.findViewById(R.id.add_event)
 
     fun bind(result: CategoryWithExpenseAndIcon, onAddExpenseListener: OnAddExpenseListener) {
         wasteImage.setImageDrawable(result.categoryImage)

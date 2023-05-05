@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@id/textXyev" />
 
     <ImageView
-        android:id="@+id/add_waste"
+        android:id="@+id/add_event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="15dp"
@@ -77,12 +77,12 @@
         android:paddingHorizontal="10dp"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/add_waste"
-        app:layout_constraintStart_toEndOf="@id/add_waste"
+        app:layout_constraintBottom_toBottomOf="@id/add_event"
+        app:layout_constraintStart_toEndOf="@id/add_event"
         app:layout_constraintTop_toBottomOf="@id/events_list"
         app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"/>
 
-    <EditText
+    <TextView
         android:id="@+id/event_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

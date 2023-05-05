@@ -84,7 +84,7 @@ class AutoApplication : Application() {
                 Log.d("AutoApplication#onCreate", "rulesRepo created")
             }
             val eventsRepoJob = launch {
-                eventsRepo = EventsRepository()
+                eventsRepo = EventsRepository(_database.eventDao())
                 Log.d("AutoApplication#onCreate", "eventsRepo created")
             }
             autoRepoJob.join()
