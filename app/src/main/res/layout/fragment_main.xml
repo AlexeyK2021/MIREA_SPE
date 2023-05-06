@@ -7,6 +7,34 @@
     android:background="@color/black"
     tools:context=".fragments.MainFragment">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalBeginGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="80dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalBeginGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalEndGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp"/>
+
     <ImageView
         android:id="@+id/settingsButton"
         android:layout_height="48dp"
@@ -61,36 +89,41 @@
 
     <ImageView
         android:id="@+id/moreExpencesImage"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        app:layout_constraintTop_toBottomOf="@id/checksImage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/baseline_keyboard_arrow_down_24" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toTopOf="@id/finesButton"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        android:src="@drawable/rectangle_with_arrow" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/fineButton"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="ПДД"
-        app:layout_constraintTop_toBottomOf="@+id/moreExpencesImage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/pddButton"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/finesButton"
+        style="@style/Button.Black"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
         android:text="@string/fines"
-        app:layout_constraintTop_toBottomOf="@+id/fineButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:paddingEnd="160dp"
+        android:paddingVertical="5dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintWidth_percent="0.65"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        app:layout_constraintBottom_toTopOf="@id/pddButton"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/pddButton"
+        style="@style/Button.Black"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:text="ПДД"
+        android:paddingEnd="190dp"
+        android:paddingVertical="5dp"
+        app:layout_constraintWidth_percent="0.65"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
