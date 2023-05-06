@@ -14,7 +14,6 @@ import ru.eco.automan.models.Event
 class EventsRepository(private val eventDao: EventDao) {
     private var _events: LiveData<List<Event>>? = null
     val events get() = _events!!
-
     init {
         runBlocking {
             val eventsJob = launch {

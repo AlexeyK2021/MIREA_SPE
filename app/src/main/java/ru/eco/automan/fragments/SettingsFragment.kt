@@ -12,9 +12,11 @@ import androidx.navigation.fragment.findNavController
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
 import ru.eco.automan.databinding.FragmentSettingsAutoBinding
+import ru.eco.automan.viewModelFactories.AutoViewModelFactory
 import ru.eco.automan.viewModelFactories.EventsViewModelFactory
 import ru.eco.automan.viewModelFactories.ExpenseViewModelFactory
 import ru.eco.automan.viewModelFactories.SettingsViewModelFactory
+import ru.eco.automan.viewModels.AutoViewModel
 import ru.eco.automan.viewModels.EventsViewModel
 import ru.eco.automan.viewModels.ExpenseViewModel
 import ru.eco.automan.viewModels.SettingsViewModel
@@ -29,6 +31,11 @@ class SettingsFragment : Fragment(R.layout.fragment_settings_auto) {
     private val expenseViewModel: ExpenseViewModel by activityViewModels {
         ExpenseViewModelFactory(
             AutoApplication.expenseRepository
+        )
+    }
+    private val autoViewModel: AutoViewModel by activityViewModels {
+        AutoViewModelFactory(
+            AutoApplication.autoRepository
         )
     }
 
@@ -103,7 +110,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings_auto) {
             clearExpenses.setOnClickListener {
                 expenseViewModel.deleteAllExpenses()
             }
-            eventsNumber.text = eventsViewModel.getEventsNumberByAutoId().toString()
+            eventsNumber.text = eventsViewModel.getEventsNumberByAutoId(autoViewModel.currAuto.value!!.id).toString()
         }
     }
 

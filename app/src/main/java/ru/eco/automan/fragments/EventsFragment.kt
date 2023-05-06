@@ -2,6 +2,7 @@ package ru.eco.automan.fragments
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,37 +49,36 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
 
         binding.apply {
             eventsList.layoutManager = lm
-            eventsList.adapter =
-                EventsAdapter(eventsViewModel.getEventsByAutoId(autoViewModel.currAuto.value!!.id))
+
+            eventsViewModel.autoEvents.observe(viewLifecycleOwner) {
+                eventsList.adapter =
+                    EventsAdapter(eventsViewModel.getEventsByAutoId(autoViewModel.currAuto.value!!.id))
+            }
 
             addEvent.setOnClickListener {
-                if (date != null)
+                if (date != null && Calendar.getInstance().timeInMillis < date!!.time)
                     eventsViewModel.addEvent(
                         newEvent.text.toString(),
                         date!!,
                         autoViewModel.currAuto.value!!.id
                     )
+                newEvent.text = "".getEditable()
+                eventDate.text = ""
             }
 
             eventDate.setOnClickListener {
-                val chosenDate = showDatePicker()
-                eventDate.text = chosenDate
-                date = Date.valueOf(chosenDate)
+                val dateAndTime = Calendar.getInstance()
+                val _year = dateAndTime.get(Calendar.YEAR)
+                val _month = dateAndTime.get(Calendar.MONTH)
+                val _day = dateAndTime.get(Calendar.DAY_OF_MONTH)
+
+                DatePickerDialog(requireContext(), { view, year, month, day ->
+                    val text = "$year-${month + 1}-$day"
+                    date = Date.valueOf(text)
+                    val dateToShow = "$day.${month + 1}.${year}"
+                    eventDate.text = dateToShow
+                }, _year, _month, _day).show()
             }
         }
-    }
-
-    private fun showDatePicker(): String {
-        val dateAndTime = Calendar.getInstance()
-        val year = dateAndTime.get(Calendar.YEAR)
-        val month = dateAndTime.get(Calendar.MONTH)
-        val day = dateAndTime.get(Calendar.DAY_OF_MONTH)
-        var text = ""
-
-        val dpd = DatePickerDialog(requireContext(), { view, year, monthOfYear, dayOfMonth ->
-            text = "$dayOfMonth.$monthOfYear.$year"
-        }, year, month, day)
-        dpd.show()
-        return text
     }
 }

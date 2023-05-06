@@ -25,10 +25,12 @@ class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         val curr = eventsList[position]
+        val daysBefore = getNumberDaysBefore(curr.date)
+
         val days = holder.itemView.resources.getQuantityString(
-            R.plurals.days,
-            getNumberDaysBefore(curr.date)
+            R.plurals.days, daysBefore, daysBefore
         )
+
         holder.apply {
             eventName.text = curr.name
             eventDate.text = days
@@ -37,7 +39,10 @@ class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<
 
     override fun getItemCount(): Int = eventsList.size
 
-    private fun getNumberDaysBefore(date: Date): Int =
-        ((Calendar.getInstance().timeInMillis - date.time) / AutoApplication.periods[0].secondsNum).toInt()
+    private fun getNumberDaysBefore(date: Date): Int {
+        val daysInMs = date.time - Calendar.getInstance().timeInMillis
+        val days = daysInMs / AutoApplication.periods[0].secondsNum + 1
+        return days.toInt()
+    }
 
 }

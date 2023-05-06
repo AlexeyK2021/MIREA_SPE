@@ -78,6 +78,7 @@
         <item quantity="two">%1$d дня</item>
         <item quantity="few">%1$d дня</item>
         <item quantity="many">%1$d дней</item>
+        <item quantity="other">%1$d дня</item>
     </plurals>
 
     <string-array name="wastes_periods">

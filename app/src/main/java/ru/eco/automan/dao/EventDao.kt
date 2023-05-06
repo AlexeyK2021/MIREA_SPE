@@ -1,6 +1,7 @@
 package ru.eco.automan.dao
 
 import androidx.lifecycle.LiveData
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import ru.eco.automan.models.Event
@@ -9,6 +10,7 @@ import ru.eco.automan.models.Event
  * Интерфейс, позволяющий получить доступ к данным о предстоящих собитиях
  * @see Event
  */
+@Dao
 interface EventDao {
 
     @Insert

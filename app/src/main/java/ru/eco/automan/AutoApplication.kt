@@ -95,11 +95,11 @@ class AutoApplication : Application() {
 
         _notificationController = NotificationController()
 
-        val periods = resources.getStringArray(R.array.wastes_periods)
+        val periodsNames = resources.getStringArray(R.array.wastes_periods)
         _periods = mutableListOf(
-            Period(periods[0], 86_400_000),
-            Period(periods[1], 604_800_000),
-            Period(periods[2], 2_678_400_000)
+            Period(periodsNames[0], 86_400_000),
+            Period(periodsNames[1], 604_800_000),
+            Period(periodsNames[2], 2_678_400_000)
         )
         createNotificationChannel()
     }

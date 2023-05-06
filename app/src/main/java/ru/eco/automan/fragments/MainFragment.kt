@@ -36,11 +36,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 findNavController().navigate(R.id.action_mainFragment_to_wastesListFragment)
             }
 
-            pddButton.setOnClickListener {
+            finesButton.setOnClickListener {
                 findNavController().navigate(R.id.action_mainFragment_to_finesFragment)
             }
 
-            fineButton.setOnClickListener {
+            pddButton.setOnClickListener {
                 findNavController().navigate(R.id.action_mainFragment_to_rulesChapterFragment)
             }
 
