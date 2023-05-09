@@ -22,4 +22,7 @@ interface EventDao {
     @Query("SELECT * FROM event")
     fun getAllEventsLiveData(): LiveData<List<Event>>
 
+    @Query("SELECT * FROM event")
+    fun getAllEvents(): List<Event>
+
 }

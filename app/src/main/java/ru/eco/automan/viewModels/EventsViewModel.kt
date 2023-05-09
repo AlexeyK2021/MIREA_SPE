@@ -1,5 +1,6 @@
 package ru.eco.automan.viewModels
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
@@ -19,31 +20,32 @@ fun Date.getEstimatedDays(): Int {
 class EventsViewModel(private val eventsRepository: EventsRepository) : ViewModel() {
     val autoEvents get() = eventsRepository.events
 
-    init {
-        viewModelScope.launch(Dispatchers.IO) {
-            autoEvents.value?.forEach {
-                if (it.date.getEstimatedDays() <= 0) eventsRepository.deleteEvent(it.id)
-            }
 
         }
     }
 
-        fun getEventsNumberByAutoId(autoId: Int): Int {
-            val number = autoEvents.value?.count { it.autoId == autoId }
-            return if (number == null) 0 else number
+    fun getEventsByAutoId(autoId: Int): List<Event> {
+        checkDate()
+        val ret = mutableListOf<Event>()
+        autoEvents.value?.forEach {
+            if (it.autoId == autoId) ret.add(it)
         }
+        return ret
+    }
 
-        fun getEventsByAutoId(autoId: Int): List<Event> {
-            val ret = mutableListOf<Event>()
-            autoEvents.value?.forEach {
-                if (it.autoId == autoId) ret.add(it)
-            }
-            return ret
+    fun addEvent(name: String, date: Date, autoId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            eventsRepository.addEvent(Event(id = 0, name = name, date = date, autoId = autoId))
         }
+    }
 
-        fun addEvent(name: String, date: Date, autoId: Int) {
-            viewModelScope.launch(Dispatchers.IO) {
-                eventsRepository.addEvent(Event(id = 0, name = name, date = date, autoId = autoId))
+    private fun checkDate() {
+        viewModelScope.launch(Dispatchers.IO) {
+            autoEvents.value!!.forEach {
+                if (it.date.getEstimatedDays() <= 0) {
+                    Log.d("EventsRepository#Init", it.name)
+                    eventsRepository.deleteEvent(it.id)
+                }
             }
         }
 }

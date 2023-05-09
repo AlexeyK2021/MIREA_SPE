@@ -1,5 +1,6 @@
 package ru.eco.automan
 
+import android.app.AlarmManager
 import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -7,7 +8,11 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
 import android.util.Log
+import androidx.constraintlayout.widget.Constraints
 import androidx.room.Room
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import ru.eco.automan.NotificationController.Companion.CHANNEL_ID
@@ -17,6 +22,7 @@ import ru.eco.automan.repositories.AutoRepository
 import ru.eco.automan.repositories.EventsRepository
 import ru.eco.automan.repositories.ExpenseRepository
 import ru.eco.automan.repositories.RulesRepository
+import java.util.concurrent.TimeUnit
 
 /**
  * Класс приложения
@@ -102,6 +108,9 @@ class AutoApplication : Application() {
             Period(periodsNames[2], 2_678_400_000)
         )
         createNotificationChannel()
+
+        val workRequest = PeriodicWorkRequestBuilder<EventWorker>(1, TimeUnit.DAYS).build()
+        WorkManager.getInstance(this).enqueue(workRequest)
     }
 
     private fun createNotificationChannel() {
