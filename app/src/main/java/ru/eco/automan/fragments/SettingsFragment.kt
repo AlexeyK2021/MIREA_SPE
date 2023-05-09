@@ -111,7 +111,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings_auto) {
                 expenseViewModel.deleteAllExpenses()
             }
             eventsViewModel.autoEvents.observe(viewLifecycleOwner){
-                eventsNumber.text = eventsViewModel.getEventsNumberByAutoId(autoViewModel.currAuto.value!!.id).toString()
+                eventsNumber.text = eventsViewModel.getEventsByAutoId(autoViewModel.currAuto.value!!.id).size.toString()
             }
         }
     }

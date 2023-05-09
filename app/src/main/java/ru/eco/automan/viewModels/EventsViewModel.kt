@@ -20,10 +20,6 @@ fun Date.getEstimatedDays(): Int {
 class EventsViewModel(private val eventsRepository: EventsRepository) : ViewModel() {
     val autoEvents get() = eventsRepository.events
 
-
-        }
-    }
-
     fun getEventsByAutoId(autoId: Int): List<Event> {
         checkDate()
         val ret = mutableListOf<Event>()
@@ -48,4 +44,5 @@ class EventsViewModel(private val eventsRepository: EventsRepository) : ViewMode
                 }
             }
         }
+    }
 }
