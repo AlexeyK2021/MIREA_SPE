@@ -26,6 +26,7 @@ class EventsViewModel(private val eventsRepository: EventsRepository) : ViewMode
             }
 
         }
+    }
 
         fun getEventsNumberByAutoId(autoId: Int): Int {
             val number = autoEvents.value?.count { it.autoId == autoId }
@@ -45,5 +46,4 @@ class EventsViewModel(private val eventsRepository: EventsRepository) : ViewMode
                 eventsRepository.addEvent(Event(id = 0, name = name, date = date, autoId = autoId))
             }
         }
-
-    }
+}

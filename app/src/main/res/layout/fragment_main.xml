@@ -37,35 +37,49 @@
 
     <ImageView
         android:id="@+id/settingsButton"
-        android:layout_height="48dp"
-        android:layout_width="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="36dp"
+        android:layout_width="36dp"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"
         android:src="@drawable/baseline_settings" />
 
     <ImageView
         android:id="@+id/editAutoButton"
-        android:layout_height="48dp"
-        android:layout_width="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="36dp"
+        android:layout_width="36dp"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"
         android:src="@drawable/baseline_settings" />
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:text="@string/app_name"
+        app:layout_constraintEnd_toStartOf="@id/editAutoButton"
+        app:layout_constraintStart_toEndOf="@id/settingsButton"
+        app:layout_constraintTop_toTopOf="@id/settingsButton"/>
+
 
     <ImageView
         android:id="@+id/auto_image"
         android:layout_height="164dp"
         android:layout_width="164dp"
-        app:layout_constraintTop_toBottomOf="@+id/editAutoButton"
-        app:layout_constraintStart_toEndOf="@+id/settingsButton"
-        app:layout_constraintEnd_toStartOf="@id/editAutoButton"
-        android:src="@drawable/baseline_settings" />
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/appName"
+        app:layout_constraintStart_toEndOf="@+id/verticalBeginGuideline"
+        app:layout_constraintEnd_toStartOf="@id/verticalEndGuideLine"
+        android:src="@drawable/radio_button_unchecked" />
 
     <ImageView
         android:id="@+id/oilImage"
         android:layout_height="64dp"
         android:layout_width="64dp"
-        app:layout_constraintTop_toBottomOf="@id/auto_image"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/checksImage"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
         app:layout_constraintEnd_toStartOf="@id/checksImage"
         android:src="@drawable/baseline_settings" />
 
@@ -76,15 +90,17 @@
         app:layout_constraintTop_toBottomOf="@id/auto_image"
         app:layout_constraintStart_toEndOf="@id/oilImage"
         app:layout_constraintEnd_toStartOf="@id/repairImage"
+        app:layout_constraintBottom_toTopOf="@id/moreExpencesImage"
+        app:layout_constraintVertical_bias="0.8"
         android:src="@drawable/baseline_settings" />
 
     <ImageView
         android:id="@+id/repairImage"
         android:layout_height="64dp"
         android:layout_width="64dp"
-        app:layout_constraintTop_toBottomOf="@id/auto_image"
+        app:layout_constraintTop_toTopOf="@id/checksImage"
         app:layout_constraintStart_toEndOf="@id/checksImage"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
         android:src="@drawable/baseline_settings" />
 
     <ImageView

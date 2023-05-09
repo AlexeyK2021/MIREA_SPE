@@ -1,13 +1,20 @@
 package ru.eco.automan.adapters
 
+import android.animation.LayoutTransition
 import android.annotation.SuppressLint
+import android.os.Build
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.delay
 import ru.eco.automan.R
 import ru.eco.automan.listeners.OnAddExpenseListener
 import ru.eco.automan.models.CategoryWithExpenseAndIcon
@@ -16,6 +23,7 @@ import ru.eco.automan.models.CategoryWithExpenseAndIcon
  * ViewHolder для списка категорий трат
  */
 class ExpenseCategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    val constraintLayout: ConstraintLayout = view.findViewById(R.id.constraintWastes)
     val wasteImage: ImageView = view.findViewById(R.id.imageWastes)
     val wasteCategoryName: TextView = view.findViewById(R.id.textWastes)
     val wastesSum: TextView = view.findViewById(R.id.costWastes)
@@ -32,6 +40,8 @@ class ExpenseCategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         wastesListRecycler.adapter = ExpenseAdapter(result.expensesList)
         wastesListRecycler.layoutManager = LinearLayoutManager(itemView.context)
 
+        constraintLayout.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
+
         addWaste.setOnClickListener {
             val expenseAmount = newWasteAmount.text.toString()
             if (newWasteName.text.isNotEmpty())
@@ -43,6 +53,23 @@ class ExpenseCategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             newWasteName.text = ""
             newWasteAmount.text = ""
         }
+    }
+
+    fun expend(){
+        var v: Int
+        v = if (wastesListRecycler.visibility == View.GONE &&
+            addWaste.visibility == View.GONE &&
+            newWasteName.visibility == View.GONE &&
+            newWasteAmount.visibility == View.GONE) {
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
+
+        TransitionManager.beginDelayedTransition(constraintLayout, AutoTransition())
+        addWaste.visibility = v
+        newWasteName.visibility = v
+        newWasteAmount.visibility = v
     }
 }
 

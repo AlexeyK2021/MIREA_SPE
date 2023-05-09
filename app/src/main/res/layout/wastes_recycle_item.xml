@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#212121"
-            android:paddingHorizontal="5dp">
+            android:paddingHorizontal="5dp"
+            android:animateLayoutChanges="true">
 
             <ImageView
                 android:id="@+id/imageWastes"
