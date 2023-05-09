@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,6 +25,7 @@ import ru.eco.automan.models.CategoryWithExpenseAndIcon
  */
 class ExpenseCategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val constraintLayout: ConstraintLayout = view.findViewById(R.id.constraintWastes)
+    val cardView: CardView = view.findViewById(R.id.CardView)
     val wasteImage: ImageView = view.findViewById(R.id.imageWastes)
     val wasteCategoryName: TextView = view.findViewById(R.id.textWastes)
     val wastesSum: TextView = view.findViewById(R.id.costWastes)
@@ -53,7 +55,13 @@ class ExpenseCategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             newWasteName.text = ""
             newWasteAmount.text = ""
         }
+
+        cardView.setOnClickListener {
+            expend()
+        }
     }
+
+
 
     fun expend(){
         var v: Int
@@ -70,6 +78,7 @@ class ExpenseCategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         addWaste.visibility = v
         newWasteName.visibility = v
         newWasteAmount.visibility = v
+        wastesListRecycler.visibility = v
     }
 }
 
@@ -87,6 +96,7 @@ class ExpenseCategoryAdapter(
 
     override fun onBindViewHolder(holder: ExpenseCategoryViewHolder, position: Int) {
         holder.bind(result = data[position], onAddExpenseListener = onAddExpenseListener)
+        holder.expend()
     }
 
     override fun getItemCount(): Int = data.size
