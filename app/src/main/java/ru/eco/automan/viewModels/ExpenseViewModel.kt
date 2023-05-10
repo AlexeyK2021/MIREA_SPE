@@ -149,9 +149,16 @@ class ExpenseViewModel(
             expenseRepository.deleteExpensesByAutoId(autoId)
         }
     }
-    fun deleteAllExpenses(){
+
+    fun deleteAllExpenses() {
         viewModelScope.launch(Dispatchers.IO) {
             expenseRepository.deleteAllExpenses()
+        }
+    }
+
+    fun addNewCategory(categoryName: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            expenseRepository.addCategory(Category(id = 0, name = categoryName))
         }
     }
 }

@@ -62,6 +62,7 @@
     <string name="fines">Штрафы</string>
     <string name="event_date">Дата события</string>
     <string name="new_event_name">Имя нового события</string>
+    <string name="new_category_name">Имя новой категории</string>
 
     <string-array name="themes">
         <!--        <item>Светлая</item>-->

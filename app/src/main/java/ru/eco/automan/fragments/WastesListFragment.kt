@@ -69,6 +69,12 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
 
                 override fun onNothingSelected(p0: AdapterView<*>?) {}
             }
+
+            addCategory.setOnClickListener {
+                if (newCategory.text.toString().isNotEmpty())
+                    expenseViewModel.addNewCategory(newCategory.text.toString())
+                newCategory.text = "".getEditable()
+            }
         }
 
         expenseViewModel.userExpenses.observe(viewLifecycleOwner) {
@@ -81,6 +87,7 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
             eca.updateData(expenseViewModel.getCategoryWithExpensesAndIcon(view.context))
             eca.notifyDataSetChanged()
         }
+
 
 //        expenseViewModel.categories.observe(viewLifecycleOwner) {
 //            val data = expenseViewModel.getCategoryWithExpensesAndIcon(view.context)

@@ -49,33 +49,61 @@
         android:id="@+id/period_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:entries="@array/wastes_periods"
         app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
-        app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"
-        android:entries="@array/wastes_periods"/>
+        app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/expenses_recycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginVertical="20dp"
+        app:layout_constraintBottom_toTopOf="@id/new_category"
         app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
         app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
         app:layout_constraintTop_toBottomOf="@id/periodTextView"
-        tools:listitem="@layout/wastes_recycle_item"
-        app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline"/>
-<!--    app:layout_constraintBottom_toTopOf="@id/continueButton"-->
+        tools:listitem="@layout/wastes_recycle_item" />
+    <!--    app:layout_constraintBottom_toTopOf="@id/continueButton"-->
 
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/continueButton"-->
-<!--            style="@style/Button.White"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/continue_wastes"-->
-<!--            android:paddingVertical="15dp"-->
-<!--            app:layout_constraintWidth_percent="0.65"-->
-<!--            app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"-->
-<!--            app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline" />-->
+    <!--        <com.google.android.material.button.MaterialButton-->
+    <!--            android:id="@+id/continueButton"-->
+    <!--            style="@style/Button.White"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="@string/continue_wastes"-->
+    <!--            android:paddingVertical="15dp"-->
+    <!--            app:layout_constraintWidth_percent="0.65"-->
+    <!--            app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"-->
+    <!--            app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"-->
+    <!--            app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline" />-->
+
+    <ImageView
+        android:id="@+id/add_category"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="15dp"
+        android:src="@drawable/vector_oke"
+        app:layout_constraintBottom_toBottomOf="@id/new_category"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        app:layout_constraintTop_toTopOf="@id/new_category" />
+
+    <EditText
+        android:id="@+id/new_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/rectangle_214"
+        android:hint="@string/new_category_name"
+        android:inputType="text"
+        android:paddingHorizontal="10dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/verticalEndGuideLine"
+        app:layout_constraintStart_toEndOf="@id/add_category"
+        app:layout_constraintTop_toBottomOf="@id/expenses_recycler" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
