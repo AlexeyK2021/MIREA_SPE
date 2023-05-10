@@ -9,11 +9,19 @@ import ru.eco.automan.R
 import ru.eco.automan.listeners.OnChapterClickListener
 import ru.eco.automan.models.Chapter
 
+/**
+ * ViewHolder для отображения списка глав правил ПДД.
+ */
 class RulesViewHolder(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
     val chapterName: TextView = itemView.findViewById(R.id.chapter_name)
 }
 
+/**
+ * адаптер для отображения списка глав правил ПДД.
+ * @param chapterList список глав правил ПДД.
+ * @param onChapterClickListener интерфейс, определяющий реакцию на выбор определенной главы.
+ */
 class RulesAdapter(
     private val chapterList: List<Chapter>,
     private val onChapterClickListener: OnChapterClickListener

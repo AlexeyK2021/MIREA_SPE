@@ -28,9 +28,21 @@ class EventsRepository(private val eventDao: EventDao) {
         }
     }
 
+    /**
+     * Метод получения списка всех предстоящих событий
+     * @return список всех предстоящих событий
+     */
     suspend fun getAllEvents(): List<Event> = eventDao.getAllEvents()
 
+    /**
+     * Метод добавления нового предстоящего события
+     * @param event экземпляр нового события
+     */
     fun addEvent(event: Event) = eventDao.addEvent(event)
 
+    /**
+     * Метод удаления события по его ID-номеру
+     * @param eventId ID-номер события
+     */
     fun deleteEvent(eventId: Int) = eventDao.deleteEvent(eventId = eventId)
 }

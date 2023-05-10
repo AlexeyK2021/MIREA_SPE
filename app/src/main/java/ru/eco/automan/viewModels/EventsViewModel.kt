@@ -11,15 +11,27 @@ import ru.eco.automan.repositories.EventsRepository
 import java.sql.Date
 import java.util.Calendar
 
+/**
+ * Метод для получения количества оставшихся дней до определенной даты
+ */
 fun Date.getEstimatedDays(): Int {
     val daysInMs = this.time - Calendar.getInstance().timeInMillis
     val days = daysInMs / AutoApplication.periods[0].secondsNum + 1
     return days.toInt()
 }
 
+/**
+ * ViewModel, отвечающая за работу со всеми предстоящими событиями.
+ * @param eventsRepository класс репозиторий, работающий с базой данных
+ */
 class EventsViewModel(private val eventsRepository: EventsRepository) : ViewModel() {
     val autoEvents get() = eventsRepository.events
 
+    /**
+     * Метод получения списка предстоящих событий по ID-номеру автомобиля
+     * @param autoId ID-номер автомобиля
+     * @return список предстоящих событий
+     */
     fun getEventsByAutoId(autoId: Int): List<Event> {
         checkDate()
         val ret = mutableListOf<Event>()
@@ -29,12 +41,22 @@ class EventsViewModel(private val eventsRepository: EventsRepository) : ViewMode
         return ret
     }
 
+    /**
+     * Метод добавления нового предстоящего события, параметры, имя, дата и айди, номер автомобиля.
+     * @param name имя предстоящего события
+     * @param date дата предстоящего события
+     * @param autoId ID-номер автомобиля
+     */
     fun addEvent(name: String, date: Date, autoId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             eventsRepository.addEvent(Event(id = 0, name = name, date = date, autoId = autoId))
         }
     }
 
+    /**
+     * Метод проверки существования предстоящего события.
+     * Если дата события уже прошла, то оно удаляется из БД
+     */
     private fun checkDate() {
         viewModelScope.launch(Dispatchers.IO) {
             autoEvents.value!!.forEach {

@@ -5,18 +5,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
 import ru.eco.automan.models.Event
 import ru.eco.automan.viewModels.getEstimatedDays
-import java.util.Calendar
-import java.util.Date
 
+/**
+ * ViewHolder для списка предстоящих событий.
+ */
 class EventViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
     val eventName: TextView = itemview.findViewById(R.id.event_name)
     val eventDate: TextView = itemview.findViewById(R.id.days_before)
 }
 
+/**
+ * Адаптер для списка предстоящих событий.
+ * @param eventsList список предстоящих событий
+ */
 class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<EventViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val itemView =
@@ -39,7 +43,4 @@ class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<
     }
 
     override fun getItemCount(): Int = eventsList.size
-
-
-
 }

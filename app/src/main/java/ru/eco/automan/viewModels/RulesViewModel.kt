@@ -10,6 +10,10 @@ import ru.eco.automan.models.Chapter
 import ru.eco.automan.models.Paragraph
 import ru.eco.automan.repositories.RulesRepository
 
+/**
+ * ViewModel, отвечающая за работу с правилами ПДД.
+ * @param rulesRepository класс репозиторий, работающий с базой данных
+ */
 class RulesViewModel(private val rulesRepository: RulesRepository) : ViewModel() {
     var currentChapterId = MutableLiveData<Int>()
 
@@ -32,6 +36,5 @@ class RulesViewModel(private val rulesRepository: RulesRepository) : ViewModel()
 
     fun getParagraphsForCurrentChapter(): List<Paragraph> =
         rulesRepository.getParagraphsByChapterId(currentChapterId.value!!)
-
 
 }

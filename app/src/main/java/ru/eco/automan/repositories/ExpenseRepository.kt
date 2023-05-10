@@ -78,8 +78,20 @@ class ExpenseRepository(
      */
     fun deleteCategory(category: Category) = categoryDao.deleteCategory(category)
 
+    /**
+     * Метод удаления списка трат
+     * @param expenseList список трат
+     */
     fun deleteExpenses(expenseList: List<Expense>) = expenseDao.deleteExpenses(expenseList)
 
+    /**
+     * Метод удаления списка трат по ID-номеру автомобиля
+     * @param autoId ID-номер автомобиля
+     */
     fun deleteExpensesByAutoId(autoId: Int) = expenseDao.deleteExpensesByAutoId(autoId)
+
+    /**
+     * Метод удаления всех трат
+     */
     fun deleteAllExpenses() = expenseDao.deleteAllExpenses()
 }

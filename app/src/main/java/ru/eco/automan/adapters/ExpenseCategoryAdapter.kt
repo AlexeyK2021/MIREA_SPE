@@ -61,11 +61,8 @@ class ExpenseCategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         }
     }
 
-
-
     fun expend(){
-        var v: Int
-        v = if (wastesListRecycler.visibility == View.GONE &&
+        val v: Int = if (wastesListRecycler.visibility == View.GONE &&
             addWaste.visibility == View.GONE &&
             newWasteName.visibility == View.GONE &&
             newWasteAmount.visibility == View.GONE) {
@@ -82,6 +79,11 @@ class ExpenseCategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     }
 }
 
+/**
+ * Адаптер для отображения категорий трат.
+ * @param data данные для отображения списка категорий.
+ * @param onAddExpenseListener интерфейс для добавления траты.
+ */
 class ExpenseCategoryAdapter(
     private var data: List<CategoryWithExpenseAndIcon>,
     private var onAddExpenseListener: OnAddExpenseListener

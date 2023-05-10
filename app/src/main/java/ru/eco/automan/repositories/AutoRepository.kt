@@ -87,16 +87,28 @@ class AutoRepository(
      */
     fun getModelsByBrand(brand: Brand) = modelDao.getModelsByBrandId(brandId = brand.id)
 
+    /**
+     * Метод добавления бренда
+     * @param brand экземпляр нового бренда
+     */
     fun addBrand(brand: Brand) {
         brandDao.addBrand(brand)
         _brands = brandDao.getAllBrands()
     }
 
+    /**
+     * Метод добавления новой модели
+     * @param model экземпляр новой модели
+     */
     fun addModel(model: Model) {
         modelDao.addModel(model)
         _models = modelDao.getAllModels()
     }
 
+    /**
+     * Метод добавления нового типа топлива
+     * @param fuelType экземпляр нового типа топлива
+     */
     fun addFuelType(fuelType: FuelType) {
         fuelTypeDao.addFuelType(fuelType)
         _fuels = fuelTypeDao.getAllFuelTypes()

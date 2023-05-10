@@ -70,7 +70,6 @@
 
     <string-array name="languages">
         <item>Русский</item>
-        <item>English</item>
     </string-array>
 
     <plurals name="days">
@@ -85,7 +84,6 @@
         <item>День</item>
         <item>Неделя</item>
         <item>Месяц</item>
-        <item>План.\nрасходы</item>
         <item>Все время</item>
     </string-array>
 

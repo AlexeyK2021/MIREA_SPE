@@ -46,12 +46,23 @@ interface ExpenseDao {
     @Delete
     fun deleteExpense(expense: Expense)
 
+    /**
+     * Метод удаления списка расходов
+     * @param expenses список расходов для удаления
+     */
     @Delete
     fun deleteExpenses(expenses: List<Expense>)
 
+    /**
+     * Метод удаления расходов по ID-номеру автомобиля
+     * @param autoId ID-номер автомобиля
+     */
     @Query("DELETE FROM expense WHERE auto_id =:autoId")
     fun deleteExpensesByAutoId(autoId: Int)
 
+    /**
+     * Метод удаления всех расходов
+     */
     @Query("DELETE FROM expense ")
     fun deleteAllExpenses()
 }

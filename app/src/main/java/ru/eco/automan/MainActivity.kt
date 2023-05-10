@@ -15,6 +15,9 @@ import ru.eco.automan.databinding.ActivityMainBinding
 import java.util.Currency
 import java.util.Locale
 
+/**
+ * Активность, на которой находятся все фрагменты
+ */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

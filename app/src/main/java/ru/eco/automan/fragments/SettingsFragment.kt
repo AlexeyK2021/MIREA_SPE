@@ -66,40 +66,32 @@ class SettingsFragment : Fragment(R.layout.fragment_settings_auto) {
 //                resources.getStringArray(R.array.themes)
 //            )
 //            themeSpinner.adapter = themeAdapter
-            themeSpinner.onItemSelectedListener = object : OnItemSelectedListener {
-                override fun onItemSelected(
-                    parentView: AdapterView<*>?,
-                    selectedItemView: View,
-                    position: Int,
-                    id: Long
-                ) {
-//                    Toast.makeText(
-//                        view.context,
-//                        "Clicked ${resources.getStringArray(R.array.themes)[position]}",
-//                        Toast.LENGTH_LONG
-//                    ).show()
-                    settingsViewModel.setTheme(position)
-                }
-
-                override fun onNothingSelected(p0: AdapterView<*>?) {}
-            }
-            languageSpinner.onItemSelectedListener = object : OnItemSelectedListener {
-                override fun onItemSelected(
-                    parentView: AdapterView<*>?,
-                    selectedItemView: View,
-                    position: Int,
-                    id: Long
-                ) {
-//                    Toast.makeText(
-//                        view.context,
-//                        "Clicked ${resources.getStringArray(R.array.languages)[position]}",
-//                        Toast.LENGTH_LONG
-//                    ).show()
-                    settingsViewModel.setLanguage(position)
-                }
-
-                override fun onNothingSelected(p0: AdapterView<*>?) {}
-            }
+            themeSpinner.setSelection(0)
+//            themeSpinner.onItemSelectedListener = object : OnItemSelectedListener {
+//                override fun onItemSelected(
+//                    parentView: AdapterView<*>?,
+//                    selectedItemView: View,
+//                    position: Int,
+//                    id: Long
+//                ) {
+//                    settingsViewModel.setTheme(position)
+//                }
+//
+//                override fun onNothingSelected(p0: AdapterView<*>?) {}
+//            }
+            languageSpinner.setSelection(0)
+//            languageSpinner.onItemSelectedListener = object : OnItemSelectedListener {
+//                override fun onItemSelected(
+//                    parentView: AdapterView<*>?,
+//                    selectedItemView: View,
+//                    position: Int,
+//                    id: Long
+//                ) {
+//                    settingsViewModel.setLanguage(position)
+//                }
+//
+//                override fun onNothingSelected(p0: AdapterView<*>?) {}
+//            }
             notificationSwitch.isChecked = settingsViewModel.getNotificationStatus()
             notificationSwitch.setOnCheckedChangeListener { compoundButton, b ->
                 settingsViewModel.setNotifications(b)

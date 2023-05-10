@@ -8,10 +8,17 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.eco.automan.R
 import ru.eco.automan.models.Paragraph
 
+/**
+ * ViewHolder для отображения списка пунктов правил пдд.
+ */
 class ParagraphViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val paragraphText: TextView = itemView.findViewById(R.id.paragraph_text)
 }
 
+/**
+ * Адаптер для отображения правил ПДД.
+ * @param paragraphsList список пунктов.
+ */
 class ParagraphsAdapter(private val paragraphsList: List<Paragraph>) :
     RecyclerView.Adapter<ParagraphViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ParagraphViewHolder {

@@ -1,6 +1,6 @@
 package ru.eco.automan.adapters
 
-import android.icu.text.Collator.getDisplayName
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +11,9 @@ import ru.eco.automan.models.Expense
 import java.util.Currency
 import java.util.Locale
 
+/**
+ * Функция для получения для получения денежных затрат на трату.
+ */
 fun Float.currency(): String =
     this.toString() + Currency.getInstance(Locale.getDefault(Locale.Category.DISPLAY)).symbol
 
@@ -22,6 +25,10 @@ class ExpenseViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val wasteCost: TextView = view.findViewById(R.id.costWastes)
 }
 
+/**
+ *  Адаптер для траты в определенной категории
+ *  @param expenses список трат в определенной категории
+ */
 class ExpenseAdapter(private val expenses: List<Expense>) :
     RecyclerView.Adapter<ExpenseViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExpenseViewHolder {

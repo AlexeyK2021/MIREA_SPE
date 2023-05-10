@@ -10,11 +10,19 @@ import ru.eco.automan.R
 import ru.eco.automan.listeners.OnAutoChooseClickListener
 import ru.eco.automan.models.AutoWithModelAndBrand
 
+/**
+ * ViewHolder для каждого автомобиля автомобиля
+ */
 class ChooseAutoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val autoName: TextView = itemView.findViewById(R.id.event_name)
     val deleteAuto: ImageView = itemView.findViewById(R.id.delete_auto)
 }
 
+/**
+ * Адаптер для выбора автомобилей из списка
+ * @param autosList список автомобилей и пользователя
+ * @param onAutoChooseClickListener интерфейс, определяющий реакцию по нажатию на автомобиль
+ */
 class ChooseAutoAdapter(
     private val autosList: List<AutoWithModelAndBrand>,
     private val onAutoChooseClickListener: OnAutoChooseClickListener

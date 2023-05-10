@@ -45,6 +45,10 @@ class NotificationController {
 
     }
 
+    /**
+     * Метод создания и посыла уведомления пользователю
+     * @param text текст уведомления
+     */
     @SuppressLint("MissingPermission")
     fun createEventNotification(text: String, context: Context) {
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
