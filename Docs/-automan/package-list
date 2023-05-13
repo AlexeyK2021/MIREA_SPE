@@ -1,30 +1,83 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:ru.eco.automan.adapters////PointingToDeclaration/-automan/ru.eco.automan.adapters/index.html
-$dokka.location:ru.eco.automan.adapters/CategoriesAdapter///PointingToDeclaration/-automan/ru.eco.automan.adapters/-categories-adapter/index.html
-$dokka.location:ru.eco.automan.adapters/CategoriesAdapter/CategoriesAdapter/#kotlin.collections.Map[ru.eco.automan.models.Category,kotlin.collections.List[ru.eco.automan.models.Expense]]/PointingToDeclaration/-automan/ru.eco.automan.adapters/-categories-adapter/-categories-adapter.html
-$dokka.location:ru.eco.automan.adapters/CategoriesAdapter/getItemCount/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-categories-adapter/get-item-count.html
-$dokka.location:ru.eco.automan.adapters/CategoriesAdapter/onBindViewHolder/#ru.eco.automan.adapters.CategoryViewHolder#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-categories-adapter/on-bind-view-holder.html
-$dokka.location:ru.eco.automan.adapters/CategoriesAdapter/onCreateViewHolder/#[Error type: Unresolved type for ViewGroup]#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-categories-adapter/on-create-view-holder.html
-$dokka.location:ru.eco.automan.adapters/CategoryViewHolder///PointingToDeclaration/-automan/ru.eco.automan.adapters/-category-view-holder/index.html
-$dokka.location:ru.eco.automan.adapters/CategoryViewHolder/CategoryViewHolder/#[Error type: Unresolved type for View]/PointingToDeclaration/-automan/ru.eco.automan.adapters/-category-view-holder/-category-view-holder.html
+$dokka.location:ru.eco.automan.adapters//currency/kotlin.Float#/PointingToDeclaration/-automan/ru.eco.automan.adapters/currency.html
+$dokka.location:ru.eco.automan.adapters/ChooseAutoAdapter///PointingToDeclaration/-automan/ru.eco.automan.adapters/-choose-auto-adapter/index.html
+$dokka.location:ru.eco.automan.adapters/ChooseAutoAdapter/ChooseAutoAdapter/#kotlin.collections.List[ru.eco.automan.models.AutoWithModelAndBrand]#ru.eco.automan.listeners.OnAutoChooseClickListener/PointingToDeclaration/-automan/ru.eco.automan.adapters/-choose-auto-adapter/-choose-auto-adapter.html
+$dokka.location:ru.eco.automan.adapters/ChooseAutoAdapter/getItemCount/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-choose-auto-adapter/get-item-count.html
+$dokka.location:ru.eco.automan.adapters/ChooseAutoAdapter/onBindViewHolder/#ru.eco.automan.adapters.ChooseAutoViewHolder#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-choose-auto-adapter/on-bind-view-holder.html
+$dokka.location:ru.eco.automan.adapters/ChooseAutoAdapter/onCreateViewHolder/#[Error type: Unresolved type for ViewGroup]#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-choose-auto-adapter/on-create-view-holder.html
+$dokka.location:ru.eco.automan.adapters/ChooseAutoViewHolder///PointingToDeclaration/-automan/ru.eco.automan.adapters/-choose-auto-view-holder/index.html
+$dokka.location:ru.eco.automan.adapters/ChooseAutoViewHolder/ChooseAutoViewHolder/#[Error type: Unresolved type for View]/PointingToDeclaration/-automan/ru.eco.automan.adapters/-choose-auto-view-holder/-choose-auto-view-holder.html
+$dokka.location:ru.eco.automan.adapters/ChooseAutoViewHolder/autoName/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-choose-auto-view-holder/auto-name.html
+$dokka.location:ru.eco.automan.adapters/ChooseAutoViewHolder/deleteAuto/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-choose-auto-view-holder/delete-auto.html
+$dokka.location:ru.eco.automan.adapters/EventViewHolder///PointingToDeclaration/-automan/ru.eco.automan.adapters/-event-view-holder/index.html
+$dokka.location:ru.eco.automan.adapters/EventViewHolder/EventViewHolder/#[Error type: Unresolved type for View]/PointingToDeclaration/-automan/ru.eco.automan.adapters/-event-view-holder/-event-view-holder.html
+$dokka.location:ru.eco.automan.adapters/EventViewHolder/eventDate/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-event-view-holder/event-date.html
+$dokka.location:ru.eco.automan.adapters/EventViewHolder/eventName/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-event-view-holder/event-name.html
+$dokka.location:ru.eco.automan.adapters/EventsAdapter///PointingToDeclaration/-automan/ru.eco.automan.adapters/-events-adapter/index.html
+$dokka.location:ru.eco.automan.adapters/EventsAdapter/EventsAdapter/#kotlin.collections.List[ru.eco.automan.models.Event]/PointingToDeclaration/-automan/ru.eco.automan.adapters/-events-adapter/-events-adapter.html
+$dokka.location:ru.eco.automan.adapters/EventsAdapter/getItemCount/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-events-adapter/get-item-count.html
+$dokka.location:ru.eco.automan.adapters/EventsAdapter/onBindViewHolder/#ru.eco.automan.adapters.EventViewHolder#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-events-adapter/on-bind-view-holder.html
+$dokka.location:ru.eco.automan.adapters/EventsAdapter/onCreateViewHolder/#[Error type: Unresolved type for ViewGroup]#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-events-adapter/on-create-view-holder.html
 $dokka.location:ru.eco.automan.adapters/ExpenseAdapter///PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-adapter/index.html
 $dokka.location:ru.eco.automan.adapters/ExpenseAdapter/ExpenseAdapter/#kotlin.collections.List[ru.eco.automan.models.Expense]/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-adapter/-expense-adapter.html
 $dokka.location:ru.eco.automan.adapters/ExpenseAdapter/getItemCount/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-adapter/get-item-count.html
 $dokka.location:ru.eco.automan.adapters/ExpenseAdapter/onBindViewHolder/#ru.eco.automan.adapters.ExpenseViewHolder#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-adapter/on-bind-view-holder.html
 $dokka.location:ru.eco.automan.adapters/ExpenseAdapter/onCreateViewHolder/#[Error type: Unresolved type for ViewGroup]#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-adapter/on-create-view-holder.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryAdapter///PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-adapter/index.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryAdapter/ExpenseCategoryAdapter/#kotlin.collections.List[ru.eco.automan.models.CategoryWithExpenseAndIcon]#ru.eco.automan.listeners.OnAddExpenseListener/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-adapter/-expense-category-adapter.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryAdapter/getItemCount/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-adapter/get-item-count.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryAdapter/onBindViewHolder/#ru.eco.automan.adapters.ExpenseCategoryViewHolder#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-adapter/on-bind-view-holder.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryAdapter/onCreateViewHolder/#[Error type: Unresolved type for ViewGroup]#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-adapter/on-create-view-holder.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryAdapter/updateData/#kotlin.collections.List[ru.eco.automan.models.CategoryWithExpenseAndIcon]/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-adapter/update-data.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder///PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/index.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder/ExpenseCategoryViewHolder/#[Error type: Unresolved type for View]/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/-expense-category-view-holder.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder/addWaste/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/add-waste.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder/bind/#ru.eco.automan.models.CategoryWithExpenseAndIcon#ru.eco.automan.listeners.OnAddExpenseListener/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/bind.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder/cardView/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/card-view.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder/constraintLayout/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/constraint-layout.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder/expend/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/expend.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder/newWasteAmount/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/new-waste-amount.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder/newWasteName/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/new-waste-name.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder/wasteCategoryName/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/waste-category-name.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder/wasteImage/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/waste-image.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder/wastesListRecycler/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/wastes-list-recycler.html
+$dokka.location:ru.eco.automan.adapters/ExpenseCategoryViewHolder/wastesSum/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-category-view-holder/wastes-sum.html
 $dokka.location:ru.eco.automan.adapters/ExpenseViewHolder///PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-view-holder/index.html
 $dokka.location:ru.eco.automan.adapters/ExpenseViewHolder/ExpenseViewHolder/#[Error type: Unresolved type for View]/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-view-holder/-expense-view-holder.html
+$dokka.location:ru.eco.automan.adapters/ExpenseViewHolder/wasteCost/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-view-holder/waste-cost.html
+$dokka.location:ru.eco.automan.adapters/ExpenseViewHolder/wasteName/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-expense-view-holder/waste-name.html
+$dokka.location:ru.eco.automan.adapters/ParagraphViewHolder///PointingToDeclaration/-automan/ru.eco.automan.adapters/-paragraph-view-holder/index.html
+$dokka.location:ru.eco.automan.adapters/ParagraphViewHolder/ParagraphViewHolder/#[Error type: Unresolved type for View]/PointingToDeclaration/-automan/ru.eco.automan.adapters/-paragraph-view-holder/-paragraph-view-holder.html
+$dokka.location:ru.eco.automan.adapters/ParagraphViewHolder/paragraphText/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-paragraph-view-holder/paragraph-text.html
+$dokka.location:ru.eco.automan.adapters/ParagraphsAdapter///PointingToDeclaration/-automan/ru.eco.automan.adapters/-paragraphs-adapter/index.html
+$dokka.location:ru.eco.automan.adapters/ParagraphsAdapter/ParagraphsAdapter/#kotlin.collections.List[ru.eco.automan.models.Paragraph]/PointingToDeclaration/-automan/ru.eco.automan.adapters/-paragraphs-adapter/-paragraphs-adapter.html
+$dokka.location:ru.eco.automan.adapters/ParagraphsAdapter/getItemCount/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-paragraphs-adapter/get-item-count.html
+$dokka.location:ru.eco.automan.adapters/ParagraphsAdapter/onBindViewHolder/#ru.eco.automan.adapters.ParagraphViewHolder#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-paragraphs-adapter/on-bind-view-holder.html
+$dokka.location:ru.eco.automan.adapters/ParagraphsAdapter/onCreateViewHolder/#[Error type: Unresolved type for ViewGroup]#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-paragraphs-adapter/on-create-view-holder.html
+$dokka.location:ru.eco.automan.adapters/RulesAdapter///PointingToDeclaration/-automan/ru.eco.automan.adapters/-rules-adapter/index.html
+$dokka.location:ru.eco.automan.adapters/RulesAdapter/RulesAdapter/#kotlin.collections.List[ru.eco.automan.models.Chapter]#ru.eco.automan.listeners.OnChapterClickListener/PointingToDeclaration/-automan/ru.eco.automan.adapters/-rules-adapter/-rules-adapter.html
+$dokka.location:ru.eco.automan.adapters/RulesAdapter/getItemCount/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-rules-adapter/get-item-count.html
+$dokka.location:ru.eco.automan.adapters/RulesAdapter/onBindViewHolder/#ru.eco.automan.adapters.RulesViewHolder#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-rules-adapter/on-bind-view-holder.html
+$dokka.location:ru.eco.automan.adapters/RulesAdapter/onCreateViewHolder/#[Error type: Unresolved type for ViewGroup]#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.adapters/-rules-adapter/on-create-view-holder.html
+$dokka.location:ru.eco.automan.adapters/RulesViewHolder///PointingToDeclaration/-automan/ru.eco.automan.adapters/-rules-view-holder/index.html
+$dokka.location:ru.eco.automan.adapters/RulesViewHolder/RulesViewHolder/#[Error type: Unresolved type for View]/PointingToDeclaration/-automan/ru.eco.automan.adapters/-rules-view-holder/-rules-view-holder.html
+$dokka.location:ru.eco.automan.adapters/RulesViewHolder/chapterName/#/PointingToDeclaration/-automan/ru.eco.automan.adapters/-rules-view-holder/chapter-name.html
 $dokka.location:ru.eco.automan.dao////PointingToDeclaration/-automan/ru.eco.automan.dao/index.html
 $dokka.location:ru.eco.automan.dao/AutoDao///PointingToDeclaration/-automan/ru.eco.automan.dao/-auto-dao/index.html
 $dokka.location:ru.eco.automan.dao/AutoDao/addAuto/#ru.eco.automan.models.Auto/PointingToDeclaration/-automan/ru.eco.automan.dao/-auto-dao/add-auto.html
-$dokka.location:ru.eco.automan.dao/AutoDao/deleteAuto/#ru.eco.automan.models.Auto/PointingToDeclaration/-automan/ru.eco.automan.dao/-auto-dao/delete-auto.html
+$dokka.location:ru.eco.automan.dao/AutoDao/deleteAuto/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.dao/-auto-dao/delete-auto.html
 $dokka.location:ru.eco.automan.dao/AutoDao/findById/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.dao/-auto-dao/find-by-id.html
 $dokka.location:ru.eco.automan.dao/AutoDao/getAllAutos/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-auto-dao/get-all-autos.html
 $dokka.location:ru.eco.automan.dao/AutoDao/getAllAutosLiveData/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-auto-dao/get-all-autos-live-data.html
 $dokka.location:ru.eco.automan.dao/AutoDao/updateAuto/#ru.eco.automan.models.Auto/PointingToDeclaration/-automan/ru.eco.automan.dao/-auto-dao/update-auto.html
 $dokka.location:ru.eco.automan.dao/BrandDao///PointingToDeclaration/-automan/ru.eco.automan.dao/-brand-dao/index.html
+$dokka.location:ru.eco.automan.dao/BrandDao/addBrand/#ru.eco.automan.models.Brand/PointingToDeclaration/-automan/ru.eco.automan.dao/-brand-dao/add-brand.html
 $dokka.location:ru.eco.automan.dao/BrandDao/getAllBrands/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-brand-dao/get-all-brands.html
+$dokka.location:ru.eco.automan.dao/BrandDao/getAllBrandsLiveData/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-brand-dao/get-all-brands-live-data.html
+$dokka.location:ru.eco.automan.dao/BrandDao/getBrandIdByName/#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.dao/-brand-dao/get-brand-id-by-name.html
+$dokka.location:ru.eco.automan.dao/BrandDao/getBrandNameById/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.dao/-brand-dao/get-brand-name-by-id.html
 $dokka.location:ru.eco.automan.dao/CategoryDao///PointingToDeclaration/-automan/ru.eco.automan.dao/-category-dao/index.html
 $dokka.location:ru.eco.automan.dao/CategoryDao/addCategory/#ru.eco.automan.models.Category/PointingToDeclaration/-automan/ru.eco.automan.dao/-category-dao/add-category.html
 $dokka.location:ru.eco.automan.dao/CategoryDao/deleteCategory/#ru.eco.automan.models.Category/PointingToDeclaration/-automan/ru.eco.automan.dao/-category-dao/delete-category.html
@@ -33,16 +86,30 @@ $dokka.location:ru.eco.automan.dao/CategoryDao/getAllCategoriesLiveData/#/Pointi
 $dokka.location:ru.eco.automan.dao/CategoryDao/updateCategory/#ru.eco.automan.models.Category/PointingToDeclaration/-automan/ru.eco.automan.dao/-category-dao/update-category.html
 $dokka.location:ru.eco.automan.dao/ChapterDao///PointingToDeclaration/-automan/ru.eco.automan.dao/-chapter-dao/index.html
 $dokka.location:ru.eco.automan.dao/ChapterDao/getAllChapters/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-chapter-dao/get-all-chapters.html
+$dokka.location:ru.eco.automan.dao/EventDao///PointingToDeclaration/-automan/ru.eco.automan.dao/-event-dao/index.html
+$dokka.location:ru.eco.automan.dao/EventDao/addEvent/#ru.eco.automan.models.Event/PointingToDeclaration/-automan/ru.eco.automan.dao/-event-dao/add-event.html
+$dokka.location:ru.eco.automan.dao/EventDao/deleteEvent/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.dao/-event-dao/delete-event.html
+$dokka.location:ru.eco.automan.dao/EventDao/getAllEvents/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-event-dao/get-all-events.html
+$dokka.location:ru.eco.automan.dao/EventDao/getAllEventsLiveData/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-event-dao/get-all-events-live-data.html
 $dokka.location:ru.eco.automan.dao/ExpenseDao///PointingToDeclaration/-automan/ru.eco.automan.dao/-expense-dao/index.html
 $dokka.location:ru.eco.automan.dao/ExpenseDao/addExpense/#ru.eco.automan.models.Expense/PointingToDeclaration/-automan/ru.eco.automan.dao/-expense-dao/add-expense.html
+$dokka.location:ru.eco.automan.dao/ExpenseDao/deleteAllExpenses/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-expense-dao/delete-all-expenses.html
 $dokka.location:ru.eco.automan.dao/ExpenseDao/deleteExpense/#ru.eco.automan.models.Expense/PointingToDeclaration/-automan/ru.eco.automan.dao/-expense-dao/delete-expense.html
+$dokka.location:ru.eco.automan.dao/ExpenseDao/deleteExpenses/#kotlin.collections.List[ru.eco.automan.models.Expense]/PointingToDeclaration/-automan/ru.eco.automan.dao/-expense-dao/delete-expenses.html
+$dokka.location:ru.eco.automan.dao/ExpenseDao/deleteExpensesByAutoId/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.dao/-expense-dao/delete-expenses-by-auto-id.html
 $dokka.location:ru.eco.automan.dao/ExpenseDao/getAllExpenses/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-expense-dao/get-all-expenses.html
 $dokka.location:ru.eco.automan.dao/ExpenseDao/getAllExpensesLiveData/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-expense-dao/get-all-expenses-live-data.html
 $dokka.location:ru.eco.automan.dao/ExpenseDao/updateExpense/#ru.eco.automan.models.Expense/PointingToDeclaration/-automan/ru.eco.automan.dao/-expense-dao/update-expense.html
 $dokka.location:ru.eco.automan.dao/FuelTypeDao///PointingToDeclaration/-automan/ru.eco.automan.dao/-fuel-type-dao/index.html
+$dokka.location:ru.eco.automan.dao/FuelTypeDao/addFuelType/#ru.eco.automan.models.FuelType/PointingToDeclaration/-automan/ru.eco.automan.dao/-fuel-type-dao/add-fuel-type.html
 $dokka.location:ru.eco.automan.dao/FuelTypeDao/getAllFuelTypes/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-fuel-type-dao/get-all-fuel-types.html
+$dokka.location:ru.eco.automan.dao/FuelTypeDao/getFuelTypeIdByName/#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.dao/-fuel-type-dao/get-fuel-type-id-by-name.html
+$dokka.location:ru.eco.automan.dao/FuelTypeDao/getFuelTypeNameById/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.dao/-fuel-type-dao/get-fuel-type-name-by-id.html
 $dokka.location:ru.eco.automan.dao/ModelDao///PointingToDeclaration/-automan/ru.eco.automan.dao/-model-dao/index.html
+$dokka.location:ru.eco.automan.dao/ModelDao/addModel/#ru.eco.automan.models.Model/PointingToDeclaration/-automan/ru.eco.automan.dao/-model-dao/add-model.html
 $dokka.location:ru.eco.automan.dao/ModelDao/getAllModels/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-model-dao/get-all-models.html
+$dokka.location:ru.eco.automan.dao/ModelDao/getModelIdByName/#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.dao/-model-dao/get-model-id-by-name.html
+$dokka.location:ru.eco.automan.dao/ModelDao/getModelNameById/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.dao/-model-dao/get-model-name-by-id.html
 $dokka.location:ru.eco.automan.dao/ModelDao/getModelsByBrandId/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.dao/-model-dao/get-models-by-brand-id.html
 $dokka.location:ru.eco.automan.dao/ParagraphDao///PointingToDeclaration/-automan/ru.eco.automan.dao/-paragraph-dao/index.html
 $dokka.location:ru.eco.automan.dao/ParagraphDao/getAllParagraphs/#/PointingToDeclaration/-automan/ru.eco.automan.dao/-paragraph-dao/get-all-paragraphs.html
@@ -54,28 +121,87 @@ $dokka.location:ru.eco.automan.database/AutoDatabase/autoDao/#/PointingToDeclara
 $dokka.location:ru.eco.automan.database/AutoDatabase/brandDao/#/PointingToDeclaration/-automan/ru.eco.automan.database/-auto-database/brand-dao.html
 $dokka.location:ru.eco.automan.database/AutoDatabase/categoryDao/#/PointingToDeclaration/-automan/ru.eco.automan.database/-auto-database/category-dao.html
 $dokka.location:ru.eco.automan.database/AutoDatabase/chapterDao/#/PointingToDeclaration/-automan/ru.eco.automan.database/-auto-database/chapter-dao.html
+$dokka.location:ru.eco.automan.database/AutoDatabase/eventDao/#/PointingToDeclaration/-automan/ru.eco.automan.database/-auto-database/event-dao.html
 $dokka.location:ru.eco.automan.database/AutoDatabase/expenseDao/#/PointingToDeclaration/-automan/ru.eco.automan.database/-auto-database/expense-dao.html
 $dokka.location:ru.eco.automan.database/AutoDatabase/fuelTypeDao/#/PointingToDeclaration/-automan/ru.eco.automan.database/-auto-database/fuel-type-dao.html
 $dokka.location:ru.eco.automan.database/AutoDatabase/modelDao/#/PointingToDeclaration/-automan/ru.eco.automan.database/-auto-database/model-dao.html
 $dokka.location:ru.eco.automan.database/AutoDatabase/paragraphDao/#/PointingToDeclaration/-automan/ru.eco.automan.database/-auto-database/paragraph-dao.html
 $dokka.location:ru.eco.automan.fragments////PointingToDeclaration/-automan/ru.eco.automan.fragments/index.html
-$dokka.location:ru.eco.automan.fragments/MainFragment.Companion///PointingToDeclaration/-automan/ru.eco.automan.fragments/-main-fragment/-companion/index.html
-$dokka.location:ru.eco.automan.fragments/MainFragment.Companion/newInstance/#kotlin.String#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.fragments/-main-fragment/-companion/new-instance.html
+$dokka.location:ru.eco.automan.fragments//getEditable/kotlin.String#/PointingToDeclaration/-automan/ru.eco.automan.fragments/get-editable.html
+$dokka.location:ru.eco.automan.fragments//getRuMonth/#java.time.LocalDateTime/PointingToDeclaration/-automan/ru.eco.automan.fragments/get-ru-month.html
+$dokka.location:ru.eco.automan.fragments/AddAutoFragment///PointingToDeclaration/-automan/ru.eco.automan.fragments/-add-auto-fragment/index.html
+$dokka.location:ru.eco.automan.fragments/AddAutoFragment/AddAutoFragment/#/PointingToDeclaration/-automan/ru.eco.automan.fragments/-add-auto-fragment/-add-auto-fragment.html
+$dokka.location:ru.eco.automan.fragments/AddAutoFragment/onCreateView/#[Error type: Unresolved type for LayoutInflater]#[Error type: Unresolved type for ViewGroup]?#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-add-auto-fragment/on-create-view.html
+$dokka.location:ru.eco.automan.fragments/AddAutoFragment/onDestroyView/#/PointingToDeclaration/-automan/ru.eco.automan.fragments/-add-auto-fragment/on-destroy-view.html
+$dokka.location:ru.eco.automan.fragments/AddAutoFragment/onViewCreated/#[Error type: Unresolved type for View]#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-add-auto-fragment/on-view-created.html
+$dokka.location:ru.eco.automan.fragments/ChooseAutoFragment///PointingToDeclaration/-automan/ru.eco.automan.fragments/-choose-auto-fragment/index.html
+$dokka.location:ru.eco.automan.fragments/ChooseAutoFragment/ChooseAutoFragment/#/PointingToDeclaration/-automan/ru.eco.automan.fragments/-choose-auto-fragment/-choose-auto-fragment.html
+$dokka.location:ru.eco.automan.fragments/ChooseAutoFragment/onChooseClick/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.fragments/-choose-auto-fragment/on-choose-click.html
+$dokka.location:ru.eco.automan.fragments/ChooseAutoFragment/onCreateView/#[Error type: Unresolved type for LayoutInflater]#[Error type: Unresolved type for ViewGroup]?#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-choose-auto-fragment/on-create-view.html
+$dokka.location:ru.eco.automan.fragments/ChooseAutoFragment/onDeleteClick/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.fragments/-choose-auto-fragment/on-delete-click.html
+$dokka.location:ru.eco.automan.fragments/ChooseAutoFragment/onViewCreated/#[Error type: Unresolved type for View]#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-choose-auto-fragment/on-view-created.html
+$dokka.location:ru.eco.automan.fragments/EventsFragment///PointingToDeclaration/-automan/ru.eco.automan.fragments/-events-fragment/index.html
+$dokka.location:ru.eco.automan.fragments/EventsFragment/EventsFragment/#/PointingToDeclaration/-automan/ru.eco.automan.fragments/-events-fragment/-events-fragment.html
+$dokka.location:ru.eco.automan.fragments/EventsFragment/onCreateView/#[Error type: Unresolved type for LayoutInflater]#[Error type: Unresolved type for ViewGroup]?#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-events-fragment/on-create-view.html
+$dokka.location:ru.eco.automan.fragments/EventsFragment/onViewCreated/#[Error type: Unresolved type for View]#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-events-fragment/on-view-created.html
+$dokka.location:ru.eco.automan.fragments/FinesFragment///PointingToDeclaration/-automan/ru.eco.automan.fragments/-fines-fragment/index.html
+$dokka.location:ru.eco.automan.fragments/FinesFragment/FinesFragment/#/PointingToDeclaration/-automan/ru.eco.automan.fragments/-fines-fragment/-fines-fragment.html
+$dokka.location:ru.eco.automan.fragments/FinesFragment/onCreateView/#[Error type: Unresolved type for LayoutInflater]#[Error type: Unresolved type for ViewGroup]?#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-fines-fragment/on-create-view.html
+$dokka.location:ru.eco.automan.fragments/InfoAutoFragment///PointingToDeclaration/-automan/ru.eco.automan.fragments/-info-auto-fragment/index.html
+$dokka.location:ru.eco.automan.fragments/InfoAutoFragment/InfoAutoFragment/#/PointingToDeclaration/-automan/ru.eco.automan.fragments/-info-auto-fragment/-info-auto-fragment.html
+$dokka.location:ru.eco.automan.fragments/InfoAutoFragment/onCreateView/#[Error type: Unresolved type for LayoutInflater]#[Error type: Unresolved type for ViewGroup]?#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-info-auto-fragment/on-create-view.html
+$dokka.location:ru.eco.automan.fragments/InfoAutoFragment/onDestroyView/#/PointingToDeclaration/-automan/ru.eco.automan.fragments/-info-auto-fragment/on-destroy-view.html
+$dokka.location:ru.eco.automan.fragments/InfoAutoFragment/onViewCreated/#[Error type: Unresolved type for View]#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-info-auto-fragment/on-view-created.html
 $dokka.location:ru.eco.automan.fragments/MainFragment///PointingToDeclaration/-automan/ru.eco.automan.fragments/-main-fragment/index.html
 $dokka.location:ru.eco.automan.fragments/MainFragment/MainFragment/#/PointingToDeclaration/-automan/ru.eco.automan.fragments/-main-fragment/-main-fragment.html
-$dokka.location:ru.eco.automan.fragments/MainFragment/onCreate/#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-main-fragment/on-create.html
 $dokka.location:ru.eco.automan.fragments/MainFragment/onCreateView/#[Error type: Unresolved type for LayoutInflater]#[Error type: Unresolved type for ViewGroup]?#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-main-fragment/on-create-view.html
+$dokka.location:ru.eco.automan.fragments/RulesChapterFragment///PointingToDeclaration/-automan/ru.eco.automan.fragments/-rules-chapter-fragment/index.html
+$dokka.location:ru.eco.automan.fragments/RulesChapterFragment/RulesChapterFragment/#/PointingToDeclaration/-automan/ru.eco.automan.fragments/-rules-chapter-fragment/-rules-chapter-fragment.html
+$dokka.location:ru.eco.automan.fragments/RulesChapterFragment/onChapterClick/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.fragments/-rules-chapter-fragment/on-chapter-click.html
+$dokka.location:ru.eco.automan.fragments/RulesChapterFragment/onCreateView/#[Error type: Unresolved type for LayoutInflater]#[Error type: Unresolved type for ViewGroup]?#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-rules-chapter-fragment/on-create-view.html
+$dokka.location:ru.eco.automan.fragments/RulesChapterFragment/onViewCreated/#[Error type: Unresolved type for View]#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-rules-chapter-fragment/on-view-created.html
+$dokka.location:ru.eco.automan.fragments/RulesParagraphsFragment///PointingToDeclaration/-automan/ru.eco.automan.fragments/-rules-paragraphs-fragment/index.html
+$dokka.location:ru.eco.automan.fragments/RulesParagraphsFragment/RulesParagraphsFragment/#/PointingToDeclaration/-automan/ru.eco.automan.fragments/-rules-paragraphs-fragment/-rules-paragraphs-fragment.html
+$dokka.location:ru.eco.automan.fragments/RulesParagraphsFragment/onCreateView/#[Error type: Unresolved type for LayoutInflater]#[Error type: Unresolved type for ViewGroup]?#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-rules-paragraphs-fragment/on-create-view.html
+$dokka.location:ru.eco.automan.fragments/RulesParagraphsFragment/onViewCreated/#[Error type: Unresolved type for View]#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-rules-paragraphs-fragment/on-view-created.html
+$dokka.location:ru.eco.automan.fragments/SettingsFragment///PointingToDeclaration/-automan/ru.eco.automan.fragments/-settings-fragment/index.html
+$dokka.location:ru.eco.automan.fragments/SettingsFragment/SettingsFragment/#/PointingToDeclaration/-automan/ru.eco.automan.fragments/-settings-fragment/-settings-fragment.html
+$dokka.location:ru.eco.automan.fragments/SettingsFragment/onCreateView/#[Error type: Unresolved type for LayoutInflater]#[Error type: Unresolved type for ViewGroup]?#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-settings-fragment/on-create-view.html
+$dokka.location:ru.eco.automan.fragments/SettingsFragment/onViewCreated/#[Error type: Unresolved type for View]#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-settings-fragment/on-view-created.html
+$dokka.location:ru.eco.automan.fragments/WastesListFragment///PointingToDeclaration/-automan/ru.eco.automan.fragments/-wastes-list-fragment/index.html
+$dokka.location:ru.eco.automan.fragments/WastesListFragment/WastesListFragment/#/PointingToDeclaration/-automan/ru.eco.automan.fragments/-wastes-list-fragment/-wastes-list-fragment.html
+$dokka.location:ru.eco.automan.fragments/WastesListFragment/addExpense/#kotlin.String#kotlin.String#kotlin.Float/PointingToDeclaration/-automan/ru.eco.automan.fragments/-wastes-list-fragment/add-expense.html
+$dokka.location:ru.eco.automan.fragments/WastesListFragment/onCreateView/#[Error type: Unresolved type for LayoutInflater]#[Error type: Unresolved type for ViewGroup]?#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-wastes-list-fragment/on-create-view.html
+$dokka.location:ru.eco.automan.fragments/WastesListFragment/onUpdatePeriodSpinner/#kotlin.Int#ru.eco.automan.adapters.ExpenseCategoryAdapter#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.fragments/-wastes-list-fragment/on-update-period-spinner.html
+$dokka.location:ru.eco.automan.fragments/WastesListFragment/onViewCreated/#[Error type: Unresolved type for View]#[Error type: Unresolved type for Bundle]?/PointingToDeclaration/-automan/ru.eco.automan.fragments/-wastes-list-fragment/on-view-created.html
+$dokka.location:ru.eco.automan.listeners////PointingToDeclaration/-automan/ru.eco.automan.listeners/index.html
+$dokka.location:ru.eco.automan.listeners/OnAddExpenseListener///PointingToDeclaration/-automan/ru.eco.automan.listeners/-on-add-expense-listener/index.html
+$dokka.location:ru.eco.automan.listeners/OnAddExpenseListener/addExpense/#kotlin.String#kotlin.String#kotlin.Float/PointingToDeclaration/-automan/ru.eco.automan.listeners/-on-add-expense-listener/add-expense.html
+$dokka.location:ru.eco.automan.listeners/OnAutoChooseClickListener///PointingToDeclaration/-automan/ru.eco.automan.listeners/-on-auto-choose-click-listener/index.html
+$dokka.location:ru.eco.automan.listeners/OnAutoChooseClickListener/onChooseClick/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.listeners/-on-auto-choose-click-listener/on-choose-click.html
+$dokka.location:ru.eco.automan.listeners/OnAutoChooseClickListener/onDeleteClick/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.listeners/-on-auto-choose-click-listener/on-delete-click.html
+$dokka.location:ru.eco.automan.listeners/OnChapterClickListener///PointingToDeclaration/-automan/ru.eco.automan.listeners/-on-chapter-click-listener/index.html
+$dokka.location:ru.eco.automan.listeners/OnChapterClickListener/onChapterClick/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.listeners/-on-chapter-click-listener/on-chapter-click.html
 $dokka.location:ru.eco.automan.models////PointingToDeclaration/-automan/ru.eco.automan.models/index.html
 $dokka.location:ru.eco.automan.models/Auto///PointingToDeclaration/-automan/ru.eco.automan.models/-auto/index.html
-$dokka.location:ru.eco.automan.models/Auto/Auto/#kotlin.Int#kotlin.String?#kotlin.Int#kotlin.Int#kotlin.String?#kotlin.Int#java.sql.Date?#java.sql.Date?/PointingToDeclaration/-automan/ru.eco.automan.models/-auto/-auto.html
+$dokka.location:ru.eco.automan.models/Auto/Auto/#kotlin.Int#kotlin.String?#kotlin.Int#kotlin.Int#kotlin.String?#kotlin.Int#java.sql.Date?#java.sql.Date?#kotlin.String?#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.models/-auto/-auto.html
 $dokka.location:ru.eco.automan.models/Auto/brandId/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto/brand-id.html
 $dokka.location:ru.eco.automan.models/Auto/fuelTypeId/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto/fuel-type-id.html
 $dokka.location:ru.eco.automan.models/Auto/id/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto/id.html
 $dokka.location:ru.eco.automan.models/Auto/insuranceExpirationDate/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto/insurance-expiration-date.html
 $dokka.location:ru.eco.automan.models/Auto/lastMaintenanceDate/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto/last-maintenance-date.html
+$dokka.location:ru.eco.automan.models/Auto/manufactureYear/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto/manufacture-year.html
 $dokka.location:ru.eco.automan.models/Auto/modelId/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto/model-id.html
 $dokka.location:ru.eco.automan.models/Auto/name/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto/name.html
+$dokka.location:ru.eco.automan.models/Auto/registrationCertificateNumber/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto/registration-certificate-number.html
 $dokka.location:ru.eco.automan.models/Auto/registrationNumber/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto/registration-number.html
+$dokka.location:ru.eco.automan.models/AutoWithModelAndBrand///PointingToDeclaration/-automan/ru.eco.automan.models/-auto-with-model-and-brand/index.html
+$dokka.location:ru.eco.automan.models/AutoWithModelAndBrand/AutoWithModelAndBrand/#kotlin.Int#kotlin.String?#kotlin.String#kotlin.String#[Error type: Unresolved type for Image]?/PointingToDeclaration/-automan/ru.eco.automan.models/-auto-with-model-and-brand/-auto-with-model-and-brand.html
+$dokka.location:ru.eco.automan.models/AutoWithModelAndBrand/autoIcon/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto-with-model-and-brand/auto-icon.html
+$dokka.location:ru.eco.automan.models/AutoWithModelAndBrand/brandName/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto-with-model-and-brand/brand-name.html
+$dokka.location:ru.eco.automan.models/AutoWithModelAndBrand/id/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto-with-model-and-brand/id.html
+$dokka.location:ru.eco.automan.models/AutoWithModelAndBrand/modelName/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto-with-model-and-brand/model-name.html
+$dokka.location:ru.eco.automan.models/AutoWithModelAndBrand/name/#/PointingToDeclaration/-automan/ru.eco.automan.models/-auto-with-model-and-brand/name.html
 $dokka.location:ru.eco.automan.models/Brand///PointingToDeclaration/-automan/ru.eco.automan.models/-brand/index.html
 $dokka.location:ru.eco.automan.models/Brand/Brand/#kotlin.Int#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.models/-brand/-brand.html
 $dokka.location:ru.eco.automan.models/Brand/id/#/PointingToDeclaration/-automan/ru.eco.automan.models/-brand/id.html
@@ -84,10 +210,22 @@ $dokka.location:ru.eco.automan.models/Category///PointingToDeclaration/-automan
 $dokka.location:ru.eco.automan.models/Category/Category/#kotlin.Int#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.models/-category/-category.html
 $dokka.location:ru.eco.automan.models/Category/id/#/PointingToDeclaration/-automan/ru.eco.automan.models/-category/id.html
 $dokka.location:ru.eco.automan.models/Category/name/#/PointingToDeclaration/-automan/ru.eco.automan.models/-category/name.html
+$dokka.location:ru.eco.automan.models/CategoryWithExpenseAndIcon///PointingToDeclaration/-automan/ru.eco.automan.models/-category-with-expense-and-icon/index.html
+$dokka.location:ru.eco.automan.models/CategoryWithExpenseAndIcon/CategoryWithExpenseAndIcon/#kotlin.String#kotlin.collections.List[ru.eco.automan.models.Expense]#kotlin.Float#[Error type: Unresolved type for Drawable]/PointingToDeclaration/-automan/ru.eco.automan.models/-category-with-expense-and-icon/-category-with-expense-and-icon.html
+$dokka.location:ru.eco.automan.models/CategoryWithExpenseAndIcon/categoryImage/#/PointingToDeclaration/-automan/ru.eco.automan.models/-category-with-expense-and-icon/category-image.html
+$dokka.location:ru.eco.automan.models/CategoryWithExpenseAndIcon/categoryName/#/PointingToDeclaration/-automan/ru.eco.automan.models/-category-with-expense-and-icon/category-name.html
+$dokka.location:ru.eco.automan.models/CategoryWithExpenseAndIcon/expensesList/#/PointingToDeclaration/-automan/ru.eco.automan.models/-category-with-expense-and-icon/expenses-list.html
+$dokka.location:ru.eco.automan.models/CategoryWithExpenseAndIcon/wastesSum/#/PointingToDeclaration/-automan/ru.eco.automan.models/-category-with-expense-and-icon/wastes-sum.html
 $dokka.location:ru.eco.automan.models/Chapter///PointingToDeclaration/-automan/ru.eco.automan.models/-chapter/index.html
 $dokka.location:ru.eco.automan.models/Chapter/Chapter/#kotlin.Int#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.models/-chapter/-chapter.html
 $dokka.location:ru.eco.automan.models/Chapter/id/#/PointingToDeclaration/-automan/ru.eco.automan.models/-chapter/id.html
 $dokka.location:ru.eco.automan.models/Chapter/name/#/PointingToDeclaration/-automan/ru.eco.automan.models/-chapter/name.html
+$dokka.location:ru.eco.automan.models/Event///PointingToDeclaration/-automan/ru.eco.automan.models/-event/index.html
+$dokka.location:ru.eco.automan.models/Event/Event/#kotlin.Int#kotlin.String#java.sql.Date#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.models/-event/-event.html
+$dokka.location:ru.eco.automan.models/Event/autoId/#/PointingToDeclaration/-automan/ru.eco.automan.models/-event/auto-id.html
+$dokka.location:ru.eco.automan.models/Event/date/#/PointingToDeclaration/-automan/ru.eco.automan.models/-event/date.html
+$dokka.location:ru.eco.automan.models/Event/id/#/PointingToDeclaration/-automan/ru.eco.automan.models/-event/id.html
+$dokka.location:ru.eco.automan.models/Event/name/#/PointingToDeclaration/-automan/ru.eco.automan.models/-event/name.html
 $dokka.location:ru.eco.automan.models/Expense///PointingToDeclaration/-automan/ru.eco.automan.models/-expense/index.html
 $dokka.location:ru.eco.automan.models/Expense/Expense/#kotlin.Int#kotlin.String#kotlin.Float#java.sql.Date#kotlin.Int#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.models/-expense/-expense.html
 $dokka.location:ru.eco.automan.models/Expense/amount/#/PointingToDeclaration/-automan/ru.eco.automan.models/-expense/amount.html
@@ -111,57 +249,139 @@ $dokka.location:ru.eco.automan.models/Paragraph/chapterId/#/PointingToDeclaratio
 $dokka.location:ru.eco.automan.models/Paragraph/id/#/PointingToDeclaration/-automan/ru.eco.automan.models/-paragraph/id.html
 $dokka.location:ru.eco.automan.models/Paragraph/name/#/PointingToDeclaration/-automan/ru.eco.automan.models/-paragraph/name.html
 $dokka.location:ru.eco.automan.models/Paragraph/text/#/PointingToDeclaration/-automan/ru.eco.automan.models/-paragraph/text.html
+$dokka.location:ru.eco.automan.models/Period///PointingToDeclaration/-automan/ru.eco.automan.models/-period/index.html
+$dokka.location:ru.eco.automan.models/Period/Period/#kotlin.String#kotlin.Long/PointingToDeclaration/-automan/ru.eco.automan.models/-period/-period.html
+$dokka.location:ru.eco.automan.models/Period/name/#/PointingToDeclaration/-automan/ru.eco.automan.models/-period/name.html
+$dokka.location:ru.eco.automan.models/Period/secondsNum/#/PointingToDeclaration/-automan/ru.eco.automan.models/-period/seconds-num.html
 $dokka.location:ru.eco.automan.repositories////PointingToDeclaration/-automan/ru.eco.automan.repositories/index.html
 $dokka.location:ru.eco.automan.repositories/AutoRepository///PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/index.html
 $dokka.location:ru.eco.automan.repositories/AutoRepository/AutoRepository/#ru.eco.automan.dao.AutoDao#ru.eco.automan.dao.BrandDao#ru.eco.automan.dao.ModelDao#ru.eco.automan.dao.FuelTypeDao/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/-auto-repository.html
 $dokka.location:ru.eco.automan.repositories/AutoRepository/addAuto/#ru.eco.automan.models.Auto/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/add-auto.html
+$dokka.location:ru.eco.automan.repositories/AutoRepository/addBrand/#ru.eco.automan.models.Brand/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/add-brand.html
+$dokka.location:ru.eco.automan.repositories/AutoRepository/addFuelType/#ru.eco.automan.models.FuelType/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/add-fuel-type.html
+$dokka.location:ru.eco.automan.repositories/AutoRepository/addModel/#ru.eco.automan.models.Model/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/add-model.html
 $dokka.location:ru.eco.automan.repositories/AutoRepository/autos/#/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/autos.html
 $dokka.location:ru.eco.automan.repositories/AutoRepository/brands/#/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/brands.html
-$dokka.location:ru.eco.automan.repositories/AutoRepository/deleteAuto/#ru.eco.automan.models.Auto/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/delete-auto.html
+$dokka.location:ru.eco.automan.repositories/AutoRepository/deleteAuto/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/delete-auto.html
+$dokka.location:ru.eco.automan.repositories/AutoRepository/fuelTypes/#/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/fuel-types.html
 $dokka.location:ru.eco.automan.repositories/AutoRepository/getModelsByBrand/#ru.eco.automan.models.Brand/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/get-models-by-brand.html
+$dokka.location:ru.eco.automan.repositories/AutoRepository/models/#/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/models.html
 $dokka.location:ru.eco.automan.repositories/AutoRepository/updateAuto/#ru.eco.automan.models.Auto/PointingToDeclaration/-automan/ru.eco.automan.repositories/-auto-repository/update-auto.html
+$dokka.location:ru.eco.automan.repositories/EventsRepository///PointingToDeclaration/-automan/ru.eco.automan.repositories/-events-repository/index.html
+$dokka.location:ru.eco.automan.repositories/EventsRepository/EventsRepository/#ru.eco.automan.dao.EventDao/PointingToDeclaration/-automan/ru.eco.automan.repositories/-events-repository/-events-repository.html
+$dokka.location:ru.eco.automan.repositories/EventsRepository/addEvent/#ru.eco.automan.models.Event/PointingToDeclaration/-automan/ru.eco.automan.repositories/-events-repository/add-event.html
+$dokka.location:ru.eco.automan.repositories/EventsRepository/deleteEvent/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.repositories/-events-repository/delete-event.html
+$dokka.location:ru.eco.automan.repositories/EventsRepository/events/#/PointingToDeclaration/-automan/ru.eco.automan.repositories/-events-repository/events.html
+$dokka.location:ru.eco.automan.repositories/EventsRepository/getAllEvents/#/PointingToDeclaration/-automan/ru.eco.automan.repositories/-events-repository/get-all-events.html
 $dokka.location:ru.eco.automan.repositories/ExpenseRepository///PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/index.html
 $dokka.location:ru.eco.automan.repositories/ExpenseRepository/ExpenseRepository/#ru.eco.automan.dao.ExpenseDao#ru.eco.automan.dao.CategoryDao/PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/-expense-repository.html
 $dokka.location:ru.eco.automan.repositories/ExpenseRepository/addCategory/#ru.eco.automan.models.Category/PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/add-category.html
 $dokka.location:ru.eco.automan.repositories/ExpenseRepository/addExpense/#ru.eco.automan.models.Expense/PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/add-expense.html
 $dokka.location:ru.eco.automan.repositories/ExpenseRepository/categories/#/PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/categories.html
+$dokka.location:ru.eco.automan.repositories/ExpenseRepository/deleteAllExpenses/#/PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/delete-all-expenses.html
 $dokka.location:ru.eco.automan.repositories/ExpenseRepository/deleteCategory/#ru.eco.automan.models.Category/PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/delete-category.html
 $dokka.location:ru.eco.automan.repositories/ExpenseRepository/deleteExpense/#ru.eco.automan.models.Expense/PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/delete-expense.html
+$dokka.location:ru.eco.automan.repositories/ExpenseRepository/deleteExpenses/#kotlin.collections.List[ru.eco.automan.models.Expense]/PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/delete-expenses.html
+$dokka.location:ru.eco.automan.repositories/ExpenseRepository/deleteExpensesByAutoId/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/delete-expenses-by-auto-id.html
 $dokka.location:ru.eco.automan.repositories/ExpenseRepository/expenses/#/PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/expenses.html
 $dokka.location:ru.eco.automan.repositories/ExpenseRepository/updateCategory/#ru.eco.automan.models.Category/PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/update-category.html
 $dokka.location:ru.eco.automan.repositories/ExpenseRepository/updateExpense/#ru.eco.automan.models.Expense/PointingToDeclaration/-automan/ru.eco.automan.repositories/-expense-repository/update-expense.html
 $dokka.location:ru.eco.automan.repositories/RulesRepository///PointingToDeclaration/-automan/ru.eco.automan.repositories/-rules-repository/index.html
 $dokka.location:ru.eco.automan.repositories/RulesRepository/RulesRepository/#ru.eco.automan.dao.ChapterDao#ru.eco.automan.dao.ParagraphDao/PointingToDeclaration/-automan/ru.eco.automan.repositories/-rules-repository/-rules-repository.html
 $dokka.location:ru.eco.automan.repositories/RulesRepository/chapters/#/PointingToDeclaration/-automan/ru.eco.automan.repositories/-rules-repository/chapters.html
-$dokka.location:ru.eco.automan.repositories/RulesRepository/getParagraphsByChapter/#ru.eco.automan.models.Chapter/PointingToDeclaration/-automan/ru.eco.automan.repositories/-rules-repository/get-paragraphs-by-chapter.html
+$dokka.location:ru.eco.automan.repositories/RulesRepository/getParagraphsByChapterId/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.repositories/-rules-repository/get-paragraphs-by-chapter-id.html
+$dokka.location:ru.eco.automan.repositories/RulesRepository/paragraphs/#/PointingToDeclaration/-automan/ru.eco.automan.repositories/-rules-repository/paragraphs.html
 $dokka.location:ru.eco.automan.viewModelFactories////PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/index.html
 $dokka.location:ru.eco.automan.viewModelFactories/AutoViewModelFactory///PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-auto-view-model-factory/index.html
 $dokka.location:ru.eco.automan.viewModelFactories/AutoViewModelFactory/AutoViewModelFactory/#ru.eco.automan.repositories.AutoRepository/PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-auto-view-model-factory/-auto-view-model-factory.html
 $dokka.location:ru.eco.automan.viewModelFactories/AutoViewModelFactory/create/#java.lang.Class[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-auto-view-model-factory/create.html
+$dokka.location:ru.eco.automan.viewModelFactories/EventsViewModelFactory///PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-events-view-model-factory/index.html
+$dokka.location:ru.eco.automan.viewModelFactories/EventsViewModelFactory/EventsViewModelFactory/#ru.eco.automan.repositories.EventsRepository/PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-events-view-model-factory/-events-view-model-factory.html
+$dokka.location:ru.eco.automan.viewModelFactories/EventsViewModelFactory/create/#java.lang.Class[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-events-view-model-factory/create.html
 $dokka.location:ru.eco.automan.viewModelFactories/ExpenseViewModelFactory///PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-expense-view-model-factory/index.html
 $dokka.location:ru.eco.automan.viewModelFactories/ExpenseViewModelFactory/ExpenseViewModelFactory/#ru.eco.automan.repositories.ExpenseRepository/PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-expense-view-model-factory/-expense-view-model-factory.html
 $dokka.location:ru.eco.automan.viewModelFactories/ExpenseViewModelFactory/create/#java.lang.Class[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-expense-view-model-factory/create.html
+$dokka.location:ru.eco.automan.viewModelFactories/RulesViewModelFactory///PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-rules-view-model-factory/index.html
+$dokka.location:ru.eco.automan.viewModelFactories/RulesViewModelFactory/RulesViewModelFactory/#ru.eco.automan.repositories.RulesRepository/PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-rules-view-model-factory/-rules-view-model-factory.html
+$dokka.location:ru.eco.automan.viewModelFactories/RulesViewModelFactory/create/#java.lang.Class[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-rules-view-model-factory/create.html
+$dokka.location:ru.eco.automan.viewModelFactories/SettingsViewModelFactory///PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-settings-view-model-factory/index.html
+$dokka.location:ru.eco.automan.viewModelFactories/SettingsViewModelFactory/SettingsViewModelFactory/#[Error type: Unresolved type for SharedPreferences]/PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-settings-view-model-factory/-settings-view-model-factory.html
+$dokka.location:ru.eco.automan.viewModelFactories/SettingsViewModelFactory/create/#java.lang.Class[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/-automan/ru.eco.automan.viewModelFactories/-settings-view-model-factory/create.html
 $dokka.location:ru.eco.automan.viewModels////PointingToDeclaration/-automan/ru.eco.automan.viewModels/index.html
+$dokka.location:ru.eco.automan.viewModels//getEstimatedDays/java.sql.Date#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/get-estimated-days.html
 $dokka.location:ru.eco.automan.viewModels/AutoViewModel///PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/index.html
 $dokka.location:ru.eco.automan.viewModels/AutoViewModel/AutoViewModel/#ru.eco.automan.repositories.AutoRepository/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/-auto-view-model.html
-$dokka.location:ru.eco.automan.viewModels/AutoViewModel/addAuto/#ru.eco.automan.models.Auto/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/add-auto.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/addNewAuto/#kotlin.String#kotlin.String#kotlin.Int#kotlin.String#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/add-new-auto.html
 $dokka.location:ru.eco.automan.viewModels/AutoViewModel/brands/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/brands.html
-$dokka.location:ru.eco.automan.viewModels/AutoViewModel/deleteAuto/#ru.eco.automan.models.Auto/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/delete-auto.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/currAuto/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/curr-auto.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/currentAutoBrandName/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/current-auto-brand-name.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/currentAutoFuelTypeName/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/current-auto-fuel-type-name.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/currentAutoModelName/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/current-auto-model-name.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/currentAutoRegNumber/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/current-auto-reg-number.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/deleteAuto/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/delete-auto.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/didUserAddAuto/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/did-user-add-auto.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/getAutosWithBrandAndModel/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/get-autos-with-brand-and-model.html
 $dokka.location:ru.eco.automan.viewModels/AutoViewModel/getModelsByBrand/#ru.eco.automan.models.Brand/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/get-models-by-brand.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/setCurrentAutoById/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/set-current-auto-by-id.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/setNewBrand/#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/set-new-brand.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/setNewFuelType/#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/set-new-fuel-type.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/setNewModel/#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/set-new-model.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/setNewName/#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/set-new-name.html
+$dokka.location:ru.eco.automan.viewModels/AutoViewModel/setNewRegistrationCertificate/#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/set-new-registration-certificate.html
 $dokka.location:ru.eco.automan.viewModels/AutoViewModel/updateAuto/#ru.eco.automan.models.Auto/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/update-auto.html
 $dokka.location:ru.eco.automan.viewModels/AutoViewModel/userAutos/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-auto-view-model/user-autos.html
+$dokka.location:ru.eco.automan.viewModels/EventsViewModel///PointingToDeclaration/-automan/ru.eco.automan.viewModels/-events-view-model/index.html
+$dokka.location:ru.eco.automan.viewModels/EventsViewModel/EventsViewModel/#ru.eco.automan.repositories.EventsRepository/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-events-view-model/-events-view-model.html
+$dokka.location:ru.eco.automan.viewModels/EventsViewModel/addEvent/#kotlin.String#java.sql.Date#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-events-view-model/add-event.html
+$dokka.location:ru.eco.automan.viewModels/EventsViewModel/autoEvents/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-events-view-model/auto-events.html
+$dokka.location:ru.eco.automan.viewModels/EventsViewModel/getEventsByAutoId/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-events-view-model/get-events-by-auto-id.html
 $dokka.location:ru.eco.automan.viewModels/ExpenseViewModel///PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/index.html
-$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/ExpenseViewModel/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/-expense-view-model.html
-$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/addExpense/#ru.eco.automan.models.Expense/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/add-expense.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/ExpenseViewModel/#ru.eco.automan.repositories.ExpenseRepository/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/-expense-view-model.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/addNewCategory/#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/add-new-category.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/addNewExpense/#kotlin.String#kotlin.Float#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/add-new-expense.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/categories/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/categories.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/deleteAllExpenses/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/delete-all-expenses.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/deleteAllExpensesByAutoId/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/delete-all-expenses-by-auto-id.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/deleteExpense/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/delete-expense.html
 $dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/deleteExpense/#ru.eco.automan.models.Expense/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/delete-expense.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/expensesByPeriod/#kotlin.Long/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/expenses-by-period.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/getCategoryWithExpensesAndIcon/#[Error type: Unresolved type for Context]/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/get-category-with-expenses-and-icon.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/getExpensesByAutoId/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/get-expenses-by-auto-id.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/getExpensesByPeriod/#kotlin.Int#kotlin.Int#[Error type: Unresolved type for Context]/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/get-expenses-by-period.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/setCurrentAuto/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/set-current-auto.html
 $dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/updateExpense/#ru.eco.automan.models.Expense/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/update-expense.html
+$dokka.location:ru.eco.automan.viewModels/ExpenseViewModel/userExpenses/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-expense-view-model/user-expenses.html
+$dokka.location:ru.eco.automan.viewModels/RulesViewModel///PointingToDeclaration/-automan/ru.eco.automan.viewModels/-rules-view-model/index.html
+$dokka.location:ru.eco.automan.viewModels/RulesViewModel/RulesViewModel/#ru.eco.automan.repositories.RulesRepository/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-rules-view-model/-rules-view-model.html
+$dokka.location:ru.eco.automan.viewModels/RulesViewModel/chapters/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-rules-view-model/chapters.html
+$dokka.location:ru.eco.automan.viewModels/RulesViewModel/currentChapterId/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-rules-view-model/current-chapter-id.html
+$dokka.location:ru.eco.automan.viewModels/RulesViewModel/getAllChapters/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-rules-view-model/get-all-chapters.html
+$dokka.location:ru.eco.automan.viewModels/RulesViewModel/getCurrentChapterName/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-rules-view-model/get-current-chapter-name.html
+$dokka.location:ru.eco.automan.viewModels/RulesViewModel/getParagraphsForCurrentChapter/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-rules-view-model/get-paragraphs-for-current-chapter.html
+$dokka.location:ru.eco.automan.viewModels/SettingsTypes.LANGUAGE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-automan/ru.eco.automan.viewModels/-settings-types/-l-a-n-g-u-a-g-e/index.html
+$dokka.location:ru.eco.automan.viewModels/SettingsTypes.NOTIFICATIONS///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-automan/ru.eco.automan.viewModels/-settings-types/-n-o-t-i-f-i-c-a-t-i-o-n-s/index.html
+$dokka.location:ru.eco.automan.viewModels/SettingsTypes.THEME///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-automan/ru.eco.automan.viewModels/-settings-types/-t-h-e-m-e/index.html
+$dokka.location:ru.eco.automan.viewModels/SettingsTypes///PointingToDeclaration/-automan/ru.eco.automan.viewModels/-settings-types/index.html
+$dokka.location:ru.eco.automan.viewModels/SettingsTypes/valueOf/#kotlin.String/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-settings-types/value-of.html
+$dokka.location:ru.eco.automan.viewModels/SettingsTypes/values/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-settings-types/values.html
+$dokka.location:ru.eco.automan.viewModels/SettingsViewModel///PointingToDeclaration/-automan/ru.eco.automan.viewModels/-settings-view-model/index.html
+$dokka.location:ru.eco.automan.viewModels/SettingsViewModel/SettingsViewModel/#[Error type: Unresolved type for SharedPreferences]/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-settings-view-model/-settings-view-model.html
+$dokka.location:ru.eco.automan.viewModels/SettingsViewModel/getLanguagePref/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-settings-view-model/get-language-pref.html
+$dokka.location:ru.eco.automan.viewModels/SettingsViewModel/getNotificationStatus/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-settings-view-model/get-notification-status.html
+$dokka.location:ru.eco.automan.viewModels/SettingsViewModel/getThemePref/#/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-settings-view-model/get-theme-pref.html
+$dokka.location:ru.eco.automan.viewModels/SettingsViewModel/setLanguage/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-settings-view-model/set-language.html
+$dokka.location:ru.eco.automan.viewModels/SettingsViewModel/setNotifications/#kotlin.Boolean/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-settings-view-model/set-notifications.html
+$dokka.location:ru.eco.automan.viewModels/SettingsViewModel/setTheme/#kotlin.Int/PointingToDeclaration/-automan/ru.eco.automan.viewModels/-settings-view-model/set-theme.html
 $dokka.location:ru.eco.automan////PointingToDeclaration/-automan/ru.eco.automan/index.html
 $dokka.location:ru.eco.automan/AutoApplication.Companion///PointingToDeclaration/-automan/ru.eco.automan/-auto-application/-companion/index.html
 $dokka.location:ru.eco.automan/AutoApplication.Companion/autoRepository/#/PointingToDeclaration/-automan/ru.eco.automan/-auto-application/-companion/auto-repository.html
 $dokka.location:ru.eco.automan/AutoApplication.Companion/database/#/PointingToDeclaration/-automan/ru.eco.automan/-auto-application/-companion/database.html
+$dokka.location:ru.eco.automan/AutoApplication.Companion/eventsRepository/#/PointingToDeclaration/-automan/ru.eco.automan/-auto-application/-companion/events-repository.html
 $dokka.location:ru.eco.automan/AutoApplication.Companion/expenseRepository/#/PointingToDeclaration/-automan/ru.eco.automan/-auto-application/-companion/expense-repository.html
 $dokka.location:ru.eco.automan/AutoApplication.Companion/notificationManager/#/PointingToDeclaration/-automan/ru.eco.automan/-auto-application/-companion/notification-manager.html
+$dokka.location:ru.eco.automan/AutoApplication.Companion/periods/#/PointingToDeclaration/-automan/ru.eco.automan/-auto-application/-companion/periods.html
 $dokka.location:ru.eco.automan/AutoApplication.Companion/rulesRepository/#/PointingToDeclaration/-automan/ru.eco.automan/-auto-application/-companion/rules-repository.html
+$dokka.location:ru.eco.automan/AutoApplication.Companion/sharedPreferences/#/PointingToDeclaration/-automan/ru.eco.automan/-auto-application/-companion/shared-preferences.html
 $dokka.location:ru.eco.automan/AutoApplication///PointingToDeclaration/-automan/ru.eco.automan/-auto-application/index.html
 $dokka.location:ru.eco.automan/AutoApplication/AutoApplication/#/PointingToDeclaration/-automan/ru.eco.automan/-auto-application/-auto-application.html
 $dokka.location:ru.eco.automan/AutoApplication/onCreate/#/PointingToDeclaration/-automan/ru.eco.automan/-auto-application/on-create.html
@@ -169,6 +389,9 @@ $dokka.location:ru.eco.automan/Converters///PointingToDeclaration/-automan/ru.e
 $dokka.location:ru.eco.automan/Converters/Converters/#/PointingToDeclaration/-automan/ru.eco.automan/-converters/-converters.html
 $dokka.location:ru.eco.automan/Converters/dateToTimestamp/#java.sql.Date?/PointingToDeclaration/-automan/ru.eco.automan/-converters/date-to-timestamp.html
 $dokka.location:ru.eco.automan/Converters/fromTimestamp/#kotlin.Long?/PointingToDeclaration/-automan/ru.eco.automan/-converters/from-timestamp.html
+$dokka.location:ru.eco.automan/EventWorker///PointingToDeclaration/-automan/ru.eco.automan/-event-worker/index.html
+$dokka.location:ru.eco.automan/EventWorker/EventWorker/#[Error type: Unresolved type for Context]#[Error type: Unresolved type for WorkerParameters]/PointingToDeclaration/-automan/ru.eco.automan/-event-worker/-event-worker.html
+$dokka.location:ru.eco.automan/EventWorker/doWork/#/PointingToDeclaration/-automan/ru.eco.automan/-event-worker/do-work.html
 $dokka.location:ru.eco.automan/ExampleInstrumentedTest///PointingToDeclaration/-automan/ru.eco.automan/-example-instrumented-test/index.html
 $dokka.location:ru.eco.automan/ExampleInstrumentedTest/ExampleInstrumentedTest/#/PointingToDeclaration/-automan/ru.eco.automan/-example-instrumented-test/-example-instrumented-test.html
 $dokka.location:ru.eco.automan/ExampleInstrumentedTest/useAppContext/#/PointingToDeclaration/-automan/ru.eco.automan/-example-instrumented-test/use-app-context.html
@@ -183,12 +406,14 @@ $dokka.location:ru.eco.automan/NotificationController.Companion/CHANNEL_ID/#/Poi
 $dokka.location:ru.eco.automan/NotificationController.Companion/NOTIFICATION_ID/#/PointingToDeclaration/-automan/ru.eco.automan/-notification-controller/-companion/-n-o-t-i-f-i-c-a-t-i-o-n_-i-d.html
 $dokka.location:ru.eco.automan/NotificationController///PointingToDeclaration/-automan/ru.eco.automan/-notification-controller/index.html
 $dokka.location:ru.eco.automan/NotificationController/NotificationController/#/PointingToDeclaration/-automan/ru.eco.automan/-notification-controller/-notification-controller.html
+$dokka.location:ru.eco.automan/NotificationController/createEventNotification/#kotlin.String#[Error type: Unresolved type for Context]/PointingToDeclaration/-automan/ru.eco.automan/-notification-controller/create-event-notification.html
 $dokka.location:ru.eco.automan/NotificationController/createTestNotification/#[Error type: Unresolved type for Context]/PointingToDeclaration/-automan/ru.eco.automan/-notification-controller/create-test-notification.html
 ru.eco.automan
 ru.eco.automan.adapters
 ru.eco.automan.dao
 ru.eco.automan.database
 ru.eco.automan.fragments
+ru.eco.automan.listeners
 ru.eco.automan.models
 ru.eco.automan.repositories
 ru.eco.automan.viewModelFactories
