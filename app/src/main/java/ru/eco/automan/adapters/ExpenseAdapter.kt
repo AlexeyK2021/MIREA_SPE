@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ru.eco.automan.R
+import ru.eco.automan.listeners.OnChangeExpenseDataRequestListener
 import ru.eco.automan.models.Expense
 import java.util.Currency
 import java.util.Locale
@@ -29,8 +30,12 @@ class ExpenseViewHolder(view: View) : RecyclerView.ViewHolder(view) {
  *  Адаптер для траты в определенной категории
  *  @param expenses список трат в определенной категории
  */
-class ExpenseAdapter(private val expenses: List<Expense>) :
+class ExpenseAdapter(
+    private val expenses: List<Expense>,
+    private val onChangeExpenseDataRequestListener: OnChangeExpenseDataRequestListener
+) :
     RecyclerView.Adapter<ExpenseViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExpenseViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.wastes_card_recycler_item, parent, false)
@@ -42,9 +47,16 @@ class ExpenseAdapter(private val expenses: List<Expense>) :
         holder.apply {
             wasteName.text = expense.name
             wasteCost.text = expense.amount.currency()
+
+            itemView.setOnClickListener {
+                onChangeExpenseDataRequestListener.onChangeDataRequest(
+                    expenseId = expense.id,
+                    expenseName = expense.name,
+                    expenseAmount = expense.amount
+                )
+            }
         }
     }
 
     override fun getItemCount(): Int = expenses.size
-
 }

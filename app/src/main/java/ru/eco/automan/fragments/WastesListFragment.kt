@@ -15,12 +15,13 @@ import ru.eco.automan.R
 import ru.eco.automan.adapters.ExpenseCategoryAdapter
 import ru.eco.automan.databinding.FragmentWastesAutoBinding
 import ru.eco.automan.listeners.OnAddExpenseListener
+import ru.eco.automan.listeners.OnChangeExpenseListener
 import ru.eco.automan.viewModelFactories.AutoViewModelFactory
 import ru.eco.automan.viewModelFactories.ExpenseViewModelFactory
 import ru.eco.automan.viewModels.AutoViewModel
 import ru.eco.automan.viewModels.ExpenseViewModel
 
-class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpenseListener {
+class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpenseListener, OnChangeExpenseListener {
     private val expenseViewModel: ExpenseViewModel by activityViewModels {
         ExpenseViewModelFactory(
             AutoApplication.expenseRepository
@@ -50,7 +51,7 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
         expenseViewModel.setCurrentAuto(autoViewModel.currAuto.value!!.id)
 
         val data = expenseViewModel.getCategoryWithExpensesAndIcon(view.context)
-        val eca = ExpenseCategoryAdapter(data, this)
+        val eca = ExpenseCategoryAdapter(data, this, this)
 
         val lastPeriod = requireContext().resources.getStringArray(R.array.wastes_periods).lastIndex
         binding.apply {
@@ -110,5 +111,13 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
             categoryName = categoryName,
             amount = expenseAmount
         )
+    }
+
+    override fun editExpense(expenseId: Int, newExpenseName: String, newExpenseAmount: Float) {
+        expenseViewModel.editExpense(expenseId, newExpenseName, newExpenseAmount)
+    }
+
+    override fun deleteExpense(expenseId: Int) {
+       expenseViewModel.deleteExpense(expenseId)
     }
 }

@@ -62,9 +62,7 @@ class ChooseAutoFragment : Fragment(R.layout.fragment_control_auto), OnAutoChoos
     override fun onDeleteClick(autoId: Int) {
         expenseViewModel.deleteAllExpensesByAutoId(autoId)
         autoViewModel.deleteAuto(autoId)
-
     }
-
 
     override fun onChooseClick(autoId: Int) {
         autoViewModel.setCurrentAutoById(autoId)

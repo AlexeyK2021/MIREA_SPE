@@ -80,7 +80,7 @@
                 app:layout_constraintTop_toBottomOf="@id/recycler_wastes" />
 
             <EditText
-                android:id="@+id/new_event"
+                android:id="@+id/new_expense"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -94,6 +94,18 @@
                 app:layout_constraintTop_toTopOf="@id/add_event"
                 android:inputType="text"/>
 
+            <ImageView
+                android:id="@+id/delete_expense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/cancel_editing"
+                app:layout_constraintStart_toStartOf="@id/recycler_wastes"
+                app:layout_constraintTop_toBottomOf="@id/new_expense"
+                android:visibility="gone"
+                android:clickable="false"/>
+
             <EditText
                 android:id="@+id/newWasteAmount"
                 android:layout_width="wrap_content"
@@ -104,9 +116,9 @@
                 android:paddingHorizontal="10dp"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@id/new_event"
-                app:layout_constraintStart_toStartOf="@id/new_event"
-                app:layout_constraintTop_toBottomOf="@id/new_event"
+                app:layout_constraintEnd_toEndOf="@id/new_expense"
+                app:layout_constraintStart_toStartOf="@id/new_expense"
+                app:layout_constraintTop_toBottomOf="@id/new_expense"
                 android:inputType="numberDecimal"/>
 
 

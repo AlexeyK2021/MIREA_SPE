@@ -54,6 +54,15 @@ class ExpenseViewModel(
         }
     }
 
+    fun editExpense(expenseId: Int, newExpenseName: String, newExpenseAmount: Float) {
+        val expenseToEdit = userExpenses.value!!.find { it.id == expenseId }!!
+        expenseToEdit.name = newExpenseName
+        expenseToEdit.amount = newExpenseAmount
+
+        viewModelScope.launch(Dispatchers.IO) { expenseRepository.updateExpense(expenseToEdit) }
+    }
+
+
     fun updateExpense(expense: Expense) =
         viewModelScope.launch(Dispatchers.IO) { }
 

@@ -32,8 +32,8 @@ import java.sql.Date
 )
 data class Expense(
     @PrimaryKey(autoGenerate = true) val id: Int,
-    @ColumnInfo val name: String,
-    @ColumnInfo val amount: Float,
+    @ColumnInfo var name: String,
+    @ColumnInfo var amount: Float,
     @ColumnInfo val date: Date,
     @ColumnInfo(name = "category_id") val categoryId: Int,
     @ColumnInfo(name = "auto_id") val autoId: Int
