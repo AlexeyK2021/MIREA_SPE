@@ -36,5 +36,5 @@ data class Expense(
     @ColumnInfo var amount: Float,
     @ColumnInfo val date: Date,
     @ColumnInfo(name = "category_id") val categoryId: Int,
-    @ColumnInfo(name = "auto_id") val autoId: Int
+    @ColumnInfo(name = "auto_id") val autoId: Int,
 )

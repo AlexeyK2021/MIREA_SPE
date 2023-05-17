@@ -1,7 +1,9 @@
 package ru.eco.automan.viewModels
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -79,6 +81,7 @@ class ExpenseViewModel(
         return dataToReturn
     }
 
+    @SuppressLint("DiscouragedApi")
     private fun getCategoryWithExpensesAndIcon(
         context: Context,
         userExpenses: List<Expense>?
@@ -95,7 +98,14 @@ class ExpenseViewModel(
             ret.add(
                 CategoryWithExpenseAndIcon(
                     categoryName = category.name,
-                    categoryImage = ContextCompat.getDrawable(context, R.drawable.icon_book)!!,
+                    categoryImage = AppCompatResources.getDrawable(
+                        context,
+                        context.resources.getIdentifier(
+                            category.iconName,
+                            "drawable",
+                            context.packageName
+                        )
+                    )!!,
                     expensesList = expenses,
                     wastesSum = sumOfExpenseList(expenses)
                 )
