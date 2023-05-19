@@ -15,6 +15,7 @@ import ru.eco.automan.viewModels.getEstimatedDays
 class EventViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
     val eventName: TextView = itemview.findViewById(R.id.event_name)
     val eventDate: TextView = itemview.findViewById(R.id.days_before)
+    val eventDateDescription: TextView = itemview.findViewById(R.id.event_description)
 }
 
 /**
@@ -31,6 +32,7 @@ class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         val curr = eventsList[position]
         val daysBefore = curr.date.getEstimatedDays()
+        val date = "Дата события:\n" + curr.date.toString()
 
         val days = holder.itemView.resources.getQuantityString(
             R.plurals.days, daysBefore, daysBefore
@@ -39,6 +41,7 @@ class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<
         holder.apply {
             eventName.text = curr.name
             eventDate.text = days
+            eventDateDescription.text = date
         }
     }
 

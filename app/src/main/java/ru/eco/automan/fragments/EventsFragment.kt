@@ -36,7 +36,7 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentEventAutoBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -78,6 +78,7 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                     eventDate.text = dateToShow
                 }, _year, _month, _day).show()
             }
+
         }
     }
 }
