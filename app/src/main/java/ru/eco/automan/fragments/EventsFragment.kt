@@ -54,18 +54,14 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                     EventsAdapter(eventsViewModel.getEventsByAutoId(autoViewModel.currAuto.value!!.id))
             }
 
-            addEvent.setOnClickListener {
-                if (date != null && Calendar.getInstance().timeInMillis < date!!.time)
-                    eventsViewModel.addEvent(
-                        newEvent.text.toString(),
-                        date!!,
-                        autoViewModel.currAuto.value!!.id
-                    )
-                newEvent.text = "".getEditable()
-                eventDate.text = ""
+            addEventButton.addEventButton.setOnClickListener {
+                addEventButton.addEventButton.visibility = View.GONE
+
+                enterEventData.enterEventData.visibility = View.VISIBLE
+                confirmButton.visibility = View.VISIBLE
             }
 
-            eventDate.setOnClickListener {
+            enterEventData.calendarImage.setOnClickListener {
                 val dateAndTime = Calendar.getInstance()
                 val _year = dateAndTime.get(Calendar.YEAR)
                 val _month = dateAndTime.get(Calendar.MONTH)
@@ -75,10 +71,27 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                     val text = "$year-${month + 1}-$day"
                     date = Date.valueOf(text)
                     val dateToShow = "$day.${month + 1}.${year}"
-                    eventDate.text = dateToShow
+                    enterEventData.eventDate.text = dateToShow
                 }, _year, _month, _day).show()
+            }
+
+            confirmButton.setOnClickListener {
+                if (date != null && Calendar.getInstance().timeInMillis < date!!.time)
+                    eventsViewModel.addEvent(
+                        enterEventData.newEvent.text.toString(),
+                        date!!,
+                        autoViewModel.currAuto.value!!.id
+                    )
+                enterEventData.newEvent.text = "".getEditable()
+                enterEventData.eventDate.text = ""
+
+                addEventButton.addEventButton.visibility = View.VISIBLE
+
+                enterEventData.enterEventData.visibility = View.GONE
+                confirmButton.visibility = View.GONE
             }
 
         }
     }
+
 }

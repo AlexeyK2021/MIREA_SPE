@@ -49,54 +49,67 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/events_list"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginVertical="20dp"
-        app:layout_constraintBottom_toTopOf="@id/new_event"
         app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
         app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintTop_toBottomOf="@id/textXyev" />
+        app:layout_constraintTop_toBottomOf="@id/textXyev"
+        />
 
-    <ImageView
-        android:id="@+id/add_event"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginVertical="15dp"
-        android:src="@drawable/vector_oke"
-        app:layout_constraintBottom_toBottomOf="@id/event_date"
-        app:layout_constraintEnd_toStartOf="@id/new_event"
-        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintTop_toTopOf="@id/new_event" />
-
-    <EditText
-        android:id="@+id/new_event"
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/middle_barrier_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/rectangle_214"
-        android:hint="@string/new_event_name"
-        android:inputType="text"
-        android:paddingHorizontal="10dp"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@id/event_date"
-        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
-        app:layout_constraintStart_toEndOf="@id/add_event" />
+        app:constraint_referenced_ids="textXyev, events_list"
+        app:barrierDirection="bottom"
+        />
 
-    <TextView
-        android:id="@+id/event_date"
-        android:layout_width="0dp"
+    <include
+        android:id="@+id/add_event_button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:background="@drawable/rectangle_214"
-        android:hint="@string/event_date"
+        layout="@layout/add_event_button"
 
-        android:paddingHorizontal="5dp"
-        android:paddingVertical="5dp"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalEndGuideline"
-        app:layout_constraintEnd_toEndOf="@id/new_event"
-        app:layout_constraintStart_toStartOf="@id/new_event" />
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/middle_barrier_1"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        />
+
+    <include
+        android:id="@+id/enter_event_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/enter_event_data"
+        android:visibility="gone"
+
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/middle_barrier_1"
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
+        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
+        />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/middle_barrier_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="add_event_button, enter_event_data"
+        app:barrierDirection="bottom"
+        />
+
+    <ImageView
+        android:id="@+id/confirm_button"
+        android:layout_width="107dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/vector_oke"
+        android:background="@drawable/frog_element_background_black"
+        android:visibility="gone"
+        tools:ignore="contentDescription"
+
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/middle_barrier_2"
+        app:layout_constraintStart_toStartOf="@+id/add_event_button"
+        app:layout_constraintEnd_toEndOf="@+id/add_event_button"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

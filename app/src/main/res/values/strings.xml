@@ -61,7 +61,7 @@
     <string name="events_description">Получайте уведомления о предстоящих событиях</string>
     <string name="fines">Штрафы</string>
     <string name="event_date">Дата события</string>
-    <string name="new_event_name">Имя нового события</string>
+    <string name="new_event_name">Новое событие</string>
     <string name="new_category_name">Имя новой категории</string>
 
     <!--AlertDialog-->
@@ -69,6 +69,7 @@
     <string name="yes">Да</string>
     <string name="delete_expense">Вы собираетесь удалить трату. Желаете продолжить?</string>
     <string name="delete_auto">Вы собираетесь удалить автомобиль. Желаете продолжить?</string>
+    <string name="add_event_text">Добавь предстоящее событие</string>
 
     <string-array name="themes">
         <!--        <item>Светлая</item>-->

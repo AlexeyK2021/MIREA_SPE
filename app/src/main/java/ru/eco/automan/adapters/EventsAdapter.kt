@@ -1,5 +1,6 @@
 package ru.eco.automan.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.eco.automan.R
 import ru.eco.automan.models.Event
 import ru.eco.automan.viewModels.getEstimatedDays
+import java.sql.Date
 
 /**
  * ViewHolder для списка предстоящих событий.
@@ -32,7 +34,11 @@ class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         val curr = eventsList[position]
         val daysBefore = curr.date.getEstimatedDays()
-        val date = "Дата события:\n" + curr.date.toString()
+        val dateList = getSeparatedDate(curr.date)
+        val day = dateList[2]
+        val month = getRuMonth(dateList[1])
+        val year = dateList[0]
+        val description = "Следующая дата события\n- $day $month $year года, осталось:"
 
         val days = holder.itemView.resources.getQuantityString(
             R.plurals.days, daysBefore, daysBefore
@@ -41,9 +47,52 @@ class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<
         holder.apply {
             eventName.text = curr.name
             eventDate.text = days
-            eventDateDescription.text = date
+            eventDateDescription.text = description
         }
     }
 
     override fun getItemCount(): Int = eventsList.size
+}
+
+/*
+ * Эта функция переводит числовое значение месяца в буквенное
+ *
+ * :param month: число от 1 до 12
+ * :return: строку с названием месяца в родительном падеже
+ */
+fun getRuMonth(month: Int) : String {
+    return when(month) {
+        1 -> "января"
+        2 -> "февраля"
+        3 -> "марта"
+        4 -> "апреля"
+        5 -> "мая"
+        6 -> "июня"
+        7 -> "июля"
+        8 -> "августа"
+        9 -> "сентября"
+        10 -> "октября"
+        11 -> "ноября"
+        12 -> "декабря"
+        else -> "ERROR"
+    }
+}
+
+/*
+ * Эта функция возвращает список из трёх элементов: день, месяц, год в числовом формате
+ * доставая из передаваемого внутрь значения date
+ *
+ * :param date (тип sql.Date): дата
+ * :return: список [год, месяц, день]
+ */
+fun getSeparatedDate(date: Date) : List<Int> {
+    val strDate = date.toString() // 2023-05-22
+    val year = strDate.subSequence(0, 4).toString().toInt()
+    Log.d("frog", "year: $year")
+    val month = strDate.subSequence(5, 7).toString().toInt()
+    Log.d("frog", "month: $month")
+    val day = strDate.subSequence(8, 10).toString().toInt()
+    Log.d("frog", "day: $day")
+
+    return listOf(year, month, day)
 }
