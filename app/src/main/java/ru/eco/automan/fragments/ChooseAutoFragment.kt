@@ -13,12 +13,14 @@ import ru.eco.automan.R
 import ru.eco.automan.adapters.ChooseAutoAdapter
 import ru.eco.automan.databinding.FragmentControlAutoBinding
 import ru.eco.automan.listeners.OnAutoChooseClickListener
+import ru.eco.automan.listeners.OnDialogListener
 import ru.eco.automan.viewModelFactories.AutoViewModelFactory
 import ru.eco.automan.viewModelFactories.ExpenseViewModelFactory
 import ru.eco.automan.viewModels.AutoViewModel
 import ru.eco.automan.viewModels.ExpenseViewModel
 
-class ChooseAutoFragment : Fragment(R.layout.fragment_control_auto), OnAutoChooseClickListener {
+class ChooseAutoFragment : Fragment(R.layout.fragment_control_auto), OnAutoChooseClickListener,
+    OnDialogListener {
     private val autoViewModel: AutoViewModel by activityViewModels {
         AutoViewModelFactory(
             AutoApplication.autoRepository
@@ -31,6 +33,8 @@ class ChooseAutoFragment : Fragment(R.layout.fragment_control_auto), OnAutoChoos
     }
     private var _binding: FragmentControlAutoBinding? = null
     private val binding get() = _binding!!
+
+    private var deleteAutoId = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,13 +64,26 @@ class ChooseAutoFragment : Fragment(R.layout.fragment_control_auto), OnAutoChoos
     }
 
     override fun onDeleteClick(autoId: Int) {
-        expenseViewModel.deleteAllExpensesByAutoId(autoId)
-        autoViewModel.deleteAuto(autoId)
+        DeleteDialogFragment(
+            R.string.delete_auto_label,
+            R.string.delete_auto,
+            this,
+            requireContext()
+        )
+        deleteAutoId = autoId
     }
 
     override fun onChooseClick(autoId: Int) {
         autoViewModel.setCurrentAutoById(autoId)
-
         findNavController().navigate(R.id.action_chooseAutoFragment2_to_mainFragment)
+    }
+
+    override fun onNegativeButtonClicked() {
+        deleteAutoId = 0
+    }
+
+    override fun onPositiveButtonClicked() {
+        expenseViewModel.deleteAllExpensesByAutoId(deleteAutoId)
+        autoViewModel.deleteAuto(deleteAutoId)
     }
 }

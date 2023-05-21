@@ -75,6 +75,20 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                 }, _year, _month, _day).show()
             }
 
+            enterEventData.eventDate.setOnClickListener {
+                val dateAndTime = Calendar.getInstance()
+                val _year = dateAndTime.get(Calendar.YEAR)
+                val _month = dateAndTime.get(Calendar.MONTH)
+                val _day = dateAndTime.get(Calendar.DAY_OF_MONTH)
+
+                DatePickerDialog(requireContext(), { view, year, month, day ->
+                    val text = "$year-${month + 1}-$day"
+                    date = Date.valueOf(text)
+                    val dateToShow = "$day.${month + 1}.${year}"
+                    enterEventData.eventDate.text = dateToShow
+                }, _year, _month, _day).show()
+            }
+
             confirmButton.setOnClickListener {
                 if (date != null && Calendar.getInstance().timeInMillis < date!!.time)
                     eventsViewModel.addEvent(

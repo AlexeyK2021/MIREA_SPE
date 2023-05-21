@@ -70,6 +70,9 @@
     <string name="delete_expense">Вы собираетесь удалить трату. Желаете продолжить?</string>
     <string name="delete_auto">Вы собираетесь удалить автомобиль. Желаете продолжить?</string>
     <string name="add_event_text">Добавь предстоящее событие</string>
+    <string name="delete_expenses" >Вы собираетесь удалить все траты данного автомобиля. Желаете продолжить?</string>
+    <string name="delete_auto_label">Удаление автомобиля</string>
+    <string name="delete_expense_label">Удаление траты</string>
 
     <string-array name="themes">
         <!--        <item>Светлая</item>-->

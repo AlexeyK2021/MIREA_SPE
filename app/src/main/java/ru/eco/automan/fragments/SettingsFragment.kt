@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
 import ru.eco.automan.databinding.FragmentSettingsAutoBinding
+import ru.eco.automan.listeners.OnDialogListener
 import ru.eco.automan.viewModelFactories.AutoViewModelFactory
 import ru.eco.automan.viewModelFactories.EventsViewModelFactory
 import ru.eco.automan.viewModelFactories.ExpenseViewModelFactory
@@ -21,7 +23,7 @@ import ru.eco.automan.viewModels.EventsViewModel
 import ru.eco.automan.viewModels.ExpenseViewModel
 import ru.eco.automan.viewModels.SettingsViewModel
 
-class SettingsFragment : Fragment(R.layout.fragment_settings_auto) {
+class SettingsFragment : Fragment(R.layout.fragment_settings_auto), OnDialogListener {
     private val settingsViewModel: SettingsViewModel by activityViewModels {
         SettingsViewModelFactory(AutoApplication.sharedPreferences)
     }
@@ -100,12 +102,24 @@ class SettingsFragment : Fragment(R.layout.fragment_settings_auto) {
                 findNavController().navigate(R.id.action_settingsFragment_to_eventsFragment)
             }
             clearExpenses.setOnClickListener {
-                expenseViewModel.deleteAllExpenses()
+                DeleteDialogFragment(
+                    R.string.delete_expense_label,
+                    R.string.delete_expenses,
+                    this@SettingsFragment,
+                    this@SettingsFragment.requireContext()
+                )
             }
-            eventsViewModel.autoEvents.observe(viewLifecycleOwner){
-                eventsNumber.text = eventsViewModel.getEventsByAutoId(autoViewModel.currAuto.value!!.id).size.toString()
+            eventsViewModel.autoEvents.observe(viewLifecycleOwner) {
+                eventsNumber.text =
+                    eventsViewModel.getEventsByAutoId(autoViewModel.currAuto.value!!.id).size.toString()
             }
         }
     }
 
+    override fun onNegativeButtonClicked() {
+    }
+
+    override fun onPositiveButtonClicked() {
+        expenseViewModel.deleteAllExpensesByAutoId(autoViewModel.currAuto.value!!.id)
+    }
 }

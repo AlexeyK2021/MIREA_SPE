@@ -29,21 +29,20 @@
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@id/event"
         app:layout_constraintBottom_toBottomOf="@id/event"
+        android:layout_marginHorizontal="10dp"
         app:layout_constraintTop_toTopOf="@id/event"
-        app:layout_constraintEnd_toStartOf="@id/days_before"
         tools:text="Mercedes-benz C300"/>
 
     <ImageView
-        android:id="@+id/days_before"
+        android:id="@+id/auto_icon"
         android:layout_width="67dp"
         android:layout_height="38dp"
-        android:src="@drawable/ic_launcher_foreground"
+        android:src="@drawable/car_icon"
         tools:ignore="contentDescription"
-
         app:layout_constraintBottom_toBottomOf="@id/event"
         app:layout_constraintTop_toTopOf="@id/event"
         app:layout_constraintEnd_toEndOf="@id/event"
-        app:layout_constraintStart_toEndOf="@id/event_name"/>
+        android:layout_marginHorizontal="10dp"/>
 
     <ImageView
         android:id="@+id/delete_auto"

@@ -41,6 +41,7 @@
             android:id="@+id/auto_photo"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:src="@drawable/car_icon"
             app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
             app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
             app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"

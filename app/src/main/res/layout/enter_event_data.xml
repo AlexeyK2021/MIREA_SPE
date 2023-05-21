@@ -16,8 +16,7 @@
 
         app:layout_constraintTop_toTopOf="@id/new_event"
         app:layout_constraintBottom_toBottomOf="@id/new_event"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
         android:id="@+id/new_event"

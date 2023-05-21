@@ -55,7 +55,12 @@ class ExpenseCategoryViewHolder(
 
         deleteEditing.visibility = View.GONE
         deleteEditing.setOnClickListener {
-            DeleteDialogFragment(titleId = R.string.delete_expense, this, itemView.context)
+            DeleteDialogFragment(
+                R.string.delete_expense_label,
+                R.string.delete_expense,
+                this,
+                itemView.context
+            )
         }
         addWaste.setOnClickListener {
             if (editingExpenseId == 0) {

@@ -9,4 +9,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="spaceGray">#CACACA</color>
+
+    <!--Кнопки панели подтверждения удаления-->
+    <color name="delete">#FF0000</color>
+    <color name="dismiss">#FFFFFF</color>
+
+    <color name="blue">#0030DB</color>
 </resources>
