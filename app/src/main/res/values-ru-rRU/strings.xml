@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingQuantity">
+    <string name="app_name">AutoCost</string>
+    <!-- ControlAutoFragment -->
+    <string name="choose_your_auto">Choose your auto</string>
+    <string name="add_auto_text">Add auto</string>
+    <string name="actual_text">View all relevant information</string>
+    <string name="expenses_text">Keep track of expenses</string>
+    <string name="add_text">Add your auto</string>
+
+    <!-- AddAutoFragment -->
+    <string name="continue_text">Продолжить</string>
+    <string name="brand">Марка</string>
+    <string name="model">Модель</string>
+    <string name="years">Год выпуска</string>
+    <string name="fuel">Вид топлива</string>
+    <string name="insurance">Тип страхования</string>
+    <string name="description">Чтобы контролировать\nфинансовые расходы</string>
+    <string name="add_your_auto">Добавьте свой\nавтомобиль</string>
+
+    <!-- SettingsAutoFragment -->
+    <string name="common">Общие</string>
+    <string name="theme">Тема</string>
+    <string name="language">Язык</string>
+    <string name="notifications">Уведомления</string>
+    <string name="manage">Управление автомобилем</string>
+    <string name="event">Предстоящие события</string>
+    <string name="clear">Очистить историю трат</string>
+
+    <!-- AutoInformationFragment -->
+    <string name="brand_inf">Марка машины</string>
+    <string name="model_inf">Модель машины</string>
+    <string name="registration_inf">Свидетельство о регистрации</string>
+
+    <!-- EventAutoFragment -->
+    <string name="future_event">Предстоящие события</string>
+
+    <!-- WastesAutoFragment -->
+    <string name="period">Период</string>
+    <string name="continue_wastes">Сохранить</string>
+<!--    <plurals name="periods">-->
+<!--        <item quantity="zero">День</item>-->
+<!--        <item quantity="one">Неделя</item>-->
+<!--        <item quantity="two">Месяц</item>-->
+<!--        <item quantity="few">План.\nрасходы</item>-->
+<!--        <item quantity="other">Все время</item>-->
+<!--    </plurals>-->
+
+    <!-- RulesSectionsFragment -->
+
+    <!-- RulesFragment -->
+    <string name="pdd">Правила дорожного\nдвижения</string>
+    <string name="new_waste_name">Имя новой траты</string>
+    <string name="new_waste_cost">Стоимость</string>
+
+    <!-- Fines -->
+    <string name="check_fines_button">Проверить</string>
+    <string name="last_check">Проверка не производилась</string>
+
+    <!--Notifications-->
+    <string name="events">События</string>
+    <string name="events_description">Получайте уведомления о предстоящих событиях</string>
+    <string name="fines">Штрафы</string>
+    <string name="event_date">Дата события</string>
+    <string name="new_event_name">Новое событие</string>
+    <string name="new_category_name">Имя новой категории</string>
+
+    <!--AlertDialog-->
+    <string name="no">Нет</string>
+    <string name="yes">Да</string>
+    <string name="delete_expense">Вы собираетесь удалить трату. Желаете продолжить?</string>
+    <string name="delete_auto">Вы собираетесь удалить автомобиль. Желаете продолжить?</string>
+    <string name="add_event_text">Добавь предстоящее событие</string>
+    <string name="delete_expenses" >Вы собираетесь удалить все траты данного автомобиля. Желаете продолжить?</string>
+    <string name="delete_auto_label">Удаление автомобиля</string>
+    <string name="delete_expense_label">Удаление траты</string>
+
+    <string-array name="themes">
+        <!--        <item>Светлая</item>-->
+        <item>Тёмная</item>
+    </string-array>
+
+    <string-array name="languages">
+        <item>Русский</item>
+    </string-array>
+
+    <plurals name="days">
+        <item quantity="one">%1$d день</item>
+<!--        <item quantity="two">%1$d дня</item>-->
+        <item quantity="few">%1$d дня</item>
+        <item quantity="many">%1$d дней</item>
+        <item quantity="other">%1$d дня</item>
+    </plurals>
+
+    <string-array name="wastes_periods">
+        <item>День</item>
+        <item>Неделя</item>
+        <item>Месяц</item>
+        <item>Все время</item>
+    </string-array>
+</resources>

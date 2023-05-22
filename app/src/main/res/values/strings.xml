@@ -1,101 +1,100 @@
 <resources>
     <string name="app_name">AutoCost</string>
     <!-- ControlAutoFragment -->
-    <string name="choose_your_auto">Выберите свой\n автомобиль</string>
-    <string name="add_auto_text">Добавить автомобиль</string>
-    <string name="actual_text">Просматривайте всю актуальную\nинформацию.</string>
-    <string name="expenses_text">Следите за расходами</string>
-    <string name="add_text">Добавляйте автомобиль</string>
+    <string name="choose_your_auto">Choose your auto</string>
+    <string name="add_auto_text">Add auto</string>
+    <string name="actual_text">View all relevant information</string>
+    <string name="expenses_text">Keep track of expenses</string>
+    <string name="add_text">Add your auto</string>
 
     <!-- AddAutoFragment -->
-    <string name="continue_text">Продолжить</string>
-    <string name="brand">Марка</string>
-    <string name="model">Модель</string>
-    <string name="years">Год выпуска</string>
-    <string name="fuel">Вид топлива</string>
-    <string name="insurance">Тип страхования</string>
-    <string name="description">Чтобы контролировать\nфинансовые расходы</string>
-    <string name="add_your_auto">Добавьте свой\nавтомобиль</string>
+    <string name="continue_text">Continue</string>
+    <string name="brand">Brand</string>
+    <string name="model">Model</string>
+    <string name="years">Release year</string>
+    <string name="fuel">Fuel type</string>
+    <string name="insurance">Insurance</string>
+    <string name="description">To control financial expenses</string>
+    <string name="add_your_auto">@string/add_text</string>
 
     <!-- SettingsAutoFragment -->
-    <string name="common">Общие</string>
-    <string name="theme">Тема</string>
-    <string name="language">Язык</string>
-    <string name="notifications">Уведомления</string>
-    <string name="manage">Управление автомобилем</string>
-    <string name="event">Предстоящие события</string>
-    <string name="clear">Очистить историю трат</string>
+    <string name="common">General</string>
+    <string name="theme">Theme</string>
+    <string name="language">Language</string>
+    <string name="notifications">Notifications</string>
+    <string name="manage">Auto control</string>
+    <string name="event">Upcoming events</string>
+    <string name="clear">Clear your expense history</string>
 
     <!-- AutoInformationFragment -->
-    <string name="brand_inf">Марка машины</string>
-    <string name="model_inf">Модель машины</string>
-    <string name="registration_inf">Свидетельство о регистрации</string>
+    <string name="brand_inf">@string/brand</string>
+    <string name="model_inf">@string/model</string>
+    <string name="registration_inf">Registration certificate</string>
 
     <!-- EventAutoFragment -->
-    <string name="future_event">Предстоящие события</string>
+    <string name="future_event">@string/event</string>
 
     <!-- WastesAutoFragment -->
-    <string name="period">Период</string>
-    <string name="continue_wastes">Сохранить</string>
-    <plurals name="periods">
-        <item quantity="zero">День</item>
-        <item quantity="one">Неделя</item>
-        <item quantity="two">Месяц</item>
-        <item quantity="few">План.\nрасходы</item>
-        <item quantity="other">Все время</item>
-    </plurals>
+    <string name="period">Period</string>
+    <string name="continue_wastes">Save</string>
+<!--    <plurals name="periods">-->
+<!--        <item quantity="zero">День</item>-->
+<!--        <item quantity="one">Неделя</item>-->
+<!--        <item quantity="two">Месяц</item>-->
+<!--        <item quantity="few">План.\nрасходы</item>-->
+<!--        <item quantity="other">Все время</item>-->
+<!--    </plurals>-->
 
     <!-- RulesSectionsFragment -->
 
     <!-- RulesFragment -->
-    <string name="pdd">Правила дорожного\nдвижения</string>
-    <string name="new_waste_name">Имя новой траты</string>
-    <string name="new_waste_cost">Стоимость</string>
+    <string name="pdd">Traffic Laws</string>
+    <string name="new_waste_name">New waste name</string>
+    <string name="new_waste_cost">New waste amount</string>
 
     <!-- Fines -->
-    <string name="check_fines_button">Проверить</string>
-    <string name="last_check">Проверка не производилась</string>
+    <string name="check_fines_button">Check</string>
+    <string name="last_check">The check was not performed</string>
 
     <!--Notifications-->
-    <string name="events">События</string>
-    <string name="events_description">Получайте уведомления о предстоящих событиях</string>
-    <string name="fines">Штрафы</string>
-    <string name="event_date">Дата события</string>
-    <string name="new_event_name">Новое событие</string>
-    <string name="new_category_name">Имя новой категории</string>
+    <string name="events">Events</string>
+    <string name="events_description">Get notifications about upcoming events</string>
+    <string name="fines">Penalties</string>
+    <string name="event_date">Event date</string>
+    <string name="new_event_name">New еvent</string>
+    <string name="new_category_name">New category name</string>
 
     <!--AlertDialog-->
-    <string name="no">Нет</string>
-    <string name="yes">Да</string>
-    <string name="delete_expense">Вы собираетесь удалить трату. Желаете продолжить?</string>
-    <string name="delete_auto">Вы собираетесь удалить автомобиль. Желаете продолжить?</string>
-    <string name="add_event_text">Добавь предстоящее событие</string>
-    <string name="delete_expenses" >Вы собираетесь удалить все траты данного автомобиля. Желаете продолжить?</string>
-    <string name="delete_auto_label">Удаление автомобиля</string>
-    <string name="delete_expense_label">Удаление траты</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="delete_expense">You are going to delete the waste. Continue?</string>
+    <string name="delete_auto">You are going to delete the car. Continue?</string>
+    <string name="add_event_text">Add an upcoming event</string>
+    <string name="delete_expenses" >You are going to delete all the expenses of this car. Continue?</string>
+    <string name="delete_auto_label">Delete auto</string>
+    <string name="delete_expense_label">Delete expense</string>
 
     <string-array name="themes">
         <!--        <item>Светлая</item>-->
-        <item>Тёмная</item>
+        <item>Dark</item>
     </string-array>
 
     <string-array name="languages">
-        <item>Русский</item>
+        <item>English</item>
     </string-array>
 
     <plurals name="days">
-        <item quantity="one">%1$d день</item>
-        <item quantity="two">%1$d дня</item>
-        <item quantity="few">%1$d дня</item>
-        <item quantity="many">%1$d дней</item>
-        <item quantity="other">%1$d дня</item>
+        <item quantity="one">%1$d day</item>
+        <item quantity="few">%1$d days</item>
+        <item quantity="many">%1$d days</item>
+        <item quantity="other">%1$d days</item>
     </plurals>
 
     <string-array name="wastes_periods">
-        <item>День</item>
-        <item>Неделя</item>
-        <item>Месяц</item>
-        <item>Все время</item>
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
+        <item>All time</item>
     </string-array>
 
 </resources>
