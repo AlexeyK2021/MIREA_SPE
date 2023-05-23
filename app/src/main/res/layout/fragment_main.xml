@@ -75,34 +75,46 @@
         app:layout_constraintEnd_toStartOf="@id/verticalEndGuideLine"
         android:src="@drawable/radio_button_unchecked" />
 
-    <ImageView
+    <ProgressBar
         android:id="@+id/oilImage"
-        android:layout_height="64dp"
-        android:layout_width="64dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:background="@drawable/circle_shape"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
         app:layout_constraintTop_toTopOf="@id/checksImage"
         app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintEnd_toStartOf="@id/checksImage"
-        android:src="@drawable/baseline_settings" />
+        app:layout_constraintEnd_toStartOf="@id/checksImage"/>
 
-    <ImageView
+    <ProgressBar
         android:id="@+id/checksImage"
-        android:layout_height="64dp"
-        android:layout_width="64dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:background="@drawable/circle_shape"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
         app:layout_constraintTop_toBottomOf="@id/auto_image"
         app:layout_constraintStart_toEndOf="@id/oilImage"
         app:layout_constraintEnd_toStartOf="@id/repairImage"
         app:layout_constraintBottom_toTopOf="@id/moreExpencesImage"
-        app:layout_constraintVertical_bias="0.8"
-        android:src="@drawable/baseline_settings" />
+        app:layout_constraintVertical_bias="0.6"/>
 
-    <ImageView
+    <ProgressBar
         android:id="@+id/repairImage"
-        android:layout_height="64dp"
-        android:layout_width="64dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:background="@drawable/circle_shape"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
         app:layout_constraintTop_toTopOf="@id/checksImage"
         app:layout_constraintStart_toEndOf="@id/checksImage"
-        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
-        android:src="@drawable/baseline_settings" />
+        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"/>
 
     <ImageView
         android:id="@+id/moreExpencesImage"
