@@ -10,8 +10,11 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
+import ru.eco.automan.adapters.EventActionListener
+import ru.eco.automan.adapters.EventViewHolder
 import ru.eco.automan.adapters.EventsAdapter
 import ru.eco.automan.databinding.FragmentEventAutoBinding
+import ru.eco.automan.models.Event
 import ru.eco.automan.viewModelFactories.AutoViewModelFactory
 import ru.eco.automan.viewModelFactories.EventsViewModelFactory
 import ru.eco.automan.viewModels.AutoViewModel
@@ -50,8 +53,82 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
             eventsList.layoutManager = lm
 
             eventsViewModel.autoEvents.observe(viewLifecycleOwner) {
-                eventsList.adapter =
-                    EventsAdapter(eventsViewModel.getEventsByAutoId(autoViewModel.currAuto.value!!.id))
+                val adapter = EventsAdapter(eventsViewModel
+                        .getEventsByAutoId(autoViewModel.currAuto.value!!.id))
+
+                adapter.eventActionListener = object : EventActionListener {
+                    override fun onDeleteClick(curr: Event) {
+                        eventsViewModel.deleteEvent(curr.id)
+                    }
+
+                    override fun onEditClick(holder: EventViewHolder, curr: Event) {
+                        holder.newEventName.setText(curr.name)
+                        holder.newEventDate.text = curr.date.toString()
+
+                        holder.enterData.visibility = View.VISIBLE
+                        holder.confirmButton.visibility = View.VISIBLE
+                        holder.cancelButton.visibility = View.VISIBLE
+
+                        holder.editButton.visibility = View.GONE
+                        holder.deleteButton.visibility = View.GONE
+                        holder.eventDate.visibility = View.GONE
+                        holder.eventName.visibility = View.GONE
+                        holder.eventDateDescription.visibility = View.GONE
+                    }
+
+                    override fun onEventClick(
+                        holder: EventViewHolder,
+                    ) {
+                        val pos = holder.layoutPosition
+                        if (!adapter.isExpandList[pos]){
+                            holder.deleteButton.visibility = View.VISIBLE
+                            holder.editButton.visibility = View.VISIBLE
+                        } else {
+                            holder.deleteButton.visibility = View.GONE
+                            holder.editButton.visibility = View.GONE
+                        }
+                        adapter.isExpandList[pos] = !adapter.isExpandList[pos]
+                    }
+
+                    override fun onConfirmButtonClick(holder: EventViewHolder, curr: Event) {
+                        holder.enterData.visibility = View.GONE
+                        holder.confirmButton.visibility = View.GONE
+                        holder.cancelButton.visibility = View.GONE
+                        holder.eventDate.visibility = View.VISIBLE
+                        holder.eventName.visibility = View.VISIBLE
+                        holder.eventDateDescription.visibility = View.VISIBLE
+
+                        if (date != null && Calendar.getInstance().timeInMillis < date!!.time) {
+                            curr.name = holder.newEventName.text.toString()
+                            curr.date = date as Date
+                            eventsViewModel.updateEvent(curr)
+                        }
+                    }
+
+                    override fun onCancelButtonClick(holder: EventViewHolder) {
+                        holder.enterData.visibility = View.GONE
+                        holder.confirmButton.visibility = View.GONE
+                        holder.cancelButton.visibility = View.GONE
+                        holder.eventDate.visibility = View.VISIBLE
+                        holder.eventName.visibility = View.VISIBLE
+                        holder.eventDateDescription.visibility = View.VISIBLE
+                    }
+
+                    override fun onCalendarImageClick(holder: EventViewHolder) {
+                        val dateAndTime = Calendar.getInstance()
+                        val _year = dateAndTime.get(Calendar.YEAR)
+                        val _month = dateAndTime.get(Calendar.MONTH)
+                        val _day = dateAndTime.get(Calendar.DAY_OF_MONTH)
+
+                        DatePickerDialog(requireContext(), { view, year, month, day ->
+                            val text = "$year-${month + 1}-$day"
+                            date = Date.valueOf(text)
+                            val dateToShow = "$day.${month + 1}.${year}"
+                            holder.newEventDate.text = dateToShow
+                        }, _year, _month, _day).show()
+                    }
+                }
+                eventsList.adapter = adapter
             }
 
             addEventButton.addEventButton.setOnClickListener {
@@ -104,6 +181,7 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                 enterEventData.enterEventData.visibility = View.GONE
                 confirmButton.visibility = View.GONE
             }
+
 
         }
     }

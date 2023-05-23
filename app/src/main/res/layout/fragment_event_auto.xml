@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/black"
     tools:context=".fragments.EventsFragment">
 
@@ -50,7 +56,9 @@
         android:id="@+id/events_list"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="20dp"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="128dp"
         app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
         app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
         app:layout_constraintTop_toBottomOf="@id/textXyev"
@@ -92,8 +100,14 @@
         android:id="@+id/middle_barrier_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="add_event_button, enter_event_data"
+        app:constraint_referenced_ids="add_event_button, confirm_button"
         app:barrierDirection="bottom"
+        />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        app:layout_constraintTop_toBottomOf="@id/middle_barrier_2"
         />
 
     <ImageView
@@ -106,9 +120,10 @@
         tools:ignore="contentDescription"
 
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/middle_barrier_2"
+        app:layout_constraintTop_toBottomOf="@+id/enter_event_data"
         app:layout_constraintStart_toStartOf="@+id/add_event_button"
         app:layout_constraintEnd_toEndOf="@+id/add_event_button"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

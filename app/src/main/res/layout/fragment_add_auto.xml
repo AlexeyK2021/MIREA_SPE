@@ -38,16 +38,33 @@
             app:layout_constraintGuide_end="30dp" />
 
         <ImageView
-            android:id="@+id/auto_photo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/car_icon"
+            android:id="@+id/gray_circle"
+            android:layout_width="146dp"
+            android:layout_height="146dp"
+            android:src="@drawable/radio_button_unchecked"
+            tools:ignore="ContentDescription"
+
+            android:layout_marginBottom="28dp"
+            app:layout_constraintBottom_toTopOf="@id/add_your_auto_text"
             app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
             app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-            app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline"
-            tools:ignore="ContentDescription" />
+            />
+
+        <ImageView
+            android:id="@+id/auto_photo"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:src="@drawable/ic_car"
+            tools:ignore="ContentDescription"
+
+            app:layout_constraintTop_toTopOf="@id/gray_circle"
+            app:layout_constraintStart_toStartOf="@id/gray_circle"
+            app:layout_constraintEnd_toEndOf="@id/gray_circle"
+            app:layout_constraintBottom_toBottomOf="@id/gray_circle"
+            />
 
         <TextView
+            android:id="@+id/add_your_auto_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_your_auto"

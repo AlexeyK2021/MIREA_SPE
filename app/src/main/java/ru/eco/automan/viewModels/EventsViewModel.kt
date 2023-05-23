@@ -53,6 +53,18 @@ class EventsViewModel(private val eventsRepository: EventsRepository) : ViewMode
         }
     }
 
+    fun deleteEvent(eventId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            eventsRepository.deleteEvent(eventId)
+        }
+    }
+
+    fun updateEvent(event: Event) {
+        viewModelScope.launch (Dispatchers.IO) {
+            eventsRepository.updateEvent(event)
+        }
+    }
+
     /**
      * Метод проверки существования предстоящего события.
      * Если дата события уже прошла, то оно удаляется из БД

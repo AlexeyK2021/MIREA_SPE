@@ -4,12 +4,24 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import ru.eco.automan.R
 import ru.eco.automan.models.Event
 import ru.eco.automan.viewModels.getEstimatedDays
 import java.sql.Date
+
+interface EventActionListener {
+    fun onDeleteClick(curr: Event)
+    fun onEditClick(holder: EventViewHolder, curr: Event)
+    fun onEventClick(holder: EventViewHolder)
+    fun onConfirmButtonClick(holder: EventViewHolder, curr: Event)
+    fun onCancelButtonClick(holder: EventViewHolder)
+    fun onCalendarImageClick(holder: EventViewHolder)
+}
 
 /**
  * ViewHolder для списка предстоящих событий.
@@ -18,6 +30,14 @@ class EventViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
     val eventName: TextView = itemview.findViewById(R.id.event_name)
     val eventDate: TextView = itemview.findViewById(R.id.days_before)
     val eventDateDescription: TextView = itemview.findViewById(R.id.event_description)
+    val editButton: TextView = itemview.findViewById(R.id.edit_button)
+    val deleteButton: TextView = itemview.findViewById(R.id.delete_button)
+    val enterData: ConstraintLayout = itemview.findViewById(R.id.enter_event_data)
+    val confirmButton: ImageView = itemview.findViewById(R.id.confirm_button)
+    val cancelButton: ImageView = itemview.findViewById(R.id.cancel_button)
+    val calendarImage: ImageView = itemview.findViewById(R.id.calendar_image)
+    val newEventName: EditText = itemview.findViewById(R.id.new_event)
+    val newEventDate: TextView = itemview.findViewById(R.id.event_date)
 }
 
 /**
@@ -25,6 +45,11 @@ class EventViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
  * @param eventsList список предстоящих событий
  */
 class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<EventViewHolder>() {
+
+    //var isExpand: Boolean = false
+    val isExpandList: MutableList<Boolean> = mutableListOf()
+    lateinit var eventActionListener: EventActionListener
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.event_recycle_item, parent, false)
@@ -32,6 +57,8 @@ class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
+        isExpandList.add(position, false)
+
         val curr = eventsList[position]
         val daysBefore = curr.date.getEstimatedDays()
         val dateList = getSeparatedDate(curr.date)
@@ -48,13 +75,34 @@ class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<
             eventName.text = curr.name
             eventDate.text = days
             eventDateDescription.text = description
+            //
+            itemView.setOnClickListener {
+                eventActionListener.onEventClick(holder)
+            }
+            deleteButton.setOnClickListener {
+                eventActionListener.onDeleteClick(curr)
+            }
+            editButton.setOnClickListener {
+                eventActionListener.onEditClick(holder, curr)
+            }
+            confirmButton.setOnClickListener {
+                eventActionListener.onConfirmButtonClick(holder, curr)
+            }
+            cancelButton.setOnClickListener {
+                eventActionListener.onCancelButtonClick(holder)
+            }
+            calendarImage.setOnClickListener {
+                eventActionListener.onCalendarImageClick(holder)
+            }
         }
     }
 
-    override fun getItemCount(): Int = eventsList.size
+    override fun getItemCount(): Int {
+        return eventsList.size
+    }
 }
 
-/*
+/**
  * Эта функция переводит числовое значение месяца в буквенное
  *
  * :param month: число от 1 до 12
@@ -78,7 +126,7 @@ fun getRuMonth(month: Int) : String {
     }
 }
 
-/*
+/**
  * Эта функция возвращает список из трёх элементов: день, месяц, год в числовом формате
  * доставая из передаваемого внутрь значения date
  *

@@ -114,4 +114,7 @@
         <item>Декабря</item>
     </string-array>
     <string name="no_internet">Вы не подключены к сети Интернет</string>
+    <string name="edit">Изменить</string>
+    <string name="delete">Удалить</string>
+    <string name="event_name">Новое событие</string>
 </resources>

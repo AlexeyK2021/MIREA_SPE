@@ -1,14 +1,11 @@
 package ru.eco.automan.repositories
 
-import android.util.Log
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import ru.eco.automan.dao.EventDao
 import ru.eco.automan.models.Event
-import ru.eco.automan.viewModels.getEstimatedDays
 
 /**
  * Пограничный класс-репозиторий, работающий с данными в базе данных и автомобилями пользователя, списками марок и соответствующими им моделями автомобилей
@@ -32,7 +29,7 @@ class EventsRepository(private val eventDao: EventDao) {
      * Метод получения списка всех предстоящих событий
      * @return список всех предстоящих событий
      */
-    suspend fun getAllEvents(): List<Event> = eventDao.getAllEvents()
+    fun getAllEvents(): List<Event> = eventDao.getAllEvents()
 
     /**
      * Метод добавления нового предстоящего события
@@ -45,4 +42,6 @@ class EventsRepository(private val eventDao: EventDao) {
      * @param eventId ID-номер события
      */
     fun deleteEvent(eventId: Int) = eventDao.deleteEvent(eventId = eventId)
+
+    fun updateEvent(event: Event) = eventDao.updateEvent(event = event)
 }

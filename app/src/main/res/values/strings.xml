@@ -74,6 +74,9 @@
     <string name="delete_expenses" >You are going to delete all the expenses of this car. Continue?</string>
     <string name="delete_auto_label">Delete auto</string>
     <string name="delete_expense_label">Delete expense</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="event_name">Event name</string>
 
     <string-array name="themes">
         <!--        <item>Светлая</item>-->

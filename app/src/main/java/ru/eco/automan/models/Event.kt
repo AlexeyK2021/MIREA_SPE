@@ -25,7 +25,7 @@ import java.sql.Date
 )
 data class Event(
     @PrimaryKey(autoGenerate = true) val id: Int,
-    @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "date") val date: Date,
+    @ColumnInfo(name = "name") var name: String,
+    @ColumnInfo(name = "date") var date: Date,
     @ColumnInfo(name = "auto_id") val autoId: Int
 )

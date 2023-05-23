@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import ru.eco.automan.models.Event
 
 /**
@@ -40,4 +41,6 @@ interface EventDao {
     @Query("DELETE FROM event WHERE id =:eventId")
     fun deleteEvent(eventId: Int)
 
+    @Update
+    fun updateEvent(event: Event) : Int
 }
