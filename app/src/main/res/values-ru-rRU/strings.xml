@@ -70,7 +70,7 @@
     <string name="yes">Да</string>
     <string name="delete_expense">Вы собираетесь удалить трату. Желаете продолжить?</string>
     <string name="delete_auto">Вы собираетесь удалить автомобиль. Желаете продолжить?</string>
-    <string name="add_event_text">Добавь предстоящее событие</string>
+    <string name="add_event_text">Добавить предстоящее событие</string>
     <string name="delete_expenses" >Вы собираетесь удалить все траты данного автомобиля. Желаете продолжить?</string>
     <string name="delete_auto_label">Удаление автомобиля</string>
     <string name="delete_expense_label">Удаление траты</string>
@@ -98,4 +98,20 @@
         <item>Месяц</item>
         <item>Все время</item>
     </string-array>
+
+    <string-array name="months">
+        <item>Января</item>
+        <item>Февраля</item>
+        <item>Марта</item>
+        <item>Апреля</item>
+        <item>Мая</item>
+        <item>Июня</item>
+        <item>Июля</item>
+        <item>Августа</item>
+        <item>Сентября</item>
+        <item>Октября</item>
+        <item>Ноября</item>
+        <item>Декабря</item>
+    </string-array>
+    <string name="no_internet">Вы не подключены к сети Интернет</string>
 </resources>

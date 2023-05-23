@@ -55,6 +55,7 @@
     <!-- Fines -->
     <string name="check_fines_button">Check</string>
     <string name="last_check">The check was not performed</string>
+    <string name="no_internet">You are not connected to the Internet</string>
 
     <!--Notifications-->
     <string name="events">Events</string>
@@ -97,4 +98,18 @@
         <item>All time</item>
     </string-array>
 
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
 </resources>
