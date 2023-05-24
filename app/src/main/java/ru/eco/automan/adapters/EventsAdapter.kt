@@ -1,5 +1,6 @@
 package ru.eco.automan.adapters
 
+import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,18 +11,10 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import ru.eco.automan.R
+import ru.eco.automan.listeners.EventActionListener
 import ru.eco.automan.models.Event
 import ru.eco.automan.viewModels.getEstimatedDays
 import java.sql.Date
-
-interface EventActionListener {
-    fun onDeleteClick(curr: Event)
-    fun onEditClick(holder: EventViewHolder, curr: Event)
-    fun onEventClick(holder: EventViewHolder)
-    fun onConfirmButtonClick(holder: EventViewHolder, curr: Event)
-    fun onCancelButtonClick(holder: EventViewHolder)
-    fun onCalendarImageClick(holder: EventViewHolder)
-}
 
 /**
  * ViewHolder для списка предстоящих событий.
@@ -63,7 +56,7 @@ class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<
         val daysBefore = curr.date.getEstimatedDays()
         val dateList = getSeparatedDate(curr.date)
         val day = dateList[2]
-        val month = getRuMonth(dateList[1])
+        val month = getMonthNameById(dateList[1], holder.itemView.context)
         val year = dateList[0]
         val description = "Следующая дата события\n- $day $month $year года, осталось:"
 
@@ -105,35 +98,36 @@ class EventsAdapter(private val eventsList: List<Event>) : RecyclerView.Adapter<
 /**
  * Эта функция переводит числовое значение месяца в буквенное
  *
- * :param month: число от 1 до 12
- * :return: строку с названием месяца в родительном падеже
+ * @param monthId: число от 1 до 12
+ * @return строку с названием месяца в родительном падеже
  */
-fun getRuMonth(month: Int) : String {
-    return when(month) {
-        1 -> "января"
-        2 -> "февраля"
-        3 -> "марта"
-        4 -> "апреля"
-        5 -> "мая"
-        6 -> "июня"
-        7 -> "июля"
-        8 -> "августа"
-        9 -> "сентября"
-        10 -> "октября"
-        11 -> "ноября"
-        12 -> "декабря"
-        else -> "ERROR"
-    }
+fun getMonthNameById(monthId: Int, context: Context): String {
+//    return when(dataTime.month) {
+//        Month.JANUARY -> "января"
+//        Month.FEBRUARY -> "февраля"
+//        Month.MARCH -> "марта"
+//        Month.APRIL -> "апреля"
+//        Month.MAY -> "мая"
+//        Month.JUNE -> "июня"
+//        Month.JULY -> "июля"
+//        Month.AUGUST -> "августа"
+//        Month.SEPTEMBER -> "сентября"
+//        Month.OCTOBER -> "октября"
+//        Month.NOVEMBER -> "ноября"
+//        Month.DECEMBER -> "декабря"
+//        else -> "ERROR"
+//    }
+    return context.resources.getStringArray(R.array.months)[monthId - 1].lowercase()
 }
 
 /**
  * Эта функция возвращает список из трёх элементов: день, месяц, год в числовом формате
  * доставая из передаваемого внутрь значения date
  *
- * :param date (тип sql.Date): дата
- * :return: список [год, месяц, день]
+ * @param date (тип sql.Date): дата
+ * @return список [год, месяц, день]
  */
-fun getSeparatedDate(date: Date) : List<Int> {
+fun getSeparatedDate(date: Date): List<Int> {
     val strDate = date.toString() // 2023-05-22
     val year = strDate.subSequence(0, 4).toString().toInt()
     Log.d("frog", "year: $year")

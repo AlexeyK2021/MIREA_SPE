@@ -76,7 +76,7 @@
         android:src="@drawable/radio_button_unchecked" />
 
     <ProgressBar
-        android:id="@+id/oilImage"
+        android:id="@+id/oil_bar"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:indeterminate="false"
@@ -84,12 +84,12 @@
         android:background="@drawable/circle_shape"
         style="?android:attr/progressBarStyleHorizontal"
         android:max="100"
-        app:layout_constraintTop_toTopOf="@id/checksImage"
+        app:layout_constraintTop_toTopOf="@id/other_wastes_bar"
         app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintEnd_toStartOf="@id/checksImage"/>
+        app:layout_constraintEnd_toStartOf="@id/other_wastes_bar"/>
 
     <ProgressBar
-        android:id="@+id/checksImage"
+        android:id="@+id/other_wastes_bar"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:indeterminate="false"
@@ -98,13 +98,13 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:max="100"
         app:layout_constraintTop_toBottomOf="@id/auto_image"
-        app:layout_constraintStart_toEndOf="@id/oilImage"
-        app:layout_constraintEnd_toStartOf="@id/repairImage"
+        app:layout_constraintStart_toEndOf="@id/oil_bar"
+        app:layout_constraintEnd_toStartOf="@id/repair_bar"
         app:layout_constraintBottom_toTopOf="@id/moreExpencesImage"
         app:layout_constraintVertical_bias="0.6"/>
 
     <ProgressBar
-        android:id="@+id/repairImage"
+        android:id="@+id/repair_bar"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:indeterminate="false"
@@ -112,8 +112,8 @@
         android:background="@drawable/circle_shape"
         style="?android:attr/progressBarStyleHorizontal"
         android:max="100"
-        app:layout_constraintTop_toTopOf="@id/checksImage"
-        app:layout_constraintStart_toEndOf="@id/checksImage"
+        app:layout_constraintTop_toTopOf="@id/other_wastes_bar"
+        app:layout_constraintStart_toEndOf="@id/other_wastes_bar"
         app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"/>
 
     <ImageView

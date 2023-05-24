@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
@@ -18,6 +17,7 @@ import ru.eco.automan.models.Period
 import ru.eco.automan.repositories.ExpenseRepository
 import java.sql.Date
 import java.util.Calendar
+import kotlin.math.round
 
 
 /**
@@ -180,4 +180,32 @@ class ExpenseViewModel(
             expenseRepository.addCategory(Category(id = 0, name = categoryName))
         }
     }
+
+    fun getPercentageWastesByName(categoryName: String, autoId: Int, maxValue: Int): Int {
+        var summ = 0f
+        var allExpenses = expensesByPeriod(AutoApplication.periods[2].secondsNum)
+        var categoryId: Int? = null
+        while (categoryId == null)
+            categoryId = getCategoryIdByName(categoryName)
+
+        allExpenses.forEach {
+            Log.d("getPercentageWastesByName", "Category find id $categoryId")
+            if (it.autoId == autoId && it.categoryId == categoryId)
+                summ += it.amount
+        }
+        return round(summ / maxValue * 100).toInt()
+    }
+
+    fun getPercentageOtherWastes(autoId: Int, context: Context): Int {
+        var summ = 0
+        expensesByPeriod(AutoApplication.periods[2].secondsNum).forEach {
+            if (it.autoId == autoId && it.categoryId != getCategoryIdByName("Топливо")
+                && it.categoryId != getCategoryIdByName("Ремонт")
+            )
+                summ += it.amount.toInt()
+        }
+        val maxSum = context.resources.getInteger(R.integer.max_other_wastes_sum)
+        return summ / maxSum * 100
+    }
+
 }

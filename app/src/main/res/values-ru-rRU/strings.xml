@@ -2,11 +2,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingQuantity">
     <string name="app_name">AutoCost</string>
     <!-- ControlAutoFragment -->
-    <string name="choose_your_auto">Choose your auto</string>
-    <string name="add_auto_text">Add auto</string>
-    <string name="actual_text">View all relevant information</string>
-    <string name="expenses_text">Keep track of expenses</string>
-    <string name="add_text">Add your auto</string>
+    <string name="choose_your_auto">Выберите ваш автомобиль</string>
+    <string name="add_auto_text">Добавляйте автомобиль</string>
+    <string name="actual_text">Просматривайте всю актуальную \nинформацию</string>
+    <string name="expenses_text">Следите за расходами</string>
+    <string name="add_text">Добавьте свой автомобиль</string>
 
     <!-- AddAutoFragment -->
     <string name="continue_text">Продолжить</string>
@@ -113,6 +113,7 @@
         <item>Ноября</item>
         <item>Декабря</item>
     </string-array>
+
     <string name="no_internet">Вы не подключены к сети Интернет</string>
     <string name="edit">Изменить</string>
     <string name="delete">Удалить</string>

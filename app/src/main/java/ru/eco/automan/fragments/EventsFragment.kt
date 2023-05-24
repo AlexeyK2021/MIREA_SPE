@@ -10,10 +10,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
-import ru.eco.automan.adapters.EventActionListener
 import ru.eco.automan.adapters.EventViewHolder
 import ru.eco.automan.adapters.EventsAdapter
 import ru.eco.automan.databinding.FragmentEventAutoBinding
+import ru.eco.automan.listeners.EventActionListener
 import ru.eco.automan.models.Event
 import ru.eco.automan.viewModelFactories.AutoViewModelFactory
 import ru.eco.automan.viewModelFactories.EventsViewModelFactory
@@ -53,8 +53,10 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
             eventsList.layoutManager = lm
 
             eventsViewModel.autoEvents.observe(viewLifecycleOwner) {
-                val adapter = EventsAdapter(eventsViewModel
-                        .getEventsByAutoId(autoViewModel.currAuto.value!!.id))
+                val adapter = EventsAdapter(
+                    eventsViewModel
+                        .getEventsByAutoId(autoViewModel.currAuto.value!!.id)
+                )
 
                 adapter.eventActionListener = object : EventActionListener {
                     override fun onDeleteClick(curr: Event) {
@@ -80,7 +82,7 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                         holder: EventViewHolder,
                     ) {
                         val pos = holder.layoutPosition
-                        if (!adapter.isExpandList[pos]){
+                        if (!adapter.isExpandList[pos]) {
                             holder.deleteButton.visibility = View.VISIBLE
                             holder.editButton.visibility = View.VISIBLE
                         } else {
@@ -181,9 +183,6 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                 enterEventData.enterEventData.visibility = View.GONE
                 confirmButton.visibility = View.GONE
             }
-
-
         }
     }
-
 }
