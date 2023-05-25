@@ -24,9 +24,8 @@ class ExpenseRepository(
     private val categoryDao: CategoryDao
 ) {
     private var _expenses: LiveData<List<Expense>>? = null
-    val expenses get() = _expenses!!
-
     private var _categories: LiveData<List<Category>>? = null
+    val expenses get() = _expenses!!
     val categories get() = _categories!!
 
     init {
@@ -94,4 +93,6 @@ class ExpenseRepository(
      * Метод удаления всех трат
      */
     fun deleteAllExpenses() = expenseDao.deleteAllExpenses()
+
+    fun getAllCategories(): List<Category> = categoryDao.getAllCategories()
 }

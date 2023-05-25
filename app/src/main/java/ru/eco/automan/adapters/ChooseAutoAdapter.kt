@@ -30,7 +30,8 @@ class ChooseAutoViewHolder(
         autoName.text = name
 
         deleteAuto.setOnClickListener {
-            DeleteDialogFragment(R.string.delete_auto_label, R.string.delete_auto, this, itemView.context)
+//            DeleteDialogFragment(R.string.delete_auto_label, R.string.delete_auto, this, itemView.context)
+            onAutoChooseClickListener.onDeleteClick(autoId)
         }
 
         itemView.setOnClickListener { onAutoChooseClickListener.onChooseClick(currAuto.id) }

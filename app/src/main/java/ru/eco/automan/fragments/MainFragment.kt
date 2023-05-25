@@ -14,11 +14,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
+import ru.eco.automan.adapters.currency
 import ru.eco.automan.databinding.FragmentMainBinding
 import ru.eco.automan.viewModelFactories.AutoViewModelFactory
 import ru.eco.automan.viewModelFactories.ExpenseViewModelFactory
 import ru.eco.automan.viewModels.AutoViewModel
 import ru.eco.automan.viewModels.ExpenseViewModel
+import kotlin.math.roundToInt
 
 /**
  * Фрагмент, отвечающий за главную страницу приложения
@@ -79,23 +81,35 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             autoImage.setOnClickListener {
                 AutoApplication.notificationManager.createTestNotification(view.context)
             }
+
             expenseViewModel.userExpenses.observe(viewLifecycleOwner) {
-                oilBar.progress = expenseViewModel.getPercentageWastesByName(
-                    "Топливо",
-                    autoViewModel.currAuto.value!!.id,
-                    requireContext().resources.getInteger(R.integer.max_oil_wastes_sum)
+//                val maxOilSum = resources.getFraction(R.fraction.max_oil_wastes_sum, 1, 1)
+//                val maxOtherSum = resources.getFraction(R.fraction.max_other_wastes_sum, 1, 1)
+//                val maxRepairSum = resources.getFraction(R.fraction.max_repairing_wastes_sum, 1, 1)
+                val maxOilSum = 10000f
+                val maxOtherSum = 10000f
+                val maxRepairSum = 10000f
+
+                val oil = expenseViewModel.getWastesSumById(
+                    1, autoViewModel.currAuto.value!!.id
+                )
+                val other = expenseViewModel.getOtherWastesSum(
+                    autoViewModel.currAuto.value!!.id
+                )
+                val repair = expenseViewModel.getWastesSumById(
+                    2, autoViewModel.currAuto.value!!.id
                 )
 
-                otherWastesBar.progress = expenseViewModel.getPercentageOtherWastes(
-                    autoViewModel.currAuto.value!!.id,
-                    requireContext()
-                )
+                oilBar.progress = (oil / maxOilSum * 100).roundToInt()
+                otherWastesBar.progress = (other / maxOtherSum * 100).roundToInt()
+                repairBar.progress = (repair / maxRepairSum * 100).roundToInt()
 
-                repairBar.progress = expenseViewModel.getPercentageWastesByName(
-                    "Ремонт",
-                    autoViewModel.currAuto.value!!.id,
-                    requireContext().resources.getInteger(R.integer.max_repairing_wastes_sum)
-                )
+                val oilText = "${oil.currency()}/${maxOilSum.currency()}"
+                oilExpensesSum.text = oilText
+                val otherText = "${other.currency()}/${maxOtherSum.currency()}"
+                otherExpensesSum.text = otherText
+                val repairText = "${repair.currency()}/${maxRepairSum.currency()}"
+                repairExpensesSum.text = repairText
             }
         }
 

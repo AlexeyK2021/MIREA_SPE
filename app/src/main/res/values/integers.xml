@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="max_oil_wastes_sum">10000</integer>
-    <integer name="max_repairing_wastes_sum">10000</integer>
-    <integer name="max_other_wastes_sum">10000</integer>
+    <fraction name="max_oil_wastes_sum">10000</fraction>
+    <fraction name="max_repairing_wastes_sum">10000</fraction>
+    <fraction name="max_other_wastes_sum">10000</fraction>
 </resources>

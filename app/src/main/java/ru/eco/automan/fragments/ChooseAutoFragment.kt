@@ -58,8 +58,7 @@ class ChooseAutoFragment : Fragment(R.layout.fragment_control_auto), OnAutoChoos
             if (autos.isEmpty()) binding.mainTextView.text = getText(R.string.add_your_auto)
             else binding.mainTextView.text = getText(R.string.choose_your_auto)
 
-            binding.userAutosList.adapter =
-                ChooseAutoAdapter(autos, this)
+            binding.userAutosList.adapter = ChooseAutoAdapter(autos, this)
         }
     }
 

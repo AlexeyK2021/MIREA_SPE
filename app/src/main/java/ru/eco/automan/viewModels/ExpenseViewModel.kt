@@ -17,7 +17,7 @@ import ru.eco.automan.models.Period
 import ru.eco.automan.repositories.ExpenseRepository
 import java.sql.Date
 import java.util.Calendar
-import kotlin.math.round
+import kotlin.math.roundToInt
 
 
 /**
@@ -88,7 +88,7 @@ class ExpenseViewModel(
     ): List<CategoryWithExpenseAndIcon> {
         val ret = mutableListOf<CategoryWithExpenseAndIcon>()
 
-        Log.d("getCategoryWithExpensesAndIcon", categories.value.toString())
+//        Log.d("getCategoryWithExpensesAndIcon", categories.value.toString())
         categories.value?.forEach { category ->
             val expenses = mutableListOf<Expense>()
             userExpenses?.forEach { e ->
@@ -138,7 +138,7 @@ class ExpenseViewModel(
         }
     }
 
-    fun expensesByPeriod(millis: Long): List<Expense> {
+    private fun expensesByPeriod(millis: Long): List<Expense> {
         val ret = mutableListOf<Expense>()
         userExpenses.value?.forEach {
             Log.d(
@@ -181,31 +181,25 @@ class ExpenseViewModel(
         }
     }
 
-    fun getPercentageWastesByName(categoryName: String, autoId: Int, maxValue: Int): Int {
+    fun getWastesSumById(categoryId: Int, autoId: Int): Float {
         var summ = 0f
-        var allExpenses = expensesByPeriod(AutoApplication.periods[2].secondsNum)
-        var categoryId: Int? = null
-        while (categoryId == null)
-            categoryId = getCategoryIdByName(categoryName)
+        val allExpenses = expensesByPeriod(AutoApplication.periods[2].secondsNum)
 
         allExpenses.forEach {
             Log.d("getPercentageWastesByName", "Category find id $categoryId")
             if (it.autoId == autoId && it.categoryId == categoryId)
                 summ += it.amount
         }
-        return round(summ / maxValue * 100).toInt()
+        return summ
     }
 
-    fun getPercentageOtherWastes(autoId: Int, context: Context): Int {
-        var summ = 0
+    fun getOtherWastesSum(autoId: Int): Float {
+        var summ = 0f
         expensesByPeriod(AutoApplication.periods[2].secondsNum).forEach {
-            if (it.autoId == autoId && it.categoryId != getCategoryIdByName("Топливо")
-                && it.categoryId != getCategoryIdByName("Ремонт")
-            )
-                summ += it.amount.toInt()
+            if (it.autoId == autoId && it.categoryId > 2)
+                summ += it.amount
         }
-        val maxSum = context.resources.getInteger(R.integer.max_other_wastes_sum)
-        return summ / maxSum * 100
+        return summ
     }
 
 }
