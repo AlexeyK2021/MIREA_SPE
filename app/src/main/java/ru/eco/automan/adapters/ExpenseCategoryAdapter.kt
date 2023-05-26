@@ -39,13 +39,15 @@ class ExpenseCategoryViewHolder(
     private val newWasteAmount: TextView = view.findViewById(R.id.newWasteAmount)
     private val addWaste: ImageView = view.findViewById(R.id.add_event)
     private val deleteEditing: ImageView = view.findViewById(R.id.delete_expense)
+    private val downChevron: ImageView = view.findViewById(R.id.down_chevron)
 
     private var editingExpenseId = 0
 
     fun bind(result: CategoryWithExpenseAndIcon, onAddExpenseListener: OnAddExpenseListener) {
         wasteImage.setImageDrawable(result.categoryImage)
         wasteCategoryName.text = result.categoryName
-        wastesSum.text = result.wastesSum.currency()
+        val wastesSumStr = result.wastesSum.currency()
+        wastesSum.text = wastesSumStr
 
         val adapter = ExpenseAdapter(result.expensesList, this)
         wastesListRecycler.adapter = adapter
@@ -98,8 +100,10 @@ class ExpenseCategoryViewHolder(
             newWasteName.visibility == View.GONE &&
             newWasteAmount.visibility == View.GONE
         ) {
+            downChevron.rotation = 180F
             View.VISIBLE
         } else {
+            downChevron.rotation = 0F
             View.GONE
         }
 

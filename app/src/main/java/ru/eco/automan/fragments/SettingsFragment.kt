@@ -10,6 +10,8 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
 import ru.eco.automan.databinding.FragmentSettingsAutoBinding
@@ -120,6 +122,8 @@ class SettingsFragment : Fragment(R.layout.fragment_settings_auto), OnDialogList
     }
 
     override fun onPositiveButtonClicked() {
-        expenseViewModel.deleteAllExpensesByAutoId(autoViewModel.currAuto.value!!.id)
+        runBlocking(Dispatchers.IO) {
+            expenseViewModel.deleteAllExpensesByAutoId(autoViewModel.currAuto.value!!.id)
+        }
     }
 }

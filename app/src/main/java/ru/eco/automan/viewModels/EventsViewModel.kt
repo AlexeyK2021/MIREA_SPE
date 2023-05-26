@@ -65,6 +65,8 @@ class EventsViewModel(private val eventsRepository: EventsRepository) : ViewMode
         }
     }
 
+    fun deleteAllEventsByAutoId(autoId: Int) = eventsRepository.deleteEventsByAutoId(autoId)
+
     /**
      * Метод проверки существования предстоящего события.
      * Если дата события уже прошла, то оно удаляется из БД

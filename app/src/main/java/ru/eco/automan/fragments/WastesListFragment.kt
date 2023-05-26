@@ -40,7 +40,7 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentWastesAutoBinding.inflate(inflater, container, false)
         return binding.root
     }

@@ -70,7 +70,7 @@
         android:layout_height="164dp"
         android:layout_marginTop="20dp"
 
-        android:src="@drawable/radio_button_unchecked"
+        android:src="@drawable/pngwing_com_3"
         app:layout_constraintEnd_toStartOf="@id/verticalEndGuideLine"
         app:layout_constraintStart_toEndOf="@+id/verticalBeginGuideline"
         app:layout_constraintTop_toBottomOf="@+id/appName" />

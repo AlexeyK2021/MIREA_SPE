@@ -8,6 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import ru.eco.automan.AutoApplication
 import ru.eco.automan.R
 import ru.eco.automan.adapters.ChooseAutoAdapter
@@ -46,7 +50,7 @@ class ChooseAutoFragment : Fragment(R.layout.fragment_control_auto), OnAutoChoos
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentControlAutoBinding.inflate(inflater, container, false)
 //        Log.d("AddAutoFragment", "onCreateView")
         return binding.root

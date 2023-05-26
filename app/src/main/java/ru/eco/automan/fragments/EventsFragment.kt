@@ -82,7 +82,7 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                         holder: EventViewHolder,
                     ) {
                         val pos = holder.layoutPosition
-                        if (!adapter.isExpandList[pos]) {
+                        if (!adapter.isExpandList[pos]){
                             holder.deleteButton.visibility = View.VISIBLE
                             holder.editButton.visibility = View.VISIBLE
                         } else {
@@ -104,7 +104,9 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                             curr.name = holder.newEventName.text.toString()
                             curr.date = date as Date
                             eventsViewModel.updateEvent(curr)
+                            date = null
                         }
+                        holder.itemView.isClickable = true
                     }
 
                     override fun onCancelButtonClick(holder: EventViewHolder) {
@@ -169,12 +171,14 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
             }
 
             confirmButton.setOnClickListener {
-                if (date != null && Calendar.getInstance().timeInMillis < date!!.time)
+                if (date != null && Calendar.getInstance().timeInMillis < date!!.time) {
                     eventsViewModel.addEvent(
                         enterEventData.newEvent.text.toString(),
                         date!!,
                         autoViewModel.currAuto.value!!.id
                     )
+                    date = null
+                }
                 enterEventData.newEvent.text = "".getEditable()
                 enterEventData.eventDate.text = ""
 
@@ -183,6 +187,9 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                 enterEventData.enterEventData.visibility = View.GONE
                 confirmButton.visibility = View.GONE
             }
+
+
         }
     }
+
 }

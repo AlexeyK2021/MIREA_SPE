@@ -13,10 +13,14 @@ import java.util.Currency
 import java.util.Locale
 
 /**
- * Функция для получения для получения денежных затрат на трату.
+ * Функция для получения денежных затрат на трату.
  */
 fun Float.currency(): String =
-    this.toString() + Currency.getInstance(Locale.getDefault(Locale.Category.DISPLAY)).symbol
+    if (this < 1000)
+        "${this.toInt()} руб"
+    else
+        "${String.format("%.1f", this / 1000)}к руб"
+    //this.toString() + Currency.getInstance(Locale.getDefault(Locale.Category.DISPLAY)).symbol
 
 /**
  * ViewHolder для каждой траты в определенной категории
