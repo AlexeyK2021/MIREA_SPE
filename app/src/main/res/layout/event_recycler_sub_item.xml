@@ -1,142 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/event_fragment"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/frog_element_background_black"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    >
-
-    <TextView
-        android:id="@+id/event_name"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/event_fragment"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        tools:text="Mercedes-benz C300"
-        android:maxEms="12"
-
-        android:layout_marginTop="4dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
-    <TextView
-        android:id="@+id/days_before"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="@color/spaceGrey"
-        tools:text="Hello World"
-        android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintTop_toTopOf="@id/event_description"
-        app:layout_constraintBottom_toBottomOf="@id/event_description"
+        android:background="@drawable/frog_element_background_black"
         app:layout_constraintEnd_toEndOf="parent"
-        />
-
-
-    <TextView
-        android:id="@+id/event_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        tools:text="Date: 21.05.2023"
-        android:maxEms="12"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/event_name"
-        app:layout_constraintStart_toStartOf="@+id/event_name"
-        />
-
-    <TextView
-        android:id="@+id/edit_button"
-        android:layout_width="138dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/frog_button_background_space_gray"
-        android:text="@string/edit"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:visibility="gone"
-        tools:visibility="visible"
-
-        android:layout_marginTop="21dp"
-        app:layout_constraintTop_toBottomOf="@+id/event_description"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/delete_button"
-        />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/delete_button"
-        android:layout_width="138dp"
+        <TextView
+            android:id="@+id/event_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:maxEms="12"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Mercedes-benz C300" />
+
+        <TextView
+            android:id="@+id/days_before"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher_foreground"
+            android:textColor="@color/spaceGrey"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/event_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/event_description"
+            tools:text="Hello World" />
+
+
+        <TextView
+            android:id="@+id/event_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:maxEms="12"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/event_name"
+            app:layout_constraintTop_toBottomOf="@+id/event_name"
+            tools:text="Date: 21.05.2023" />
+
+        <TextView
+            android:id="@+id/edit_button"
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/frog_button_background_space_gray"
+            android:text="@string/edit"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:visibility="gone"
+
+            app:layout_constraintEnd_toStartOf="@+id/delete_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_description"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/delete_button"
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/frog_button_background_black"
+            android:text="@string/delete"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:visibility="gone"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edit_button"
+            app:layout_constraintTop_toBottomOf="@+id/event_description"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/enter_event_data"
+        layout="@layout/edit_event_data"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/frog_button_background_black"
-        android:text="@string/delete"
-        android:textColor="@color/white"
-        android:textAlignment="center"
         android:visibility="gone"
-        tools:visibility="visible"
-
-        android:layout_marginTop="21dp"
-        app:layout_constraintTop_toBottomOf="@+id/event_description"
-        app:layout_constraintStart_toEndOf="@+id/edit_button"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/event_fragment"
+        tools:visibility="visible" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/confirm_button"
+        android:layout_width="107dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/frog_element_background_black"
+        android:src="@drawable/vector_oke"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/cancel_button"
 
-<include
-android:id="@+id/enter_event_data"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-layout="@layout/edit_event_data"
-tools:visibility="visible"
-android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_event_data"
+        tools:ignore="contentDescription"
+        tools:visibility="visible" />
 
-app:layout_constraintTop_toBottomOf="@+id/event_fragment"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintEnd_toEndOf="parent"
-    />
+    <ImageView
+        android:id="@+id/cancel_button"
+        android:layout_width="107dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/frog_element_background_black"
+        android:src="@drawable/frog_close"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
 
-<ImageView
-android:id="@+id/confirm_button"
-android:layout_width="107dp"
-android:layout_height="32dp"
-android:src="@drawable/vector_oke"
-android:background="@drawable/frog_element_background_black"
-android:visibility="gone"
-tools:visibility="visible"
-tools:ignore="contentDescription"
-
-android:layout_marginTop="16dp"
-app:layout_constraintTop_toBottomOf="@+id/enter_event_data"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintEnd_toStartOf="@id/cancel_button"
-    />
-
-<ImageView
-android:id="@+id/cancel_button"
-android:layout_width="107dp"
-android:layout_height="32dp"
-android:src="@drawable/frog_close"
-android:background="@drawable/frog_element_background_black"
-android:visibility="gone"
-tools:visibility="visible"
-tools:ignore="contentDescription"
-
-android:layout_marginTop="16dp"
-app:layout_constraintTop_toBottomOf="@+id/enter_event_data"
-app:layout_constraintStart_toEndOf="@id/confirm_button"
-app:layout_constraintEnd_toEndOf="parent"
-    />
+        app:layout_constraintStart_toEndOf="@id/confirm_button"
+        app:layout_constraintTop_toBottomOf="@+id/enter_event_data"
+        tools:ignore="contentDescription"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

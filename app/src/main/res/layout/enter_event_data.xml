@@ -5,13 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/enter_event_data"
-    android:background="@drawable/frog_element_background_space_gray">
+    android:background="@drawable/frog_button_background_black">
 
     <ImageView
         android:id="@+id/calendar_image"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/icon_calendar_black"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/icon_calendar_white"
         tools:ignore="contentDescription"
 
         app:layout_constraintTop_toTopOf="@id/new_event"
@@ -26,8 +27,8 @@
         android:hint="@string/event_name"
         android:inputType="text"
         android:textSize="16sp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:paddingHorizontal="16dp"
         android:paddingVertical="5dp"
 
@@ -44,8 +45,8 @@
         android:background="@drawable/rectangle_214_2"
         android:hint="@string/event_date"
         android:textSize="16sp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
 
         android:paddingHorizontal="16dp"
         android:layout_marginTop="16dp"

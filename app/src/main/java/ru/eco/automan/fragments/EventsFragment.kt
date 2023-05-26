@@ -23,8 +23,7 @@ import ru.eco.automan.viewModels.EventsViewModel
 import java.sql.Date
 import java.util.Calendar
 
-class EventsFragment : Fragment(R.layout.fragment_event_auto), OnDialogListener,
-    EventActionListener {
+class EventsFragment : Fragment(R.layout.fragment_event_auto), OnDialogListener{
     private val eventsViewModel: EventsViewModel by activityViewModels {
         EventsViewModelFactory(AutoApplication.eventsRepository)
     }
