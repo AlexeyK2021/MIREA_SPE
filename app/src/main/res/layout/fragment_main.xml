@@ -128,10 +128,10 @@
         android:indeterminate="false"
         android:max="100"
         android:progressDrawable="@drawable/circular_progress_bar"
-        app:layout_constraintBottom_toTopOf="@id/moreExpencesImage"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toStartOf="@id/repair_bar"
         app:layout_constraintStart_toEndOf="@id/oil_bar"
-        app:layout_constraintTop_toBottomOf="@id/auto_image"
+        app:layout_constraintTop_toBottomOf="@id/auto_name"
         app:layout_constraintVertical_bias="0.6" />
 
     <ImageView
@@ -189,8 +189,8 @@
         android:id="@+id/moreExpencesImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
         android:src="@drawable/rectangle_with_arrow"
+        app:layout_constraintTop_toBottomOf="@id/other_expenses_sum"
         app:layout_constraintBottom_toTopOf="@id/finesButton"
         app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
         app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline" />
@@ -201,23 +201,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         layout="@layout/frog_penalties_button"
-
-
         android:layout_marginBottom="40dp"
         app:layout_constraintStart_toStartOf="@+id/verticalBeginGuideline"
         app:layout_constraintEnd_toStartOf="@id/verticalEndGuideLine"
-        app:layout_constraintBottom_toTopOf="@+id/pddButton"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/pddButton" />
 
     <include
         android:id="@+id/pddButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         layout="@layout/frog_pdd_button"
-
         app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline"
         app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintEnd_toStartOf="@id/verticalEndGuideLine"
-        />
+        app:layout_constraintEnd_toStartOf="@id/verticalEndGuideLine" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

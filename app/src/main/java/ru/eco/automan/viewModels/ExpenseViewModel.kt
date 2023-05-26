@@ -82,12 +82,17 @@ class ExpenseViewModel(
     @SuppressLint("DiscouragedApi")
     private fun getCategoryWithExpensesAndIcon(
         context: Context,
-        userExpenses: List<Expense>?
+        userExpenses: List<Expense>?,
+        autoId: Int
     ): List<CategoryWithExpenseAndIcon> {
         val ret = mutableListOf<CategoryWithExpenseAndIcon>()
 
 //        Log.d("getCategoryWithExpensesAndIcon", categories.value.toString())
-        categories.value?.forEach { category ->
+        val cats = mutableListOf<Category>()
+        categories.value?.forEach {
+            if (it.autoId == autoId || it.autoId == null) cats.add(it)
+        }
+        cats.forEach { category ->
             val expenses = mutableListOf<Expense>()
             userExpenses?.forEach { e ->
                 if (e.autoId == currAutoId && e.categoryId == category.id)
@@ -112,8 +117,11 @@ class ExpenseViewModel(
         return ret
     }
 
-    fun getCategoryWithExpensesAndIcon(context: Context): List<CategoryWithExpenseAndIcon> =
-        getCategoryWithExpensesAndIcon(context, userExpenses.value)
+    fun getCategoryWithExpensesAndIcon(
+        context: Context,
+        autoId: Int
+    ): List<CategoryWithExpenseAndIcon> =
+        getCategoryWithExpensesAndIcon(context, userExpenses.value, autoId)
 
 
     private fun sumOfExpenseList(expenses: List<Expense>): Float {
@@ -125,13 +133,15 @@ class ExpenseViewModel(
     fun getExpensesByPeriod(
         position: Int,
         lastPeriod: Int,
-        context: Context
+        context: Context,
+        autoId: Int
     ): List<CategoryWithExpenseAndIcon> {
         return when (position) {
-            lastPeriod, lastPeriod - 1 -> getCategoryWithExpensesAndIcon(context)
+            lastPeriod, lastPeriod - 1 -> getCategoryWithExpensesAndIcon(context, autoId)
             else -> getCategoryWithExpensesAndIcon(
                 context,
-                expensesByPeriod(AutoApplication.periods[position].secondsNum)
+                expensesByPeriod(AutoApplication.periods[position].secondsNum),
+                autoId
             )
         }
     }
@@ -175,7 +185,7 @@ class ExpenseViewModel(
 
     fun addNewCategory(categoryName: String, autoId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            expenseRepository.addCategory(Category(id = 0, name = categoryName))
+            expenseRepository.addCategory(Category(id = 0, name = categoryName, autoId = autoId))
         }
     }
 
@@ -198,6 +208,12 @@ class ExpenseViewModel(
                 summ += it.amount
         }
         return summ
+    }
+
+    fun deleteAllCategoriesByAutoId(autoId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            expenseRepository.deleteCategoriesByAutoId(autoId)
+        }
     }
 
 }

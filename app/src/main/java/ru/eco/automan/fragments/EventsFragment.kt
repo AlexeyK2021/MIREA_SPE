@@ -14,6 +14,7 @@ import ru.eco.automan.adapters.EventViewHolder
 import ru.eco.automan.adapters.EventsAdapter
 import ru.eco.automan.databinding.FragmentEventAutoBinding
 import ru.eco.automan.listeners.EventActionListener
+import ru.eco.automan.listeners.OnDialogListener
 import ru.eco.automan.models.Event
 import ru.eco.automan.viewModelFactories.AutoViewModelFactory
 import ru.eco.automan.viewModelFactories.EventsViewModelFactory
@@ -22,7 +23,8 @@ import ru.eco.automan.viewModels.EventsViewModel
 import java.sql.Date
 import java.util.Calendar
 
-class EventsFragment : Fragment(R.layout.fragment_event_auto) {
+class EventsFragment : Fragment(R.layout.fragment_event_auto), OnDialogListener,
+    EventActionListener {
     private val eventsViewModel: EventsViewModel by activityViewModels {
         EventsViewModelFactory(AutoApplication.eventsRepository)
     }
@@ -34,6 +36,8 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
 
     private var _binding: FragmentEventAutoBinding? = null
     private val binding get() = _binding!!
+
+    private var deletableEventId = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,13 +58,18 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
 
             eventsViewModel.autoEvents.observe(viewLifecycleOwner) {
                 val adapter = EventsAdapter(
-                    eventsViewModel
-                        .getEventsByAutoId(autoViewModel.currAuto.value!!.id)
+                    eventsViewModel.getEventsByAutoId(autoViewModel.currAuto.value!!.id)
                 )
 
                 adapter.eventActionListener = object : EventActionListener {
                     override fun onDeleteClick(curr: Event) {
-                        eventsViewModel.deleteEvent(curr.id)
+                        deletableEventId = curr.id
+                        DeleteDialogFragment(
+                            R.string.delete_event_label,
+                            R.string.delete_event,
+                            this@EventsFragment,
+                            this@EventsFragment.requireContext()
+                        )
                     }
 
                     override fun onEditClick(holder: EventViewHolder, curr: Event) {
@@ -85,7 +94,7 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                         holder: EventViewHolder,
                     ) {
                         val pos = holder.layoutPosition
-                        if (!adapter.isExpandList[pos]){
+                        if (!adapter.isExpandList[pos]) {
                             holder.deleteButton.visibility = View.VISIBLE
                             holder.editButton.visibility = View.VISIBLE
                         } else {
@@ -187,8 +196,15 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                 confirmButton.visibility = View.GONE
             }
 
-
         }
+    }
+
+    override fun onNegativeButtonClicked() {
+        deletableEventId = 0
+    }
+
+    override fun onPositiveButtonClicked() {
+        eventsViewModel.deleteEvent(deletableEventId)
     }
 
 }

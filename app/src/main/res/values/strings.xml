@@ -72,12 +72,14 @@
     <string name="delete_expense">You are going to delete the waste. Continue?</string>
     <string name="delete_auto">You are going to delete the car. Continue?</string>
     <string name="add_event_text">Add an upcoming event</string>
-    <string name="delete_expenses" >You are going to delete all the expenses of this car. Continue?</string>
+    <string name="delete_expenses" >You are going to delete all the expenses and categories of this car. Continue?</string>
     <string name="delete_auto_label">Delete auto</string>
     <string name="delete_expense_label">Delete expense</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="event_name">Event name</string>
+    <string name="delete_event">You are going to delete the event. Continue?</string>
+    <string name="delete_event_label">Delete event</string>
 
     <string-array name="themes">
         <!--        <item>Светлая</item>-->

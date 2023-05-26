@@ -42,9 +42,9 @@ class RulesParagraphsFragment : Fragment(R.layout.fragment_rules_sections) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rulesViewModel.currentChapterId.observe(viewLifecycleOwner) { chapterId ->
-            val toast =
-                Toast.makeText(activity, "CLICKED ${chapterId.toString()}", Toast.LENGTH_SHORT)
-            toast.show()
+//            val toast =
+//                Toast.makeText(activity, "CLICKED ${chapterId.toString()}", Toast.LENGTH_SHORT)
+//            toast.show()
 
             binding.chapterName.text = rulesViewModel.getCurrentChapterName()
             binding.paragraphsRecycler.adapter =

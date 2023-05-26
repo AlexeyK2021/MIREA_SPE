@@ -45,4 +45,7 @@ interface CategoryDao {
     @Delete
     fun deleteCategory(category: Category)
 
+    @Query("DELETE FROM category WHERE auto_id =:autoId")
+    fun deleteByAutoId(autoId: Int)
+
 }

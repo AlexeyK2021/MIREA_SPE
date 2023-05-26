@@ -95,4 +95,5 @@ class ExpenseRepository(
     fun deleteAllExpenses() = expenseDao.deleteAllExpenses()
 
     fun getAllCategories(): List<Category> = categoryDao.getAllCategories()
+    fun deleteCategoriesByAutoId(autoId: Int) = categoryDao.deleteByAutoId(autoId)
 }

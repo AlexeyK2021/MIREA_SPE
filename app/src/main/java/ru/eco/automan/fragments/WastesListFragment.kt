@@ -50,7 +50,7 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
         super.onViewCreated(view, savedInstanceState)
         expenseViewModel.setCurrentAuto(autoViewModel.currAuto.value!!.id)
 
-        val data = expenseViewModel.getCategoryWithExpensesAndIcon(view.context)
+        val data = expenseViewModel.getCategoryWithExpensesAndIcon(view.context, autoViewModel.currAuto.value!!.id)
         val eca = ExpenseCategoryAdapter(data, this, this)
 
         val lastPeriod = requireContext().resources.getStringArray(R.array.wastes_periods).lastIndex
@@ -80,12 +80,12 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
 
         expenseViewModel.userExpenses.observe(viewLifecycleOwner) {
             Log.d("expenseViewModel.userExpenses", it.toString())
-            eca.updateData(expenseViewModel.getCategoryWithExpensesAndIcon(view.context))
+            eca.updateData(expenseViewModel.getCategoryWithExpensesAndIcon(view.context, autoViewModel.currAuto.value!!.id))
             eca.notifyDataSetChanged()
         }
         expenseViewModel.categories.observe(viewLifecycleOwner) {
             Log.d("expenseViewModel.categories", it.toString())
-            eca.updateData(expenseViewModel.getCategoryWithExpensesAndIcon(view.context))
+            eca.updateData(expenseViewModel.getCategoryWithExpensesAndIcon(view.context, autoViewModel.currAuto.value!!.id))
             eca.notifyDataSetChanged()
         }
 
@@ -101,7 +101,7 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
 
     @SuppressLint("NotifyDataSetChanged")
     fun onUpdatePeriodSpinner(position: Int, eca: ExpenseCategoryAdapter, lastPeriod: Int) {
-        eca.updateData(expenseViewModel.getExpensesByPeriod(position, lastPeriod, requireContext()))
+        eca.updateData(expenseViewModel.getExpensesByPeriod(position, lastPeriod, requireContext(), autoViewModel.currAuto.value!!.id))
         eca.notifyDataSetChanged()
     }
 

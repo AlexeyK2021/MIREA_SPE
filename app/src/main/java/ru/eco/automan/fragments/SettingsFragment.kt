@@ -122,8 +122,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings_auto), OnDialogList
     }
 
     override fun onPositiveButtonClicked() {
-        runBlocking(Dispatchers.IO) {
-            expenseViewModel.deleteAllExpensesByAutoId(autoViewModel.currAuto.value!!.id)
-        }
+        expenseViewModel.deleteAllExpensesByAutoId(autoViewModel.currAuto.value!!.id)
+        expenseViewModel.deleteAllCategoriesByAutoId(autoViewModel.currAuto.value!!.id)
     }
 }
