@@ -69,11 +69,22 @@
         android:layout_width="164dp"
         android:layout_height="164dp"
         android:layout_marginTop="20dp"
-
         android:src="@drawable/pngwing_com_3"
         app:layout_constraintEnd_toStartOf="@id/verticalEndGuideLine"
         app:layout_constraintStart_toEndOf="@+id/verticalBeginGuideline"
         app:layout_constraintTop_toBottomOf="@+id/appName" />
+
+    <TextView
+        android:id="@+id/auto_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/auto_image"
+        app:layout_constraintTop_toBottomOf="@id/auto_image"
+        app:layout_constraintEnd_toEndOf="@id/auto_image"
+        android:layout_marginHorizontal="10dp"
+        tools:text="Mercedes-benz C300"/>
 
     <ProgressBar
         android:id="@+id/oil_bar"
@@ -190,7 +201,8 @@
         android:layout_height="60dp"
         android:layout_marginBottom="40dp"
         android:paddingVertical="5dp"
-        android:paddingEnd="160dp"
+        android:paddingHorizontal="25dp"
+        android:textAlignment="textStart"
         android:text="@string/fines"
         app:layout_constraintBottom_toTopOf="@id/pddButton"
         app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
@@ -203,8 +215,9 @@
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:paddingVertical="5dp"
-        android:paddingEnd="190dp"
-        android:text="ПДД"
+        android:paddingHorizontal="25dp"
+        android:textAlignment="textStart"
+        android:text="@string/pdd_brief"
         app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline"
         app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
         app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"

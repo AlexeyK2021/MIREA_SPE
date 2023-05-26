@@ -49,7 +49,12 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val currAuto = autoViewModel.currAuto.value!!
+        var name = currAuto.name
+        if (name == null) name = "${autoViewModel.currentAutoBrandName} ${autoViewModel.currentAutoModelName}"
         binding.apply {
+            autoName.text = name
+
             settingsButton.setOnClickListener {
                 findNavController().navigate(R.id.action_mainFragment_to_settingsFragment)
             }

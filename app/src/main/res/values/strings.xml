@@ -49,6 +49,7 @@
 
     <!-- RulesFragment -->
     <string name="pdd">Traffic Laws</string>
+    <string name="pdd_brief">@string/pdd</string>
     <string name="new_waste_name">New waste name</string>
     <string name="new_waste_cost">New waste amount</string>
 

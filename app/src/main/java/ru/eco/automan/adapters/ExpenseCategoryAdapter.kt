@@ -156,7 +156,7 @@ class ExpenseCategoryAdapter(
 
     override fun onBindViewHolder(holder: ExpenseCategoryViewHolder, position: Int) {
         holder.bind(result = data[position], onAddExpenseListener = onAddExpenseListener)
-        holder.expand()
+//        holder.expand()
     }
 
     override fun getItemCount(): Int = data.size
