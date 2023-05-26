@@ -45,9 +45,10 @@
 
     <ImageView
         android:id="@+id/carImageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/radio_button_unchecked"
+        android:layout_width="202dp"
+        android:layout_height="134dp"
+        android:src="@drawable/car_icon_portrait_png"
+
         app:layout_constraintTop_toBottomOf="@id/settingImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

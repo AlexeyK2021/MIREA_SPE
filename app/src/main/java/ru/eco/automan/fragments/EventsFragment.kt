@@ -73,9 +73,12 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
 
                         holder.editButton.visibility = View.GONE
                         holder.deleteButton.visibility = View.GONE
+                        /*
                         holder.eventDate.visibility = View.GONE
                         holder.eventName.visibility = View.GONE
                         holder.eventDateDescription.visibility = View.GONE
+                         */
+                        holder.eventFragment.visibility = View.GONE
                     }
 
                     override fun onEventClick(
@@ -96,9 +99,7 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                         holder.enterData.visibility = View.GONE
                         holder.confirmButton.visibility = View.GONE
                         holder.cancelButton.visibility = View.GONE
-                        holder.eventDate.visibility = View.VISIBLE
-                        holder.eventName.visibility = View.VISIBLE
-                        holder.eventDateDescription.visibility = View.VISIBLE
+                        holder.eventFragment.visibility = View.VISIBLE
 
                         if (date != null && Calendar.getInstance().timeInMillis < date!!.time) {
                             curr.name = holder.newEventName.text.toString()
@@ -113,9 +114,7 @@ class EventsFragment : Fragment(R.layout.fragment_event_auto) {
                         holder.enterData.visibility = View.GONE
                         holder.confirmButton.visibility = View.GONE
                         holder.cancelButton.visibility = View.GONE
-                        holder.eventDate.visibility = View.VISIBLE
-                        holder.eventName.visibility = View.VISIBLE
-                        holder.eventDateDescription.visibility = View.VISIBLE
+                        holder.eventFragment.visibility = View.VISIBLE
                     }
 
                     override fun onCalendarImageClick(holder: EventViewHolder) {

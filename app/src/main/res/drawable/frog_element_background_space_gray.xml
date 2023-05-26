@@ -12,5 +12,5 @@
         android:top="8dp"
         />
 
-    <solid android:color="@color/spaceGray" />
+    <solid android:color="@color/spaceGrey" />
 </shape>

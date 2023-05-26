@@ -47,7 +47,7 @@
         android:id="@+id/editAutoButton"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:src="@drawable/baseline_settings"
+        android:src="@drawable/car_info_icon"
         app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
         app:layout_constraintTop_toTopOf="@id/horizontalBeginGuideline" />
 
@@ -66,10 +66,11 @@
 
     <ImageView
         android:id="@+id/auto_image"
-        android:layout_width="164dp"
-        android:layout_height="164dp"
+        android:layout_width="248dp"
+        android:layout_height="193dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/pngwing_com_3"
+
+        android:src="@drawable/car_icon_png"
         app:layout_constraintEnd_toStartOf="@id/verticalEndGuideLine"
         app:layout_constraintStart_toEndOf="@+id/verticalBeginGuideline"
         app:layout_constraintTop_toBottomOf="@+id/appName" />
@@ -194,33 +195,29 @@
         app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
         app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/finesButton"
-        style="@style/Button.Black"
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="40dp"
-        android:paddingVertical="5dp"
-        android:paddingHorizontal="25dp"
-        android:textAlignment="textStart"
-        android:text="@string/fines"
-        app:layout_constraintBottom_toTopOf="@id/pddButton"
-        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
-        app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintWidth_percent="0.65" />
 
-    <com.google.android.material.button.MaterialButton
+    <include
+        android:id="@+id/finesButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/frog_penalties_button"
+
+
+        android:layout_marginBottom="40dp"
+        app:layout_constraintStart_toStartOf="@+id/verticalBeginGuideline"
+        app:layout_constraintEnd_toStartOf="@id/verticalEndGuideLine"
+        app:layout_constraintBottom_toTopOf="@+id/pddButton"
+        />
+
+    <include
         android:id="@+id/pddButton"
-        style="@style/Button.Black"
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:paddingVertical="5dp"
-        android:paddingHorizontal="25dp"
-        android:textAlignment="textStart"
-        android:text="@string/pdd_brief"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/frog_pdd_button"
+
         app:layout_constraintBottom_toBottomOf="@id/horizontalEndGuideline"
-        app:layout_constraintEnd_toEndOf="@id/verticalEndGuideLine"
         app:layout_constraintStart_toStartOf="@id/verticalBeginGuideline"
-        app:layout_constraintWidth_percent="0.65" />
+        app:layout_constraintEnd_toStartOf="@id/verticalEndGuideLine"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

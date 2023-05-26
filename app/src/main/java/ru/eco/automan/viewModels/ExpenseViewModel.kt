@@ -9,7 +9,6 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.eco.automan.AutoApplication
-import ru.eco.automan.R
 import ru.eco.automan.models.Category
 import ru.eco.automan.models.CategoryWithExpenseAndIcon
 import ru.eco.automan.models.Expense
@@ -17,7 +16,6 @@ import ru.eco.automan.models.Period
 import ru.eco.automan.repositories.ExpenseRepository
 import java.sql.Date
 import java.util.Calendar
-import kotlin.math.roundToInt
 
 
 /**
@@ -175,7 +173,7 @@ class ExpenseViewModel(
         }
     }
 
-    fun addNewCategory(categoryName: String) {
+    fun addNewCategory(categoryName: String, autoId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             expenseRepository.addCategory(Category(id = 0, name = categoryName))
         }

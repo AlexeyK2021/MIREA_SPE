@@ -73,7 +73,7 @@ class WastesListFragment : Fragment(R.layout.fragment_wastes_auto), OnAddExpense
 
             addCategory.setOnClickListener {
                 if (newCategory.text.toString().isNotEmpty())
-                    expenseViewModel.addNewCategory(newCategory.text.toString())
+                    expenseViewModel.addNewCategory(newCategory.text.toString(), autoViewModel.currAuto.value!!.id)
                 newCategory.text = "".getEditable()
             }
         }

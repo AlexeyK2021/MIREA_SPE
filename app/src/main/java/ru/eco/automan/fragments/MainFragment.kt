@@ -67,7 +67,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 findNavController().navigate(R.id.action_mainFragment_to_wastesListFragment)
             }
 
-            finesButton.setOnClickListener {
+            finesButton.penaltiesButton.setOnClickListener {
                 if (isNetworkAvailable()) {
                     findNavController().navigate(R.id.action_mainFragment_to_finesFragment)
                 } else {
@@ -79,7 +79,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 }
             }
 
-            pddButton.setOnClickListener {
+            pddButton.pddButton.setOnClickListener {
                 findNavController().navigate(R.id.action_mainFragment_to_rulesChapterFragment)
             }
 

@@ -31,6 +31,7 @@ class EventViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
     val calendarImage: ImageView = itemview.findViewById(R.id.calendar_image)
     val newEventName: EditText = itemview.findViewById(R.id.new_event)
     val newEventDate: TextView = itemview.findViewById(R.id.event_date)
+    val eventFragment: ConstraintLayout = itemview.findViewById(R.id.event_fragment)
 }
 
 /**

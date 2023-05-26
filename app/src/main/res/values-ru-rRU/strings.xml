@@ -49,7 +49,7 @@
     <!-- RulesSectionsFragment -->
 
     <!-- RulesFragment -->
-    <string name="pdd">Правила дорожного движения</string>
+    <string name="pdd">ПДД</string>
     <string name="pdd_brief">ПДД</string>
     <string name="new_waste_name">Имя новой траты</string>
     <string name="new_waste_cost">Стоимость</string>

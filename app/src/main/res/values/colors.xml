@@ -8,7 +8,8 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="spaceGray">#CACACA</color>
+    <color name="spaceGrey">#CACACA</color>
+    <color name="grey">#212121</color>
 
     <!--Кнопки панели подтверждения удаления-->
     <color name="delete">#FF0000</color>
