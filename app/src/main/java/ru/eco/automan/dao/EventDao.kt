@@ -43,4 +43,7 @@ interface EventDao {
 
     @Update
     fun updateEvent(event: Event) : Int
+
+    @Query("DELETE FROM event WHERE auto_id =:autoId")
+    fun deleteEventsByAutoId(autoId: Int)
 }

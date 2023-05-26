@@ -15,8 +15,10 @@ import ru.eco.automan.databinding.FragmentControlAutoBinding
 import ru.eco.automan.listeners.OnAutoChooseClickListener
 import ru.eco.automan.listeners.OnDialogListener
 import ru.eco.automan.viewModelFactories.AutoViewModelFactory
+import ru.eco.automan.viewModelFactories.EventsViewModelFactory
 import ru.eco.automan.viewModelFactories.ExpenseViewModelFactory
 import ru.eco.automan.viewModels.AutoViewModel
+import ru.eco.automan.viewModels.EventsViewModel
 import ru.eco.automan.viewModels.ExpenseViewModel
 
 class ChooseAutoFragment : Fragment(R.layout.fragment_control_auto), OnAutoChooseClickListener,
@@ -31,6 +33,10 @@ class ChooseAutoFragment : Fragment(R.layout.fragment_control_auto), OnAutoChoos
             AutoApplication.expenseRepository
         )
     }
+    private val eventsViewModel: EventsViewModel by activityViewModels {
+        EventsViewModelFactory(AutoApplication.eventsRepository)
+    }
+
     private var _binding: FragmentControlAutoBinding? = null
     private val binding get() = _binding!!
 
@@ -83,6 +89,7 @@ class ChooseAutoFragment : Fragment(R.layout.fragment_control_auto), OnAutoChoos
 
     override fun onPositiveButtonClicked() {
         expenseViewModel.deleteAllExpensesByAutoId(deleteAutoId)
+        eventsViewModel.deleteEventsByAutoId(deleteAutoId)
         autoViewModel.deleteAuto(deleteAutoId)
     }
 }

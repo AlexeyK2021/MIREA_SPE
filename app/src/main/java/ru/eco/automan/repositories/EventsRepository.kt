@@ -44,4 +44,5 @@ class EventsRepository(private val eventDao: EventDao) {
     fun deleteEvent(eventId: Int) = eventDao.deleteEvent(eventId = eventId)
 
     fun updateEvent(event: Event) = eventDao.updateEvent(event = event)
+    fun deleteEventsByAutoId(autoId: Int) = eventDao.deleteEventsByAutoId(autoId)
 }

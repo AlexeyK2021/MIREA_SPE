@@ -79,4 +79,10 @@ class EventsViewModel(private val eventsRepository: EventsRepository) : ViewMode
             }
         }
     }
+
+    fun deleteEventsByAutoId(autoId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            eventsRepository.deleteEventsByAutoId(autoId)
+        }
+    }
 }
