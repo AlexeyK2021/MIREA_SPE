@@ -23,27 +23,27 @@ class NotificationController {
         const val CHANNEL_ID = "channelID"
     }
 
-    @SuppressLint("MissingPermission")
-    fun createTestNotification(context: Context) {
-        val intent = Intent(context, MainActivity::class.java)
-        intent.apply {
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        }
-        val pendingIntent =
-            PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
-
-        val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.baseline_directions_car_24)
-            .setContentTitle("Напоминание")
-            .setContentText("Тестим уведомление")
-            .setAutoCancel(true)
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-            .setContentIntent(pendingIntent)
-
-        val notificationManager = NotificationManagerCompat.from(context)
-        notificationManager.notify(NOTIFICATION_ID++, builder.build())
-
-    }
+//    @SuppressLint("MissingPermission")
+//    fun createTestNotification(context: Context) {
+//        val intent = Intent(context, MainActivity::class.java)
+//        intent.apply {
+//            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//        }
+//        val pendingIntent =
+//            PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+//
+//        val builder = NotificationCompat.Builder(context, CHANNEL_ID)
+//            .setSmallIcon(R.drawable.baseline_directions_car_24)
+//            .setContentTitle("Напоминание")
+//            .setContentText("Тестим уведомление")
+//            .setAutoCancel(true)
+//            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+//            .setContentIntent(pendingIntent)
+//
+//        val notificationManager = NotificationManagerCompat.from(context)
+//        notificationManager.notify(NOTIFICATION_ID++, builder.build())
+//
+//    }
 
     /**
      * Метод создания и посыла уведомления пользователю

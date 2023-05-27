@@ -83,9 +83,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 findNavController().navigate(R.id.action_mainFragment_to_rulesChapterFragment)
             }
 
-            autoImage.setOnClickListener {
-                AutoApplication.notificationManager.createTestNotification(view.context)
-            }
+//            autoImage.setOnClickListener {
+//                AutoApplication.notificationManager.createTestNotification(view.context)
+//            }
 
             expenseViewModel.userExpenses.observe(viewLifecycleOwner) {
 //                val maxOilSum = resources.getFraction(R.fraction.max_oil_wastes_sum, 1, 1)
